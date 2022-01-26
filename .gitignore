@@ -1,0 +1,34 @@
+# Ignore sensitive information
+/web/sites/*/settings.local.php
+/web/sites/*/services*.yml
+
+# Ignore Drupal's file directory
+/web/sites/*/files/
+/web/sites/default/private/
+
+# Ignore SimpleTest multi-site environment
+/web/sites/simpletest
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore .env files as they are personal
+/.env
+
+/vendor/**/.git
+/web/**/.git
+/drush/**/.git
+
+# Ignore DB dumps
+*.sql
+*.sql.gz
+*.mysql
+*.mysql.gz
+
+# Ignore Lando overrides
+.lando.local.yml
+php.local.ini
+
+# Ignore temp files
+/.phpunit.result.cache

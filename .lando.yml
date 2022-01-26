@@ -1,0 +1,52 @@
+name: bruce-castle
+recipe: drupal9
+domain: brucecastle.local.com
+config:
+  webroot: web
+  via: nginx:1.17
+  database: mysql:5.7
+  xdebug: true
+  config:
+    vhosts: .lando/nginx/brucecastle.local.com
+    php: .lando/php/php.ini
+tooling:
+  drush:
+    service: appserver
+    cmd: /app/bin/drush --root=/app/web -l brucecastle.local.com
+  node:
+    service: node
+  yarn:
+    service: node
+services:
+  appserver:
+    type: php:8.0
+    composer_version: 2.1.3
+    run_as_root:
+      - .lando/scripts/init.sh
+  node:
+    type: node:14
+  solr:
+    type: solr:8
+    core: brucecastle_lando
+    portforward: false
+    config:
+      dir: .lando/solr
+  pma:
+    type: phpmyadmin:5.0
+    hosts: [ database ]
+  mailhog:
+    type: mailhog:v1.0.0
+    portforward: true
+    hogfrom:
+      - appserver
+proxy:
+  appserver_nginx:
+    - brucecastle.local.com
+  pma:
+    - pma.brucecastle.local.com
+  mailhog:
+    - mailhog.brucecastle.local.com
+events:
+  post-db-import:
+    - echo "Clearing site cache."
+    - appserver: cd $LANDO_WEBROOT && drush cr > /dev/null
