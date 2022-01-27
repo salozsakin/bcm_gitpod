@@ -1,3 +1,16 @@
-# LocalGov Drupal Composer project template
+# Bruce Castle (Haringey)
 
-A Composer-based installer for the LocalGov Drupal distribution.
+## Site setup
+
+Uses standard Localgov profile install.
+
+## Deployments
+
+Deploys via DeployHQ.
+
+## URLs
+Dev: TBD
+
+Stager: TBD
+
+Live: TBD
