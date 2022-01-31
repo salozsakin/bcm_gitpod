@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -535,6 +535,15 @@
                 0 => '9.3.3',
             ),
         ),
+        'drupal/config_update' => array(
+            'pretty_version' => '1.7.0',
+            'version' => '1.7.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/config_update',
+            'aliases' => array(),
+            'reference' => '8.x-1.7',
+            'dev_requirement' => false,
+        ),
         'drupal/contact' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -914,6 +923,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/facets',
             'aliases' => array(),
             'reference' => '2.0.1',
+            'dev_requirement' => false,
+        ),
+        'drupal/features' => array(
+            'pretty_version' => '3.12.0',
+            'version' => '3.12.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/features',
+            'aliases' => array(),
+            'reference' => '8.x-3.12',
             'dev_requirement' => false,
         ),
         'drupal/field' => array(
@@ -1749,12 +1767,12 @@
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(

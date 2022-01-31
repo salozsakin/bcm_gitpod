@@ -15,6 +15,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-recommended": "^9.1",
+        "drupal/features": "^3.12",
         "localgovdrupal/localgov": "^2.0"
     },
     "require-dev": {
@@ -35,7 +36,12 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
-        "bin-dir": "bin/"
+        "bin-dir": "bin/",
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true
+        }
     },
     "extra": {
         "enable-patching": true,
