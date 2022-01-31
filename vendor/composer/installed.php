@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'bb42300fe21587ced249e2dc47111bd8cc783384',
+        'reference' => '5f135a28f48da59bbec5c97d3c611adf1cc587fc',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1425,6 +1425,15 @@
             'reference' => '8.x-1.6',
             'dev_requirement' => false,
         ),
+        'drupal/seckit' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/seckit',
+            'aliases' => array(),
+            'reference' => '2.0.0',
+            'dev_requirement' => false,
+        ),
         'drupal/serialization' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1781,7 +1790,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'bb42300fe21587ced249e2dc47111bd8cc783384',
+            'reference' => '5f135a28f48da59bbec5c97d3c611adf1cc587fc',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
