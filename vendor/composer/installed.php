@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
+        'reference' => '7b78400aef8d3750c9c1456114d42459dd87de8f',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1754,7 +1754,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
+            'reference' => '7b78400aef8d3750c9c1456114d42459dd87de8f',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
