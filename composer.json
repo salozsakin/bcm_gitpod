@@ -18,6 +18,7 @@
         "drupal/features": "^3.12",
         "drupal/password_policy": "^3.1",
         "drupal/seckit": "^2.0",
+        "drupal/username_enumeration_prevention": "^1.2",
         "localgovdrupal/localgov": "^2.0"
     },
     "require-dev": {
