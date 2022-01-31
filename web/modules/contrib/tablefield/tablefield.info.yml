@@ -1,0 +1,12 @@
+name: 'TableField'
+description: 'Defines a generic tabular data field.'
+package: Field types
+
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:field
+
+configure: tablefield.admin

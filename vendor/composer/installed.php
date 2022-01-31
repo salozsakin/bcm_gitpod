@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1749,12 +1749,12 @@
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
