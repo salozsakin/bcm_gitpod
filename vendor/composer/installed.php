@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7bbce63b1c1f77f6f57fed6caf96377d9f9b2613',
+        'reference' => 'a131e890b44090d17403325d07676882e1539c04',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1613,6 +1613,15 @@
             'reference' => '6.1.2',
             'dev_requirement' => false,
         ),
+        'drupal/webp' => array(
+            'pretty_version' => '1.0.0-beta6',
+            'version' => '1.0.0.0-beta6',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/webp',
+            'aliases' => array(),
+            'reference' => '8.x-1.0-beta6',
+            'dev_requirement' => false,
+        ),
         'drupal/workflows' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1817,7 +1826,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7bbce63b1c1f77f6f57fed6caf96377d9f9b2613',
+            'reference' => 'a131e890b44090d17403325d07676882e1539c04',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
