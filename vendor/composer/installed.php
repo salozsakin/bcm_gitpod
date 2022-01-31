@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
+        'reference' => 'bb42300fe21587ced249e2dc47111bd8cc783384',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1293,6 +1293,15 @@
             'reference' => '8.x-1.12',
             'dev_requirement' => false,
         ),
+        'drupal/password_policy' => array(
+            'pretty_version' => '3.1.0',
+            'version' => '3.1.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/password_policy',
+            'aliases' => array(),
+            'reference' => '8.x-3.1',
+            'dev_requirement' => false,
+        ),
         'drupal/path' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1772,7 +1781,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd9a65b0027df93fea7d0a9c416d6e5b9c3637a01',
+            'reference' => 'bb42300fe21587ced249e2dc47111bd8cc783384',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
