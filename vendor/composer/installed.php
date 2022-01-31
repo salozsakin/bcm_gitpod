@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '442e35e0613e03028ac74f860b83b9b98a603fb4',
+        'reference' => '7bbce63b1c1f77f6f57fed6caf96377d9f9b2613',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1092,6 +1092,15 @@
                 0 => '9.3.3',
             ),
         ),
+        'drupal/image_lazy_loader' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/image_lazy_loader',
+            'aliases' => array(),
+            'reference' => '2.0.0',
+            'dev_requirement' => false,
+        ),
         'drupal/image_widget_crop' => array(
             'pretty_version' => '2.3.0',
             'version' => '2.3.0.0',
@@ -1808,7 +1817,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '442e35e0613e03028ac74f860b83b9b98a603fb4',
+            'reference' => '7bbce63b1c1f77f6f57fed6caf96377d9f9b2613',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(

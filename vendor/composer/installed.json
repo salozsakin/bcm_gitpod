@@ -5816,6 +5816,65 @@
             "install-path": "../../web/modules/contrib/gin_toolbar"
         },
         {
+            "name": "drupal/image_lazy_loader",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/image_lazy_loader.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_lazy_loader-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "d63fab96d744afc1d0c284b207dbe263ea790a25"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1623336142",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "georgebrook",
+                    "homepage": "https://www.drupal.org/user/2871149"
+                },
+                {
+                    "name": "omarcorbacho",
+                    "homepage": "https://www.drupal.org/user/3547354"
+                },
+                {
+                    "name": "patricia_zoocha",
+                    "homepage": "https://www.drupal.org/user/3363018"
+                },
+                {
+                    "name": "psebborn",
+                    "homepage": "https://www.drupal.org/user/2230930"
+                }
+            ],
+            "description": "Adds the lozad lazy loader script to image fields",
+            "homepage": "https://www.drupal.org/project/image_lazy_loader",
+            "support": {
+                "source": "https://git.drupalcode.org/project/image_lazy_loader"
+            },
+            "install-path": "../../web/modules/contrib/image_lazy_loader"
+        },
+        {
             "name": "drupal/image_widget_crop",
             "version": "2.3.0",
             "version_normalized": "2.3.0.0",
