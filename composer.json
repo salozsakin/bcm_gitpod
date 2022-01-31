@@ -19,6 +19,7 @@
         "drupal/password_policy": "^3.1",
         "drupal/seckit": "^2.0",
         "drupal/username_enumeration_prevention": "^1.2",
+        "drupal/webform": "^6.1",
         "localgovdrupal/localgov": "^2.0"
     },
     "require-dev": {

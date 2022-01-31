@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7977bba475c537cef9a9ed934728a2a703ad5491',
+        'reference' => '442e35e0613e03028ac74f860b83b9b98a603fb4',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1595,6 +1595,15 @@
             'reference' => '8.x-2.0-beta2',
             'dev_requirement' => false,
         ),
+        'drupal/webform' => array(
+            'pretty_version' => '6.1.2',
+            'version' => '6.1.2.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/webform',
+            'aliases' => array(),
+            'reference' => '6.1.2',
+            'dev_requirement' => false,
+        ),
         'drupal/workflows' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1799,7 +1808,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7977bba475c537cef9a9ed934728a2a703ad5491',
+            'reference' => '442e35e0613e03028ac74f860b83b9b98a603fb4',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
