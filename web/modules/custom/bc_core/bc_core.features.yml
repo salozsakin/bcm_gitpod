@@ -1,0 +1,4 @@
+bundle: bc
+excluded:
+  - paragraphs.paragraphs_type.localgov_header
+required: true

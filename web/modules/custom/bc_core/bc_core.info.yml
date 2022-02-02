@@ -1,0 +1,24 @@
+name: Core
+description: 'Provides core components required by other features.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - block_content
+  - content_moderation
+  - crop
+  - field
+  - file
+  - image
+  - link
+  - localgov_alert_banner
+  - media
+  - menu_link_content
+  - node
+  - options
+  - paragraphs
+  - paragraphs_library
+  - path_alias
+  - taxonomy
+  - workflows
+package: BC
