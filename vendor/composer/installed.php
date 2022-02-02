@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '427e751d155e4b16af72b32c7407c7c7ea291283',
+        'reference' => 'df43be8fb5da21612b12af3bf62f298ac328509b',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -914,6 +914,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/entity_usage',
             'aliases' => array(),
             'reference' => '8.x-2.0-beta6',
+            'dev_requirement' => false,
+        ),
+        'drupal/eu_cookie_compliance' => array(
+            'pretty_version' => '1.19.0',
+            'version' => '1.19.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/eu_cookie_compliance',
+            'aliases' => array(),
+            'reference' => '8.x-1.19',
             'dev_requirement' => false,
         ),
         'drupal/facets' => array(
@@ -1826,7 +1835,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '427e751d155e4b16af72b32c7407c7c7ea291283',
+            'reference' => 'df43be8fb5da21612b12af3bf62f298ac328509b',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
