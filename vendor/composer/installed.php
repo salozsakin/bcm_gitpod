@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '427e751d155e4b16af72b32c7407c7c7ea291283',
+        'reference' => 'a6b4aca7de546353c882295a3fb4f656b5d21cf7',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1062,6 +1062,15 @@
             'reference' => '8.x-1.0-beta20',
             'dev_requirement' => false,
         ),
+        'drupal/google_cse' => array(
+            'pretty_version' => '3.5.0',
+            'version' => '3.5.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/google_cse',
+            'aliases' => array(),
+            'reference' => '8.x-3.5',
+            'dev_requirement' => false,
+        ),
         'drupal/hal' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1826,7 +1835,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '427e751d155e4b16af72b32c7407c7c7ea291283',
+            'reference' => 'a6b4aca7de546353c882295a3fb4f656b5d21cf7',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
