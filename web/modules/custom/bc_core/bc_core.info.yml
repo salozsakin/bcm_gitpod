@@ -1,0 +1,25 @@
+name: Core
+description: 'Provides core components required by other features.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'crop:crop'
+  - 'drupal:block'
+  - 'drupal:block_content'
+  - 'drupal:content_moderation'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:media'
+  - 'drupal:menu_link_content'
+  - 'drupal:node'
+  - 'drupal:options'
+  - 'drupal:path_alias'
+  - 'drupal:system'
+  - 'drupal:taxonomy'
+  - 'google_cse:google_cse'
+  - 'localgov_core:localgov_core'
+  - 'paragraphs:paragraphs'
+  - 'paragraphs:paragraphs_library'
+package: BC

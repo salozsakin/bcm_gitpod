@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - google_cse
+  theme:
+    - localgov_scarfolk
+id: googlecse
+theme: localgov_scarfolk
+region: primary_menu
+weight: 0
+provider: null
+plugin: google_cse
+settings:
+  id: google_cse
+  label: Search
+  label_display: '0'
+  provider: google_cse
+visibility: {  }
