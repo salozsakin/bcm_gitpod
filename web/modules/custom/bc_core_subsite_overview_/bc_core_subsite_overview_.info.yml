@@ -1,0 +1,12 @@
+name: 'subsite overview '
+description: 'Provides Subsite overview content type and related configuration. Main Subsite page.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - menu_ui
+  - metatag
+  - node
+  - system
+  - views
+package: 'BC core'
