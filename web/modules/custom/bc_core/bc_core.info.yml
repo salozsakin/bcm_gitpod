@@ -7,6 +7,8 @@ dependencies:
   - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:content_moderation'
+  - 'drupal:crop'
+  - 'eu_cookie_compliance: eu_cookie_compliance'
   - 'drupal:field'
   - 'drupal:file'
   - 'drupal:image'

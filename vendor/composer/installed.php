@@ -5,7 +5,11 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
+<<<<<<< HEAD
         'reference' => 'a6b4aca7de546353c882295a3fb4f656b5d21cf7',
+=======
+        'reference' => 'df43be8fb5da21612b12af3bf62f298ac328509b',
+>>>>>>> BC-24/eu-cookie-banner
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -914,6 +918,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/entity_usage',
             'aliases' => array(),
             'reference' => '8.x-2.0-beta6',
+            'dev_requirement' => false,
+        ),
+        'drupal/eu_cookie_compliance' => array(
+            'pretty_version' => '1.19.0',
+            'version' => '1.19.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/eu_cookie_compliance',
+            'aliases' => array(),
+            'reference' => '8.x-1.19',
             'dev_requirement' => false,
         ),
         'drupal/facets' => array(
@@ -1835,7 +1848,11 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
+<<<<<<< HEAD
             'reference' => 'a6b4aca7de546353c882295a3fb4f656b5d21cf7',
+=======
+            'reference' => 'df43be8fb5da21612b12af3bf62f298ac328509b',
+>>>>>>> BC-24/eu-cookie-banner
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
