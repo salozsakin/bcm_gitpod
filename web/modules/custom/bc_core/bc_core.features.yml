@@ -6,3 +6,6 @@ required:
   - block.block.localgov_mainnavigation_scarfolk
   - block.block.localgov_page_header_block_base
   - block.block.localgov_page_header_block_scarfolk
+excluded:
+  - paragraphs.paragraphs_type.localgov_header
+required: true

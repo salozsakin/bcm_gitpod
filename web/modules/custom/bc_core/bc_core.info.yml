@@ -22,4 +22,7 @@ dependencies:
   - 'localgov_core:localgov_core'
   - 'paragraphs:paragraphs'
   - 'paragraphs:paragraphs_library'
+  - 'localgov_alter_banner:localgov_alert_banner'
+  - 'drupal:path_alias'
+  - 'localgov:workflows'
 package: BC
