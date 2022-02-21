@@ -21,11 +21,11 @@ use Drupal\Component\Utility\Unicode;
  * TODO: If the library already exists, add the CSS / JS file to the existing
  *       library (if it's not already there).
  */
-function theme_name_library_info_build() {
+function brucecastle_library_info_build() {
   // Define libraries based on the components.
   $extensions = ['scss', 'js'];
-  $directory = 'themes/custom/theme_name/components';
-  $dist = '/themes/custom/theme_name/dist';
+  $directory = 'themes/custom/brucecastle/components';
+  $dist = '/themes/custom/brucecastle/dist';
   $extensions = array_map('preg_quote', $extensions);
   $extensions = implode('|', $extensions);
   $file_scan = \Drupal::service('file_system')->scanDirectory($directory, "/{$extensions}$/");
@@ -69,7 +69,7 @@ function theme_name_library_info_build() {
  * Implements hook_theme_suggestions_page_alter().
  * Add content type theme hook suggestions.
  */
-function theme_name_theme_suggestions_page_alter(&$suggestions) {
+function brucecastle_theme_suggestions_page_alter(&$suggestions) {
   if ($node = \Drupal::request()->attributes->get('node')) {
     if (!is_object($node)) {
       $node = \Drupal::request()->attributes->get('node_revision');

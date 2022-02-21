@@ -1,6 +1,6 @@
-name: Theme Name
+name: Bruce Castle
 type: theme
-description: Storybook Starter Theme
+description: Storybook Starter Theme based custom theme
 base theme: stable
 core_version_requirement: ^8.8 || ^9
 
@@ -14,7 +14,7 @@ regions:
 logo: images/logo.png
 
 libraries:
-  - 'theme_name/global'
+  - 'brucecastle/global'
 
 ckeditor_stylesheets:
   - dist/css/base.css

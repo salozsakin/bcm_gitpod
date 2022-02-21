@@ -10,7 +10,7 @@
 # - accordion_content - the content within the accordion item.
 #
 #}
-{{ attach_library('theme_name/accordion') }}
+{{ attach_library('brucecastle/accordion') }}
 {% set accordion_base_class = 'accordion' %}
 
 <div name="{{ field_name }}" {{ bem(accordion_base_class, accordion_modifiers|default([]), accordion_blockname, ['js-accordion']) }}>
