@@ -1,9 +1,9 @@
 # Ignore compiled files.
-dist/*.map
-styleguide/*.map
+#dist/*.map
+#styleguide/*.map
 
-dist
-styleguide
+#dist
+#styleguide
 
 # Yarn/NPM
 node_modules/
