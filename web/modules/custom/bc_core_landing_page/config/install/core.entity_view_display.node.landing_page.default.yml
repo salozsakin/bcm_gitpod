@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_components
+    - field.field.node.landing_page.field_infor
     - field.field.node.landing_page.localgov_subsites_banner
     - node.type.landing_page
   module:
@@ -46,4 +47,5 @@ content:
     weight: 103
     region: content
 hidden:
+  field_infor: true
   search_api_excerpt: true

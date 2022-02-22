@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_components
+    - field.field.node.landing_page.field_infor
     - field.field.node.landing_page.localgov_subsites_banner
     - node.type.landing_page
   module:
@@ -160,4 +161,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_infor: true
