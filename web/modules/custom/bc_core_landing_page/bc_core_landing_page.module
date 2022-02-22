@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * LocalGov Subsites module file.
+ */
+
+use Drupal\node\NodeInterface;
+
+function bc_core_landing_page_preprocess_page($variables){
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node->hasField('field_header_colour') && !$node->get('field_header_colour')->isEmpty()) {
+    $string = $node->get('field_string')->value;
+    $colours = 'purple';
+  }
+  if ($node->hasField('field_box_link_colour') && !$node->get('field_box_link_colour')->isEmpty()) {
+    $string = $node->get('field_string')->value;
+    $colours = 'teal';
+    'red';
+  }
+}
