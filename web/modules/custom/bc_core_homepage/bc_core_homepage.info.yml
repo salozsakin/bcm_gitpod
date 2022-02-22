@@ -1,0 +1,14 @@
+name: Homepage
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - field
+  - media_library
+  - menu_ui
+  - metatag
+  - node
+  - paragraphs
+  - system
+  - views
+package: 'BC core'
