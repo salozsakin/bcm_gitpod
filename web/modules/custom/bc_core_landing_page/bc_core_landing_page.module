@@ -2,7 +2,7 @@
 
 /**
  * @file
- * LocalGov Subsites module file.
+ * LocalGov Landing page module file.
  */
 
 use Drupal\node\NodeInterface;
