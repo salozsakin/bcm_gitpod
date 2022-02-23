@@ -1,0 +1,103 @@
+
+.button {
+  background: btnclr(button-default-bg);
+  border: 0.1rem solid;
+  border-color: btnclr(button-default-outline);
+  border-radius: $border-radius;
+  color: btnclr(button-default-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-family: $font-body;
+  font-size: 1.4rem;
+  font-weight: $font-bold;
+  line-height: 1;
+  padding: 1.2rem $padding-medium 1.3rem;
+  transition:
+    background 0.25s ease-in-out,
+    color 0.1s ease-in-out,
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    text-decoration: underline;
+    background: btnclr(button-default-hover-bg);
+    color: btnclr(button-default-hover-color);
+  }
+
+  &:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+    background: btnclr(button-default-hover-bg);
+    color: btnclr(button-default-hover-color);
+    border-color: btnclr(button-default-outline);
+    outline-color: btnclr(button-default-outline);
+  }
+
+  &:active {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+    background-color: btnclr(button-default-active-bg);
+    border-color: btnclr(button-default-outline);
+    color: btnclr(button-default-active-color);
+    outline-color: btnclr(button-default-outline);
+  }
+
+  &:visited {
+    color: btnclr(button-default-color);
+  }
+}
+
+.button--icon {
+  .icon {
+    margin-left: $padding-default;
+    height: 1.2rem;
+    width: 1.5rem;
+    vertical-align: middle;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+    fill: currentColor;
+  }
+}
+
+/// Secondary buttons
+.button--secondary {
+  background-color: btnclr(button-secondary-bg);
+  border-color: btnclr(button-secondary-color);
+  color: btnclr(button-secondary-color);
+
+  &:hover {
+    background-color: btnclr(button-secondary-bg);
+    color: btnclr(button-secondary-color);
+    text-decoration-thickness: 0.2rem;
+  }
+
+  &:focus {
+    text-decoration: none;
+    background-color: btnclr(button-secondary-focus-bg);
+    border-color: btnclr(button-secondary-outline);
+    outline-color: btnclr(button-secondary-outline);
+    color: btnclr(button-secondary-focus-color);
+    box-shadow: 0 4px btnclr(button-secondary-outline);
+  }
+
+  &:active {
+    text-decoration: none;
+    background-color: btnclr(button-secondary-focus-bg);
+    border-color: btnclr(button-secondary-outline);
+    outline-color: btnclr(button-secondary-outline);
+    color: btnclr(button-secondary-focus-color);
+    box-shadow: 0 4px btnclr(button-secondary-outline);
+  }
+
+  &:visited {
+    color: btnclr(button-secondary-color);
+  }
+}
+
+@include medium {
+  .button {
+    width: auto;
+  }
+}
