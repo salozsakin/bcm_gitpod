@@ -25,4 +25,6 @@ dependencies:
   - 'localgov_core:localgov_core'
   - 'paragraphs:paragraphs'
   - 'paragraphs:paragraphs_library'
+  - 'eu_cookie_compliance:eu_cookie_compliance'
+
 package: BC
