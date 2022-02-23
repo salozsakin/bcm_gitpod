@@ -1,7 +1,5 @@
-
-$table-bg: clr(bg-color);
-$table-heading-bg: #d5e4f1;
-$table-border: $bright-blue-light;
+$table-heading-bg: clr(tint-tertiary);
+$table-border: clr(tertiary);
 
 table,
 .table {
@@ -52,7 +50,6 @@ thead {
 
 tr,
 .table__row {
-  background-color: $table-bg;
   &:nth-child(odd) {
     background-color: #eee;
   }

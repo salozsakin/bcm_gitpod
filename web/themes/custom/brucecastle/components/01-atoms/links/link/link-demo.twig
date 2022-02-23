@@ -1,0 +1,15 @@
+{% for group in groups %}
+  <div>
+    {% for type in group.items %}
+      <div style="margin-bottom: 2rem;">
+        {% include "@atoms/links/link/link.twig" with {
+          link_content: type.link_content|capitalize,
+          link_icon_name: type.link_icon_name,
+          link_icon_before_name: type.link_icon_before_name,
+          link_url: type.link_url,
+          link_modifiers: type.link_modifiers,
+        } %}
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}

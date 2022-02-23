@@ -1,6 +1,6 @@
 import React from 'react';
 
-import link from './link.twig';
+import link from './link-demo.twig';
 
 import linkData from './link.yml';
 

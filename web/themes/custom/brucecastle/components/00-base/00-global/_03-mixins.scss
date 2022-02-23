@@ -22,26 +22,24 @@
 //
 @mixin link {
   color: clr(link-color);
+  font-weight: $font-bold;
   transition: color .2s ease-out;
+  padding-bottom: $space-one-sixth;
 
-  &:hover,
+  &:hover {
+    text-decoration-thickness: 0.3rem;
+  }
+
+  &:focus,
   &:active {
-    color: clr(link-hover-color);
-    text-decoration: underline;
+    text-decoration: none;
+    color: clr(link-focus-color);
+    background-color: clr(focus);
+    border-bottom: 0.3rem solid clr(black);
   }
 
   &:visited {
-    color: clr(link-visited-color)
-  }
-
-  &:focus {
-    outline: 0.3rem solid clr(link-active-outline);
-  }
-
-  &:active {
-    background-color: transparent;
-    box-shadow: 0 0 0 0.4rem clr(link-active-outline);
-    color: clr(link-active-colour);
+    color: clr(link-color)
   }
 }
 
@@ -61,7 +59,7 @@
   $font-family: $font-heading,
   $font-size: 'heading--title',
   $line-height: 1.1,
-  $color: clr(black-blue),
+  $color: clr(blk),
   $font-weight: 700,
   $letter-spacing: false,
   $margin: 0 0 $padding-default,

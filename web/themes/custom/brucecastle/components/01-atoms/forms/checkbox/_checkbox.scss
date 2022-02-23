@@ -45,7 +45,6 @@
 
     &::before {
       content: "";
-      background: clr(form-bg);
       border: 0.1rem solid clr(form-border);
       border-radius: $border-radius;
       width: 2rem;
@@ -59,7 +58,7 @@
     &::after {
       content: "";
       border: solid;
-      border-color: clr(text-inverse);
+      border-color: clr(form-border);
       border-width: 0 0 0.2rem 0.2rem;
       background: transparent;
       border-top-color: transparent;

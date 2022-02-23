@@ -2,35 +2,28 @@
 // Color Usage variables - use these (via the `clr` function below)
 // rather than color variables directly.
 $defaultColors: (
-  text: $black-blue,
+  text: $off-black,
   text-inverse: $white,
-  background: $off-white,
+  background: $white,
   primary: $brand-primary,
-  primary-dark: $brand-primary-dark,
+  secondary: $brand-secondary,
+  tertiary: $brand-tertiary,
+  tint-tertiary: $brand-tertiary-tint,
+  accent: $brand-accent,
 
-  bright-orange: $bright-orange,
-  bright-yellow: $bright-yellow,
-  bright-green-light: $bright-green-light,
-  bright-green: $bright-green,
-  bright-turquoise: $bright-turquoise,
-  bright-blue: $bright-blue,
-  bright-purple: $bright-purple,
-  bright-red: $bright-red,
+  focus: $focus-yellow,
 
-  link-color: $bright-blue,
-  link-hover-color: $dark-blue,
-  link-visited-color: $bright-purple,
-  link-active-outline: $bright-blue,
+  link-color: $brand-secondary,
+  link-focus-color: $black,
 
-  blackest: $black,
+  form-border: $form-border,
+
+  blk: $black,
   off-black: $off-black,
-  dark-grey: $dark-grey,
+  dark-grey: $grey,
   mid-grey: $grey,
   light-grey: $light-grey,
-  lighter-grey: $lighter-grey,
-  off-white: $off-white,
   lightest: $white,
-  bg-color: $bg-color,
 );
 
 $buttonColors: (
@@ -44,11 +37,10 @@ $buttonColors: (
 
   button-secondary-bg: $button-secondary-bg,
   button-secondary-color: $button-secondary-color,
-  button-secondary-hover-bg: $button-secondary-hover-bg,
-  button-secondary-hover-color: $button-secondary-hover-color,
+  button-secondary-focus-bg: $button-secondary-focus-bg,
+  button-secondary-focus-color: $button-secondary-focus-color,
   button-secondary-outline: $button-secondary-outline,
   button-secondary-active-color: $button-secondary-active-color,
-  button-secondary-active-bg: $button-secondary-active-bg,
 );
 
 ///////////

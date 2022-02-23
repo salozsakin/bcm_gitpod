@@ -13,6 +13,8 @@ groups:
     items:
       - name: default
         title: 'Default'
+        button_bg: '#006980'
       - name: icon
         title: 'Iconed'
         button_icon: true
+        button_bg: '#006980'
