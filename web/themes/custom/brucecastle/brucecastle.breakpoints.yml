@@ -7,7 +7,7 @@ brucecastle.sm:
   mediaQuery: 'all and (min-width: 540px)'
 brucecastle.sm_md:
   label: tablet-small
-  mediaQuery: 'all and (min-width: 640ox)'
+  mediaQuery: 'all and (min-width: 640px)'
 brucecastle.sm_lg:
   label: tablet
   mediaQuery: 'all and (min-width: 768px)'
