@@ -1,0 +1,11 @@
+name: 'Basic Page '
+type: module
+core_version_requirement: '^8.9 || ^9'
+package: 'BC core'
+dependencies:
+  - 'drupal:block'
+  - 'drupal:block_content'
+  - 'drupal:field'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:text'
