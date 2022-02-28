@@ -1,0 +1,86 @@
+/*
+  @file Theming main menu.
+*/
+
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.lgd-region--primary-menu {
+  background-color: transparent;
+}
+
+.menu--main {
+  margin-top: var(--spacing-larger);
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.menu--main > .menu-item a {
+  display: block;
+  text-decoration: none;
+  font-size: var(--font-size-menu);
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: var(--spacing-larger);
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.menu--main > .menu-item--active-trail a,
+.menu--main > .menu-item a:hover {
+  color: var(--c-text-inverse);
+  background-color: transparent;
+}
+
+.menu--main > .menu-item a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3rem;
+}
+
+.menu--main > .menu-item a:focus {
+  color: var(--color-black);
+  background-color: var(--color-focus);
+}
+
+@include medium {
+  .lgd-region--primary-menu .menu--main {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .menu--main > .menu-item {
+    margin-right: var(--spacing);
+    margin-left: 0;
+
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .menu--main > .menu-item a {
+    margin-bottom: 0;
+    font-size: var(--font-size);
+  }
+
+  .menu--main > .menu-item--active-trail a,
+  .menu--main > .menu-item a:hover {
+    color: var(--c-text-inverse);
+    background-color: transparent;
+  }
+}
+
+@include large {
+  .menu--main > .menu-item {
+    margin-right: var(--spacing-larger);
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .menu--main > .menu-item a {
+    font-size: var(--font-size-menu);
+  }
+}
