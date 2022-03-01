@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.text
-    - field.storage.block_content.field_wysiwyg
+    - field.storage.node.field_wysiwyg
+    - node.type.localgov_subsites_page
   module:
     - text
-id: block_content.text.field_wysiwyg
+id: node.localgov_subsites_page.field_wysiwyg
 field_name: field_wysiwyg
-entity_type: block_content
-bundle: text
-label: WYSIWYG
+entity_type: node
+bundle: localgov_subsites_page
+label: 'Side Bar'
 description: ''
 required: false
 translatable: false

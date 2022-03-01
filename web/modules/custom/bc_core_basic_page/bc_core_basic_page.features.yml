@@ -1,9 +1,2 @@
 bundle: bc_core
-required:
-  - block.block.text
-  - node.type.localgov_subsites_page
-  - block_content.type.text
-  - core.entity_form_display.block_content.text.default
-  - core.entity_view_display.block_content.text.default
-  - field.field.block_content.text.body
-  - field.field.block_content.text.field_wysiwyg
+required: true
