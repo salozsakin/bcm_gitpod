@@ -1,0 +1,14 @@
+name: Media
+description: 'Feature for image styles and related settings'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - field_formatter_class
+  - image
+  - localgov_media
+  - media
+  - responsive_image
+  - system
+  - views
+package: BC

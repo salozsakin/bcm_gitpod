@@ -25,44 +25,6 @@ $grid-breakpoints: (
   xxl: 1300px,
 ) !default;
 
-// Gutters
-// By default Bootstrap will use one gutter size. Modify this value to allow custom gutters dependent on breakpoint.
-$grid-gutter-widths: (
-  xs: 2rem,
-  sm: 2rem,
-  sm-md: 2rem,
-  sm-lg: 2rem,
-  md: 2rem,
-  lg: 2rem,
-  xl: 2rem,
-  xxl: 2rem,
-) !default;
-
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-//
-// Stylelint is disabled here becase the `map-get` function trips up the `calc` syntax check.
-/* stylelint-disable */
-$container-max-widths: (
-  xs: calc(#{$phone} - #{map-get($grid-gutter-widths, 'xs')}),
-  sm: calc(#{$phone-wide} - #{map-get($grid-gutter-widths, 'sm')}),
-  sm-md: calc(#{$phablet} - #{map-get($grid-gutter-widths, 'sm-md')}),
-  sm-lg: calc(#{$tablet-small} - #{map-get($grid-gutter-widths, 'sm-lg')}),
-  md: calc(#{$tablet} - #{map-get($grid-gutter-widths, 'md')}),
-  lg: calc(#{$tablet-wide} - #{map-get($grid-gutter-widths, 'lg')}),
-  xl: calc(#{$desktop} - #{map-get($grid-gutter-widths, 'xl')}),
-  xxl: calc(#{$desktop-wide} - #{map-get($grid-gutter-widths, 'xxl')}),
-  ) !default;
-  /* stylelint-enable */
-
-
-
-// The max-width breakpoint is used when the design should be applied at whatever the
-// largest breakpoint is regardless of actual pixel value. e.g. removing outer margin on body wrapper
-$max-width: $grid-breakpoints[xl];
-
-
 /// Mixin - xs Breakpoint
 /// Allows easier @include xs {} syntax
 @mixin xs {

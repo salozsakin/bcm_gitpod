@@ -1,28 +1,42 @@
 name: Bruce Castle
 type: theme
 description: Storybook Starter Theme based custom theme
-base theme: stable
+base theme: localgov_base
 core_version_requirement: ^8.8 || ^9
 
 regions:
-  header: Header
-  hero: Hero
-  content: Content
-  sidebar: 'Sidebar'
-  footer: Footer
+  tabs: "Tabs"
+  header: "Header"
+  search: "Search"
+  mobile_search: "Mobile search"
+  primary_menu: "Primary menu"
+  secondary_menu: "Secondary menu"
+  banner: "Banner"
+  breadcrumb: "Breadcrumb"
+  messages: "Messages"
+  content_top: "Content top"
+  content: "Content"
+  content_bottom: "Content bottom"
+  sidebar_first: "Sidebar first"
+  sidebar_second: "Sidebar second"
+  footer_first: "Footer first"
+  footer_second: "Footer second"
+  footer_third: "Footer third"
+  footer: "Footer"
+  lower_footer_first: "Lower footer first"
+  lower_footer_second: "Lower footer second"
+  lower_footer_third: "Lower footer third"
+  disabled: "Disabled"
 
-logo: images/logo.png
+#logo: images/logo.png
+#
+#libraries:
+#  - 'brucecastle/global'
+#
+#ckeditor_stylesheets:
+#  - dist/css/base.css
 
-libraries:
-  - 'brucecastle/global'
-
-ckeditor_stylesheets:
-  - dist/css/base.css
-
-libraries-override:
-  system/base: false
-  system/component: false
-
+#
 component-libraries:
   base:
     paths:
@@ -42,3 +56,25 @@ component-libraries:
   pages:
     paths:
       - components/05-pages
+
+libraries-override:
+  localgov_base/global:
+    css:
+      base:
+        css/base/variables.css: dist/variables.css
+  localgov_base/header:
+    css:
+      theme:
+        css/components/header.css: dist/header.css
+  localgov_base/menu-main:
+    css:
+      theme:
+        css/components/menu-main.css: dist/menu-main.css
+  localgov_base/footer:
+    css:
+      theme:
+        css/components/footer.css: dist/footer.css
+  localgov_base/box-links:
+    css:
+      theme:
+        css/components/box-links.css: dist/box-links.css

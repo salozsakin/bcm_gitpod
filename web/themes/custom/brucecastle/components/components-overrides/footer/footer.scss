@@ -1,0 +1,95 @@
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.lgd-footer {
+  margin-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+}
+
+.lgd-footer__pre-footer {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
+  color: var(--color-white);
+  background-color: var(--color-section-pre-footer-bg);
+
+  .lgd-row {
+    align-items: center;
+  }
+
+  .menu {
+    padding: 0;
+  }
+
+  .menu-item {
+    display: block;
+    font-size: var(--font-size-menu);
+    font-weight: 700;
+    margin-bottom: var(--spacing);
+  }
+
+  @include medium {
+    .menu {
+      margin-bottom: 0;
+    }
+  }
+
+  @include large {
+    .menu {
+      display: flex;
+      margin-bottom: 0;
+    }
+
+    .menu-item {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: var(--spacing-larger);
+    }
+  }
+}
+
+.footer__partner-logos {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 -0.8rem;
+
+  .lgd-row__one-third {
+    padding: 0 var(--spacing-smaller);
+  }
+
+  @include medium {
+    .lgd-row__one-third {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.lgd-footer__pre-footer a,
+.lgd-footer__footer a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.lgd-footer__pre-footer a:hover,
+.lgd-footer__footer a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3rem;
+}
+
+.lgd-footer__pre-footer a:focus,
+.lgd-footer__footer a:focus {
+  color: var(--color-black);
+}
+
+.lgd-footer__footer {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+  background-color: var(--color-section-footer-bg);
+  font-size: var(--font-size-small);
+  color: var(--c-text-inverse);
+}
+
+.lgd-footer__post-footer {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
+  background-color: var(--color-section-post-footer-bg);
+}
