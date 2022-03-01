@@ -24,6 +24,9 @@ function getEntries(pattern) {
     ...mapFilenamesToEntries(path.resolve('components/03-organisms/**/*.scss')), // Drupal components.
     ...mapFilenamesToEntries(path.resolve('components/04-templates/**/*.scss')), // Drupal components.
     ...mapFilenamesToEntries(path.resolve('components/05-pages/**/*.scss')), // Drupal components.
+    ...mapFilenamesToEntries(
+      path.resolve('components/components-overrides/**/*.scss'),
+    ), // Localgov components.
   };
 
   glob.sync(pattern).forEach((file) => {
