@@ -13,4 +13,4 @@ dependencies:
   - 'field_group:field_group'
   - 'layout_paragraphs:layout_paragraphs'
   - 'paragraphs:paragraphs'
-package: 'BC core'
+package: bc_core

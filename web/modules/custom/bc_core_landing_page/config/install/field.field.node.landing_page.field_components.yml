@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_components
     - node.type.landing_page
+    - paragraphs.paragraphs_type.information_box
     - paragraphs.paragraphs_type.localgov_box_link
     - paragraphs.paragraphs_type.localgov_text
     - paragraphs.paragraphs_type.page_section
@@ -23,6 +24,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      information_box: information_box
       localgov_box_link: localgov_box_link
       localgov_text: localgov_text
       page_section: page_section
@@ -31,6 +33,12 @@ settings:
       from_library:
         weight: 38
         enabled: false
+      home_page_carousel:
+        weight: 42
+        enabled: false
+      information_box:
+        weight: 43
+        enabled: true
       localgov_accordion:
         weight: 39
         enabled: false
@@ -75,6 +83,9 @@ settings:
         enabled: false
       localgov_featured_teasers:
         weight: 53
+        enabled: false
+      localgov_header:
+        weight: 59
         enabled: false
       localgov_ia_block:
         weight: 54
