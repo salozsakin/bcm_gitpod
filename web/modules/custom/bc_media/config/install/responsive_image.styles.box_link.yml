@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.box_link_mobile
+    - image.style.medium_3_2_600x400
+  module:
+    - localgov_media
+id: box_link
+label: 'Box link'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_3_2_600x400
+    breakpoint_id: localgov_media.bootstrap4_sm_576px
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: box_link_mobile
+    breakpoint_id: localgov_media.bootstrap4_xs
+    multiplier: 1x
+breakpoint_group: localgov_media
+fallback_image_style: box_link_mobile
