@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - node.type.landing_page
+    - node.type.localgov_event
+    - node.type.localgov_news_article
+    - node.type.localgov_newsroom
+    - node.type.localgov_services_landing
+    - node.type.localgov_services_page
+    - node.type.localgov_services_sublanding
+    - node.type.localgov_step_by_step_overview
+    - node.type.localgov_subsites_overview
+    - node.type.localgov_subsites_page
+  module:
+    - entity_browser
+    - eu_cookie_compliance
+    - media
+    - node
+    - paragraphs
+    - paragraphs_library
+    - path
+    - system
+    - toolbar
+  enforced:
+    module:
+      - localgov_roles
+id: localgov_editor
+label: Editor
+weight: 2
+is_admin: null

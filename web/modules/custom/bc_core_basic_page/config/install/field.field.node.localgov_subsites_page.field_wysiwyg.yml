@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wysiwyg
+    - node.type.localgov_subsites_page
+  module:
+    - text
+id: node.localgov_subsites_page.field_wysiwyg
+field_name: field_wysiwyg
+entity_type: node
+bundle: localgov_subsites_page
+label: 'Side Bar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
