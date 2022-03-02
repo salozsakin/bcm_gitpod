@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_3_2_768x512
+    - image.style.medium_3_2_600x400
+    - image.style.small_3_2
+  module:
+    - localgov_media
+id: media_and_text
+label: 'Media and text'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: large_3_2_768x512
+    breakpoint_id: localgov_media.bootstrap4_lg_992px
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_3_2_600x400
+    breakpoint_id: localgov_media.bootstrap4_md_768px
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_3_2
+    breakpoint_id: localgov_media.bootstrap4_xs
+    multiplier: 1x
+breakpoint_group: localgov_media
+fallback_image_style: medium_3_2_600x400
