@@ -57,28 +57,24 @@
 
 {{ attach_library('brucecastle/media_with_text') }}
 
-{% block paragraph %}
-  <section{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% if media_position == 'left' or media_position == 'top' %}
-        <div class="media-with-text__media">
-          {{ content.localgov_media_item }}
-        </div>
-        <div class="media-with-text__body">
-          {{ heading }}
-          {{ content.localgov_text }}
-          {{ link }}
-        </div>
-      {% else %}
-        <div class="media-with-text__body">
-          {{ heading }}
-          {{ content.localgov_text }}
-          {{ link }}
-        </div>
-        <div class="media-with-text__media">
-          {{ content.localgov_media_item }}
-        </div>
-      {% endif %}
-    {% endblock %}
-  </section>
-{% endblock paragraph %}
+<section{{ attributes.addClass(classes) }}>
+  {% if media_position == 'left' %}
+    <div class="media-with-text__media">
+      {{ content.localgov_media_item }}
+    </div>
+    <div class="media-with-text__body">
+      {{ heading }}
+      {{ content.localgov_text }}
+      {{ link }}
+    </div>
+  {% else %}
+    <div class="media-with-text__body">
+      {{ heading }}
+      {{ content.localgov_text }}
+      {{ link }}
+    </div>
+    <div class="media-with-text__media">
+      {{ content.localgov_media_item }}
+    </div>
+  {% endif %}
+</section>
