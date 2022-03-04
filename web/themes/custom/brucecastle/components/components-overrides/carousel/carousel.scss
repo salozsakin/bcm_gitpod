@@ -1,0 +1,17 @@
+.home-page-carousel {
+  position: relative;
+}
+
+.home-page-carousel__content {
+  position: absolute;
+  height: calc(100% - 0.6rem);
+  max-width: 60rem;
+  top: 0;
+  left: 17%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.home-page-carousel__text {
+  color: white;
+  padding: 9.5rem 6.5rem;
+}

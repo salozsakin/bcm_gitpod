@@ -26,9 +26,10 @@ slick:
     gpl-compatible: true
   css:
     theme:
-      /libraries/slick/slick/slick.css: {}
+      https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css: { type: external }
+      https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css: { type: external }
   js:
-    /libraries/slick/slick/slick.min.js: {}
+    https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js: { type: external }
   dependencies:
     - core/drupal
     - core/jquery
@@ -36,3 +37,10 @@ slick:
 youtube_iframe_api:
   js:
     //www.youtube.com/iframe_api: {type: external, attributes: { defer: true, async: true } }
+
+carousel:
+  css:
+    theme:
+      dist/carousel.css: {}
+  js:
+    dist/js/components-overrides/carousel/carousel.js: {}
