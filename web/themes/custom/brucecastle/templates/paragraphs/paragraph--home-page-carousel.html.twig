@@ -56,7 +56,34 @@
   <div{{ attributes.addClass(classes) }}>
     {{ content.field_background_image }}
     <div class="home-page-carousel__content">
-      <h1 class="home-page-carousel__text">{{ content.field_title.0 }}</h1>
+      <h1 class="home-page-carousel__text">
+        {{ content.field_title.0 }}
+        {% if content.field_title.1 %}
+          <span>{{ content.field_title.1 }} </span>
+        {% endif %}
+      </h1>
+      {% if content.field_background_image['#items']|length > 1 %}
+        <div class="home-page-carousel__custom-nav-container">
+          <div class="home-page-carousel__custom-nav">
+            <button class="button--carousel button--prev--custom">
+              <span class="visually-hidden">Previous slide</span>
+              {% include active_theme_path() ~ '/images/icons/carousel-arrow-left.svg' %}
+            </button>
+            <button class="button--carousel button--play--custom">
+              <span class="visually-hidden">Autoplay images</span>
+              {% include active_theme_path() ~ '/images/icons/carousel-play.svg' %}
+            </button>
+            <button class="button--carousel button--pause--custom button--hidden">
+              <span class="visually-hidden">Pause autoplay</span>
+              {% include active_theme_path() ~ '/images/icons/carousel-stop.svg' %}
+            </button>
+            <button class="button--carousel button--next--custom">
+              <span class="visually-hidden">Next slide</span>
+              {% include active_theme_path() ~ '/images/icons/carousel-arrow-right.svg' %}
+            </button>
+          </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endblock paragraph %}

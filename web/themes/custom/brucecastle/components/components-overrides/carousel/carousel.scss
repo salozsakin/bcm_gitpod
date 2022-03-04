@@ -1,5 +1,44 @@
 .home-page-carousel {
   position: relative;
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slick-dots {
+    position: static;
+
+    li {
+      margin: 0;
+    }
+
+    button {
+      margin: 0;
+      padding: 0;
+
+      &::before {
+        background-color: transparent;
+        height: 0.6rem;
+        width: 0.6rem;
+        border: 0.1rem solid var(--color-white);
+        content: "";
+        opacity: 1;
+        display: inline-block;
+      }
+
+      &:focus::before {
+        background-color: var(--color-white);
+      }
+    }
+
+    .slick-active button::before {
+      background-color: var(--color-white);
+    }
+
+    .slick-dot-icon::before {
+      content: none;
+    }
+  }
 }
 
 .home-page-carousel__content {
@@ -9,9 +48,49 @@
   top: 0;
   left: 17%;
   background-color: rgba(0, 0, 0, 0.6);
+  padding: 9.5rem 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .home-page-carousel__text {
   color: white;
-  padding: 9.5rem 6.5rem;
+
+  span {
+    display: block;
+  }
+}
+
+.home-page-carousel__custom-nav {
+  display: inline-block;
+  margin-left: -1.2rem;
+}
+
+.button--carousel {
+  background-color: transparent;
+  border: none;
+  padding: var(--spacing-small);
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.button--pause--custom svg,
+.button--play--custom svg {
+  margin-bottom: 0.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.button--prev--custom svg,
+.button--next--custom svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.button--hidden {
+  display: none;
 }
