@@ -36,3 +36,8 @@ slick:
 youtube_iframe_api:
   js:
     //www.youtube.com/iframe_api: {type: external, attributes: { defer: true, async: true } }
+
+media_with_text:
+  css:
+    theme:
+      dist/media-with-text.css: {}

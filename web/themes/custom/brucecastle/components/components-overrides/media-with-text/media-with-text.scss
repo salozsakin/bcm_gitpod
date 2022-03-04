@@ -1,0 +1,66 @@
+/**
+ * @file
+ * Basic styling for Media with text paragraph.
+ */
+
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.media-with-text {
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+.media-with-text--media-left .media-with-text__body {
+  margin-top: var(--spacing-large);
+}
+
+.media-with-text__body {
+  flex-basis: 42%;
+  flex-shrink: 0;
+
+  h2 {
+    color: var(--c-tertiary);
+  }
+}
+
+.media-with-text__link {
+  background-color: var(--c-secondary);
+  border: 0.1rem solid transparent;
+  color: var(--c-text-inverse);
+  padding: 1.2rem 2.4rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-smaller);
+  display: inline-block;
+  margin-top: var(--spacing-smaller);
+
+  &:hover {
+    background-color: var(--c-white);
+    border-color: var(--c-secondary);
+    color: var(--c-secondary);
+    text-decoration: underline;
+  }
+}
+
+@include medium {
+  .media-with-text {
+    margin-top: var(--spacing-larger);
+    margin-bottom: var(--spacing-larger);
+  }
+
+  .media-with-text--media-left,
+  .media-with-text--media-right {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .media-with-text--media-left .media-with-text__body {
+    margin-top: 0;
+    padding-left: var(--spacing-large);
+  }
+
+  .media-with-text--media-right .media-with-text__body {
+    padding-right: var(--spacing-large);
+  }
+}
