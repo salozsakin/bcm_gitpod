@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * LocalGov Landing page module file.
+ */
+
+use Drupal\node\NodeInterface;
+
+function bc_core_landing_page_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->hasField('field_box_link_colour') && !$paragraph>get('field_box_link_colour')->isEmpty()) {
+    $colour = $paragraph->get('field_string')->value;
+    $variables['box-link-colour'] = $colour;
+  }
+}
