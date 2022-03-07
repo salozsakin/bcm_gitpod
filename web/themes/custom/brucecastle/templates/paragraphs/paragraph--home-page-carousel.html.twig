@@ -54,14 +54,10 @@
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
+    {# Carousel images #}
     {{ content.field_background_image }}
+    {# Custom navigation for the carousel #}
     <div class="home-page-carousel__content">
-      <h1 class="home-page-carousel__text">
-        {{ content.field_title.0 }}
-        {% if content.field_title.1 %}
-          <span>{{ content.field_title.1 }} </span>
-        {% endif %}
-      </h1>
       {% if content.field_background_image['#items']|length > 1 %}
         <div class="home-page-carousel__custom-nav-container">
           <div class="home-page-carousel__custom-nav">
@@ -84,6 +80,13 @@
           </div>
         </div>
       {% endif %}
+      {# Carousel text #}
+      <h1 class="home-page-carousel__text">
+        {{ content.field_title.0 }}
+        {% if content.field_title.1 %}
+          <span>{{ content.field_title.1 }} </span>
+        {% endif %}
+      </h1>
     </div>
   </div>
 {% endblock paragraph %}
