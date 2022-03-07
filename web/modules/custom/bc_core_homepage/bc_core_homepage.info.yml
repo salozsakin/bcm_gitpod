@@ -7,5 +7,6 @@ dependencies:
   - 'drupal:media_library'
   - 'drupal:menu_ui'
   - 'drupal:node'
+  - 'field_formatter_class:field_formatter_class'
   - 'paragraphs:paragraphs'
 package: bc_core
