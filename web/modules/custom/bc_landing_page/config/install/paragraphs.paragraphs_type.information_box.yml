@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: information_box
+label: 'Information Box'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
