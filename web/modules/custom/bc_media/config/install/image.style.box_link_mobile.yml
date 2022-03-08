@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: box_link_mobile
+label: 'Box link mobile 13:6 (400x185)'
+effects:
+  43cfc4ce-fed1-4613-9784-8e9ca176dfcd:
+    uuid: 43cfc4ce-fed1-4613-9784-8e9ca176dfcd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 185
+      anchor: center-center

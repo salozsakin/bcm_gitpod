@@ -1,0 +1,14 @@
+name: Media
+description: 'Feature for image styles and related settings'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'drupal:block'
+  - 'drupal:image'
+  - 'drupal:media'
+  - 'drupal:responsive_image'
+  - 'drupal:system'
+  - 'drupal:views'
+  - 'field_formatter_class:field_formatter_class'
+  - 'localgov_media:localgov_media'
+package: BC

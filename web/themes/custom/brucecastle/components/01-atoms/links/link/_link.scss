@@ -1,0 +1,33 @@
+a,
+.link {
+  @include link;
+  font-family: $font-heading;
+}
+
+.link {
+  @include fntpair('heading--sub');
+}
+
+.link--inline {
+  margin-right: 0.8rem;
+
+  @include medium {
+    margin-right: $padding-default;
+  }
+}
+
+.link--overlay {
+  color: transparent;
+  text-indent: -9999px;
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.link--secondary {
+  @include fntpair('body-small');
+  font-family: $font-body;
+}

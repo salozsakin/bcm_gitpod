@@ -1,0 +1,27 @@
+name: News
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - datetime
+  - entity_reference_facet_link
+  - eu_cookie_compliance
+  - facets
+  - field
+  - field_group
+  - media
+  - media_library
+  - metatag
+  - node
+  - path
+  - pathauto
+  - search_api
+  - search_api_autocomplete
+  - search_api_db
+  - system
+  - taxonomy
+  - text
+  - toolbar
+  - user
+  - views
+package: 'BC core'

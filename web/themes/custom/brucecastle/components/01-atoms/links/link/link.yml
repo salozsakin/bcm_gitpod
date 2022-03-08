@@ -1,0 +1,21 @@
+#link_content: 'This is my link text'
+#link_attributes:
+#  'target': '_blank'
+
+groups:
+  - name: 'primary_links'
+    title: 'Primary'
+    items:
+      - name: icon-name
+        link_content: 'This is my Big link'
+        link_url: 'https://zoocha.github.io/storybook-starter-theme/'
+        link_attributes:
+          'target': '_blank'
+
+      - name: icon-before
+        link_content: 'This is my secondary link'
+        link_url: 'https://zoocha.github.io/storybook-starter-theme/'
+        link_icon_before_name: 'envelope'
+        link_modifiers: ['secondary']
+        link_attributes:
+          'target': '_blank'

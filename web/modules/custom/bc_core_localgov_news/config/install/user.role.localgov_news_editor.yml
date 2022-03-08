@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+    - node.type.localgov_news_article
+  module:
+    - eu_cookie_compliance
+    - media
+    - node
+    - system
+    - toolbar
+  enforced:
+    module:
+      - localgov_news
+id: localgov_news_editor
+label: 'News editor'
+weight: 4
+is_admin: null

@@ -1,0 +1,15 @@
+<svg id="svgSprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol viewBox="0 0 16 17" id="calendar">
+  <title>Group</title>
+  <g id="calendar_Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="calendar_Group" transform="translate(-4.000000, -3.000000)">
+      <g transform="translate(4.000000, 3.000000)">
+        <rect id="calendar_Rectangle" stroke="currentColor" x="0.5" y="1.5" width="15" height="15" rx="2" />
+        <line x1="0.5" y1="5.5" x2="15.5" y2="5.5" id="calendar_Line-10" stroke="currentColor" stroke-linecap="square" />
+        <line x1="12.5" y1="2.5" x2="12.5" y2="0.5" id="calendar_Line-Copy" stroke="currentColor" stroke-linecap="round" />
+        <line x1="3.5" y1="2.5" x2="3.5" y2="0.5" id="calendar_Line" stroke="currentColor" stroke-linecap="round" />
+      </g>
+    </g>
+  </g>
+</symbol><symbol viewBox="0 0 8 12" id="chevron">
+    <path fill="currentColor" fill-rule="evenodd" d="M.424 1.063l.639-.639c.234-.234.614-.234.848 0l5.152 5.152c.234.234.234.614 0 .848L1.91 11.576c-.234.234-.614.234-.848 0l-.639-.639c-.234-.234-.234-.614 0-.848L4.512 6 .424 1.911c-.234-.234-.234-.614 0-.848z" />
+</symbol></defs></svg>
