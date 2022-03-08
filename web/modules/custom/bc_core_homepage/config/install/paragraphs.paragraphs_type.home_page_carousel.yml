@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: home_page_carousel
-label: 'Home Page Carousel'
-icon_uuid: null
-icon_default: null
-description: 'Carousel to be added to the homepage '
-behavior_plugins: {  }
