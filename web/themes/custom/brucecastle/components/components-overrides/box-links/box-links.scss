@@ -63,6 +63,11 @@
     padding: 0;
   }
 
+  .paragraph--type--localgov-box-link {
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+  }
+
   @include medium {
     margin: 0 -0.8rem;
 
@@ -70,6 +75,11 @@
       flex: 0 1 33.3333%;
       padding-right: var(--spacing-smaller);
       padding-left: var(--spacing-smaller);
+    }
+
+    .paragraph--type--localgov-box-link {
+      margin-top: var(--spacing-larger);
+      margin-bottom: var(--spacing-larger);
     }
   }
 

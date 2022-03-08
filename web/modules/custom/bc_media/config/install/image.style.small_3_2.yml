@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: small_3_2
+label: 'Small 3:2 (390 x 260px)'
+effects:
+  6ee3aa2d-1b36-4f6e-a38f-8405aac93f75:
+    uuid: 6ee3aa2d-1b36-4f6e-a38f-8405aac93f75
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 390
+      height: 260
+      anchor: center-center

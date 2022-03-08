@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_and_text
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.media_and_text
+  module:
+    - field_formatter_class
+    - responsive_image
+id: media.image.media_and_text
+targetEntityType: media
+bundle: image
+mode: media_and_text
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: media_and_text
+      image_link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
