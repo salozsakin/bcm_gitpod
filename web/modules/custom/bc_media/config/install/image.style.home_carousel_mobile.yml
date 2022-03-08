@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: home_carousel_mobile
+label: 'Home carousel mobile (450x240px)'
+effects:
+  82baaf1b-8aac-4a59-a802-3e6645e6bffc:
+    uuid: 82baaf1b-8aac-4a59-a802-3e6645e6bffc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 450
+      height: 240
+      anchor: center-center

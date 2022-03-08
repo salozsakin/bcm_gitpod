@@ -1,0 +1,137 @@
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.home-page-carousel {
+  position: relative;
+  margin-bottom: var(--spacing);
+
+  .slick-slider.slick-dotted {
+    margin-bottom: 0;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slick-dots {
+    position: static;
+
+    li {
+      margin: 0;
+    }
+
+    button {
+      margin: 0;
+      padding: 0;
+
+      &::before {
+        background-color: transparent;
+        height: 0.6rem;
+        width: 0.6rem;
+        border: 0.1rem solid var(--color-white);
+        content: "";
+        opacity: 1;
+        display: inline-block;
+      }
+
+      &:focus::before {
+        background-color: var(--color-white);
+      }
+    }
+
+    .slick-active button::before {
+      background-color: var(--color-white);
+    }
+
+    .slick-dot-icon::before {
+      content: none;
+    }
+  }
+}
+
+.home-page-carousel__content {
+  background-color: var(--c-tertiary);
+  padding: var(--spacing-large);
+  margin-right: var(--spacing-smaller);
+  margin-left: var(--spacing-smaller);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-page-carousel__text {
+  color: white;
+  margin-top: var(--spacing-large);
+  margin-bottom: 0;
+  font-size: 3.2rem;
+
+  span {
+    display: block;
+  }
+}
+
+@include medium {
+  .home-page-carousel {
+    margin-bottom: var(--spacing-larger);
+  }
+
+  .home-page-carousel__content {
+    position: absolute;
+    height: calc(100% - 0.6rem);
+    top: 0;
+    left: var(--spacing);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: var(--spacing-larger) var(--spacing-mega);
+    flex-direction: column-reverse;
+  }
+
+  .home-page-carousel__text {
+    margin-top: 0;
+  }
+}
+
+@include large {
+  .home-page-carousel__text {
+    font-size: 5.6rem;
+  }
+}
+
+@include xl {
+  .home-page-carousel__content {
+    left: calc(50% - 56.6rem - 7.5rem); // Half screen width - Half main content width - Desired displacement
+    padding: 9.5rem 6.5rem;
+  }
+}
+
+.home-page-carousel__custom-nav {
+  display: inline-block;
+  margin-left: -1.2rem;
+}
+
+.button--carousel {
+  background-color: transparent;
+  border: none;
+  padding: var(--spacing-small);
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.button--pause--custom svg,
+.button--play--custom svg {
+  margin-bottom: 0.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.button--prev--custom svg,
+.button--next--custom svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.button--hidden {
+  display: none;
+}
