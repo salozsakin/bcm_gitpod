@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_box_link_colour
+    - paragraphs.paragraphs_type.localgov_box_link
+  module:
+    - options
+id: paragraph.localgov_box_link.field_box_link_colour
+field_name: field_box_link_colour
+entity_type: paragraph
+bundle: localgov_box_link
+label: 'Box Link Colour'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: red
+default_value_callback: ''
+settings: {  }
+field_type: list_string
