@@ -12,16 +12,6 @@ targetEntityType: block_content
 bundle: text
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 26
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   field_wysiwyg:
     type: text_textarea
     weight: 27
@@ -38,4 +28,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  body: true
