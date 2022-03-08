@@ -1,0 +1,26 @@
+name: 'Basic Page '
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block_content
+  - entity_browser
+  - entity_hierarchy
+  - entity_reference_revisions
+  - eu_cookie_compliance
+  - features
+  - field
+  - field_group
+  - layout_paragraphs
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - paragraphs_library
+  - path
+  - system
+  - text
+  - toolbar
+  - user
+package: BC

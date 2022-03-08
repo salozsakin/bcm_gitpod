@@ -1,0 +1,7 @@
+bundle: bc
+excluded:
+  - core.base_field_override.node.localgov_subsites_page.promote
+  - block_content.type.text
+  - field.field.block_content.text.body
+  - user.role.localgov_editor
+required: true
