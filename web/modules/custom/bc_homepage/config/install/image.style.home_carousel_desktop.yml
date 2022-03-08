@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: home_carousel_desktop
+label: 'Home carousel desktop (1920x600px)'
+effects:
+  0ca1ffb9-931a-45ec-9185-bcf075eb59ea:
+    uuid: 0ca1ffb9-931a-45ec-9185-bcf075eb59ea
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 600
+      anchor: center-center

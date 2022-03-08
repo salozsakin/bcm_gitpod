@@ -1,0 +1,25 @@
+name: 'Home Page'
+description: 'Feature for homepage '
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block_content
+  - entity_hierarchy
+  - entity_reference_revisions
+  - field
+  - field_formatter_class
+  - field_group
+  - image
+  - layout_paragraphs
+  - localgov_media
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - path
+  - responsive_image
+  - text
+  - user
+package: BC
