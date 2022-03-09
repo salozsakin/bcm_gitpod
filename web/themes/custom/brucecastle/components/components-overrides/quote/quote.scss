@@ -1,0 +1,40 @@
+.pull-out-quote {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 8rem 9.5rem 5rem;
+  border-left: none;
+  text-align: center;
+  color: var(--c-text-inverse);
+  background-color: var(--quote-bg-color);
+  position: relative;
+}
+
+.pull-out-quote--open,
+.pull-out-quote--close {
+  opacity: 0.5;
+  position: absolute;
+}
+
+.pull-out-quote--open {
+  top: 4.5rem;
+  left: 6.5rem;
+}
+
+.pull-out-quote--close {
+  bottom: 4.5rem;
+  right: 6.5rem;
+}
+
+.pull-out-quote__content {
+  margin: 0;
+  font-size: var(--font-size-large);
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pull-out-quote__author {
+  margin-top: var(--vertical-rhythm-spacing);
+  color: var(--quote-author-color);
+}

@@ -91,7 +91,7 @@ body {
   --font-size-medium: var(--font-size);
   --font-size-large: 2.1rem;
   --font-size-larger: 2.7rem;
-  --font-size-largest: 4rem;
+  --font-size-largest: 4.6rem;
   --font-size-h1: var(--font-size-largest);
   --font-size-h2: var(--font-size-larger);
   --font-size-h3: var(--font-size-large);
@@ -276,9 +276,9 @@ body {
   --quote-padding: var(--spacing-larger);
   --quote-padding-left: var(--spacing-larger);
   --quote-border: var(--border-large);
-  --quote-border-color: var(--color-accent);
-  --quote-bg-color: var(--color-grey-light);
-  --quote-author-color: var(--color-accent);
+  --quote-border-color: var(--c-secondary);
+  --quote-bg-color: var(--c-secondary);
+  --quote-author-color: var(--c-text-inverse);
 
   /* Featured Teasers */
   --featured-teaser-border: var(--border);

@@ -41,3 +41,8 @@ media_with_text:
   css:
     theme:
       dist/media-with-text.css: {}
+
+image_caption:
+  css:
+    theme:
+      dist/image-caption.css: {}

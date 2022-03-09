@@ -78,3 +78,7 @@ libraries-override:
     css:
       theme:
         css/components/box-links.css: dist/box-links.css
+  localgov_base/quote:
+    css:
+      theme:
+        css/components/quote.css: dist/quote.css
