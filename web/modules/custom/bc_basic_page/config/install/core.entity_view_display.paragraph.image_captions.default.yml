@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.image_captions.field_text_position
     - paragraphs.paragraphs_type.image_captions
   module:
+    - options
     - text
 id: paragraph.image_captions.default
 targetEntityType: paragraph
@@ -29,6 +30,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_text_position:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
-  field_text_position: true
   search_api_excerpt: true

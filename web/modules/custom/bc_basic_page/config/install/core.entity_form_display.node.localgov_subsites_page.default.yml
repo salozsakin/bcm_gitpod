@@ -23,6 +23,8 @@ third_party_settings:
         - group_description
         - group_page_builder
         - group_side_bar
+        - group_related_content_links
+        - group_banner
       label: tabs
       region: content
       parent_name: ''
@@ -40,7 +42,7 @@ third_party_settings:
       label: Description
       region: content
       parent_name: group_tabs
-      weight: 4
+      weight: 10
       format_type: tab
       format_settings:
         classes: ''
@@ -54,7 +56,7 @@ third_party_settings:
       label: 'Page builder'
       region: content
       parent_name: group_tabs
-      weight: 5
+      weight: 11
       format_type: tab
       format_settings:
         classes: ''
@@ -66,7 +68,7 @@ third_party_settings:
       children: {  }
       label: Banner
       region: hidden
-      parent_name: ''
+      parent_name: group_tabs
       weight: 11
       format_type: tab
       format_settings:
@@ -81,7 +83,7 @@ third_party_settings:
       label: 'Side Bar'
       region: content
       parent_name: group_tabs
-      weight: 6
+      weight: 12
       format_type: tab
       format_settings:
         classes: ''
@@ -95,7 +97,22 @@ third_party_settings:
       label: 'Related content'
       region: hidden
       parent_name: ''
-      weight: 12
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_related_content_links:
+      children:
+        - field_box_links
+      label: 'Related content links'
+      region: content
+      parent_name: group_tabs
+      weight: 13
       format_type: tab
       format_settings:
         classes: ''
@@ -114,6 +131,15 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_box_links:
+    type: layout_paragraphs
+    weight: 8
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
     third_party_settings: {  }
   field_wysiwyg:
     type: text_textarea
@@ -134,7 +160,7 @@ content:
     third_party_settings: {  }
   localgov_subsites_parent:
     type: entity_reference_hierarchy_autocomplete
-    weight: -3
+    weight: -2
     region: content
     settings:
       match_operator: CONTAINS
@@ -188,7 +214,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -202,6 +228,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_box_links: true
   localgov_subsites_banner: true
   localgov_subsites_topic: true

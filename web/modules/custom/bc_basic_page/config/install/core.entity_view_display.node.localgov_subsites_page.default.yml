@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.localgov_subsites_page.localgov_subsites_topic
     - node.type.localgov_subsites_page
   module:
-    - entity_reference_revisions
     - layout_paragraphs
     - text
     - user
@@ -21,11 +20,11 @@ bundle: localgov_subsites_page
 mode: default
 content:
   field_box_links:
-    type: entity_reference_revisions_entity_view
-    label: above
+    type: layout_paragraphs
+    label: hidden
     settings:
       view_mode: default
-      link: ''
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
@@ -34,7 +33,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   localgov_subsites_content:
     type: layout_paragraphs
@@ -45,10 +44,16 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  localgov_subsites_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   links: true
   localgov_subsites_banner: true
   localgov_subsites_parent: true
-  localgov_subsites_summary: true
   localgov_subsites_topic: true
   search_api_excerpt: true
