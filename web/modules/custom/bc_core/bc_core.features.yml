@@ -1,4 +1,7 @@
 bundle: bc
+excluded:
+  - field.field.paragraph.wysiwyg.localgov_title
+  - paragraphs.paragraphs_type.wysiwyg
 required:
   - block.block.footer_2
   - block.block.googlecse
@@ -6,30 +9,3 @@ required:
   - block.block.localgov_mainnavigation_scarfolk
   - block.block.localgov_page_header_block_base
   - block.block.localgov_page_header_block_scarfolk
-excluded:
-  - core.entity_form_display.paragraph.localgov_header.default
-  - core.entity_view_display.paragraph.localgov_header.default
-  - field.field.paragraph.localgov_header.field_link
-  - field.field.paragraph.localgov_header.field_localgov_header_style
-  - field.field.paragraph.localgov_header.field_localgov_image
-  - field.field.paragraph.localgov_header.field_localgov_subtitle
-  - field.field.paragraph.localgov_header.field_localgov_title
-  - field.storage.paragraph.field_link
-  - field.storage.paragraph.field_localgov_header_style
-  - field.storage.paragraph.field_localgov_image
-  - field.storage.paragraph.field_localgov_subtitle
-  - field.storage.paragraph.field_localgov_title
-  - paragraphs.paragraphs_type.localgov_header
-  - core.entity_view_mode.block.token
-  - core.entity_view_mode.block_content.token
-  - core.entity_view_mode.content_moderation_state.token
-  - core.entity_view_mode.crop.token
-  - core.entity_view_mode.file.token
-  - core.entity_view_mode.media.token
-  - core.entity_view_mode.menu_link_content.token
-  - core.entity_view_mode.node.token
-  - core.entity_view_mode.paragraph.token
-  - core.entity_view_mode.paragraphs_library_item.token
-  - core.entity_view_mode.path_alias.token
-  - core.entity_view_mode.taxonomy_term.token
-

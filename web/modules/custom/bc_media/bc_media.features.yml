@@ -1,6 +1,5 @@
 bundle: bc
 excluded:
-  - block.block.brucecastle_views_block__services_block_service_list_scarfolk
   - block.block.stable_views_block__services_block_service_list_scarfolk
   - block.block.views_block__services_block_service_list_base
   - block.block.views_block__services_block_service_list_scarfolk

@@ -11,9 +11,9 @@ dependencies:
     - field.field.node.localgov_subsites_page.localgov_subsites_topic
     - node.type.localgov_subsites_page
   module:
+    - entity_hierarchy
     - field_group
     - layout_paragraphs
-    - paragraphs
     - path
     - text
 third_party_settings:
@@ -21,10 +21,8 @@ third_party_settings:
     group_tabs:
       children:
         - group_description
-        - group_banner
         - group_page_builder
         - group_side_bar
-        - group_links
       label: tabs
       region: content
       parent_name: ''
@@ -38,10 +36,11 @@ third_party_settings:
       children:
         - title
         - localgov_subsites_summary
+        - localgov_subsites_parent
       label: Description
       region: content
       parent_name: group_tabs
-      weight: 20
+      weight: 4
       format_type: tab
       format_settings:
         classes: ''
@@ -55,7 +54,7 @@ third_party_settings:
       label: 'Page builder'
       region: content
       parent_name: group_tabs
-      weight: 22
+      weight: 5
       format_type: tab
       format_settings:
         classes: ''
@@ -64,12 +63,11 @@ third_party_settings:
         description: ''
         required_fields: true
     group_banner:
-      children:
-        - localgov_subsites_banner
+      children: {  }
       label: Banner
-      region: content
-      parent_name: group_tabs
-      weight: 21
+      region: hidden
+      parent_name: ''
+      weight: 11
       format_type: tab
       format_settings:
         classes: ''
@@ -83,7 +81,7 @@ third_party_settings:
       label: 'Side Bar'
       region: content
       parent_name: group_tabs
-      weight: 23
+      weight: 6
       format_type: tab
       format_settings:
         classes: ''
@@ -92,13 +90,12 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_links:
-      children:
-        - field_box_links
-      label: Links
-      region: content
-      parent_name: group_tabs
-      weight: 24
+    group_related_content:
+      children: {  }
+      label: 'Related content'
+      region: hidden
+      parent_name: ''
+      weight: 12
       format_type: tab
       format_settings:
         classes: ''
@@ -118,43 +115,33 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_box_links:
-    type: layout_paragraphs
-    weight: 27
-    region: content
-    settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-    third_party_settings: {  }
   field_wysiwyg:
     type: text_textarea
-    weight: 9
+    weight: 2
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  localgov_subsites_banner:
-    type: entity_reference_paragraphs
-    weight: 26
-    region: content
-    settings:
-      title: Banner
-      title_plural: Banner
-      edit_mode: open
-      add_mode: button
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
   localgov_subsites_content:
     type: layout_paragraphs
-    weight: 24
+    weight: 8
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 1
+    third_party_settings: {  }
+  localgov_subsites_parent:
+    type: entity_reference_hierarchy_autocomplete
+    weight: -3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+      hide_weight: false
     third_party_settings: {  }
   localgov_subsites_summary:
     type: string_textarea
@@ -215,5 +202,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  localgov_subsites_parent: true
+  field_box_links: true
+  localgov_subsites_banner: true
   localgov_subsites_topic: true
