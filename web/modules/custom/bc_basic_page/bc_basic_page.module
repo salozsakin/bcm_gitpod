@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function bc_basic_page_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $content_types = [
+    'localgov_subsites_page',
+  ];
+
+  if (in_array($node->bundle(), $content_types)) {
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $config = [];
+    $subsite_navigation_block = $block_manager->createInstance('localgov_subsite_navigation', $config);
+    $subsite_navigation_block->setContextValue('node', $node);
+    $variables['subsite_nav_block'] = $subsite_navigation_block->build();
+  }
+}
+
