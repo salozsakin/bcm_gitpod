@@ -65,9 +65,9 @@ body {
   */
   --color-info: var(--color-blue);
   --color-success: var(--color-green);
-  --color-danger: var(--color-red);
+  --color-danger: var(--c-tint-primary);
   --color-warning: var(--color-orange);
-  --color-minor: var(--color-yellow);
+  --color-minor: var(--c-tint-secondary);
   --color-link: var(--c-secondary);
   --color-focus: var(--color-yellow);
 
@@ -369,6 +369,7 @@ body {
   --external-link-icon-color: var(--color-accent);
 
   /* Alert Banner */
+  --alert-banner-width: var(--width-extra-large);
   --alert-banner-bg-color: var(--color-success);
   --alert-banner-bg-color-minor: var(--color-minor);
   --alert-banner-bg-color-major: var(--color-danger);
@@ -376,18 +377,20 @@ body {
   --alert-banner-color: var(--color-white);
   --alert-banner-focus-color: var(--color-black);
   --alert-banner-minor-color: var(--color-black);
-  --alert-banner-minor-border-color: var(--color-black);
+  --alert-banner-minor-border-color: var(--c-secondary);
+  --alert-banner-major-border-color: var(--c-primary);
   --alert-banner-close-button-bg-color: var(--color-black);
   --alert-banner-close-button-color: var(--color-white);
   --alert-banner-close-button-border-color: var(--color-white);
   --alert-banner-close-padding-vertical: var(--spacing-smaller);
   --alert-banner-close-padding-horizontal: var(--spacing-small);
   --alert-banner-color-minor: var(--color-black);
+  --alert-banner-color-major: var(--color-black);
   --alert-banner-close-border: var(--border);
   --alert-banner-close-border-color: var(--color-white);
   --alert-banner-inner-margin-vertical: 0;
   --alert-banner-inner-margin-horizontal: 0;
-  --alert-banner-inner-padding-vertical: var(--spacing);
+  --alert-banner-inner-padding-vertical: 0;
   --alert-banner-inner-padding-horizontal: 0;
 
   /* Leaflet Mapping */
