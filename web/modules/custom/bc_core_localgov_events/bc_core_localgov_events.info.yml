@@ -2,17 +2,17 @@ name: Events
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
-  - block
-  - date_recur
-  - datetime
-  - facets
-  - metatag
-  - node
-  - search_api
-  - search_api_db
-  - system
-  - taxonomy
-  - text
-  - user
-  - views
-package: 'BC core'
+  - 'date_recur:date_recur'
+  - 'drupal:block'
+  - 'drupal:datetime'
+  - 'drupal:node'
+  - 'drupal:system'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'facets:facets'
+  - 'metatag:metatag'
+  - 'search_api:search_api'
+  - 'search_api:search_api_db'
+package: bc_core
