@@ -5,6 +5,8 @@ dependencies:
     - field.field.paragraph.home_page_carousel.field_background_image
     - field.field.paragraph.home_page_carousel.field_title
     - paragraphs.paragraphs_type.home_page_carousel
+  module:
+    - field_formatter_class
 id: paragraph.home_page_carousel.default
 targetEntityType: paragraph
 bundle: home_page_carousel
@@ -14,9 +16,11 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
+      view_mode: home_carousel
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 0
     region: content
   field_title:
