@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.localgov_subsites_overview.localgov_subsites_content
     - field.field.node.localgov_subsites_overview.localgov_subsites_hide_menu
     - field.field.node.localgov_subsites_overview.localgov_subsites_summary
-    - field.field.node.localgov_subsites_overview.localgov_subsites_theme
     - node.type.localgov_subsites_overview
   module:
     - field_group
@@ -173,4 +172,3 @@ hidden:
   localgov_subsites_colour_accent: true
   localgov_subsites_colour_grad: true
   localgov_subsites_hide_menu: true
-  localgov_subsites_theme: true

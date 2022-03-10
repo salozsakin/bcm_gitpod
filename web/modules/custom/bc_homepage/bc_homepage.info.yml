@@ -4,6 +4,7 @@ type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
   - 'bc_basic_page:bc_basic_page'
+  - 'bc_localgov_newsroom:bc_localgov_newsroom'
   - 'drupal:block_content'
   - 'drupal:field'
   - 'drupal:image'
