@@ -3,7 +3,9 @@ description: 'Provides Landing Page content type and related configuration. '
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
+  - 'bc_core:bc_core'
   - 'bc_homepage:bc_homepage'
+  - 'bc_localgov_newsroom:bc_localgov_newsroom'
   - 'drupal:field'
   - 'drupal:menu_ui'
   - 'drupal:node'
