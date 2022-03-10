@@ -1,7 +1,10 @@
 bundle: bc
 excluded:
   - field.field.paragraph.wysiwyg.localgov_title
+  - field.field.paragraph.wysiwyg.field_wysiwyg
   - paragraphs.paragraphs_type.wysiwyg
+  - core.entity_form_display.paragraph.wysiwyg.default
+  - core.entity_view_display.paragraph.wysiwyg.default
 required:
   - block.block.footer_2
   - block.block.googlecse
@@ -20,3 +23,4 @@ required:
   - field.field.localgov_alert_banner.localgov_alert_banner.short_description
   - field.field.localgov_alert_banner.localgov_alert_banner.type_of_alert
   - field.field.localgov_alert_banner.localgov_alert_banner.visibility
+  - user.role.emergency_publisher
