@@ -1,0 +1,104 @@
+/**
+ * @file
+ * Style rules for alert banners
+ */
+
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+/* Block Padding + Horizontal margin */
+.block-localgov-alert-banner-block {
+  padding: 0 var(--spacing-padding-horizontal);
+  margin-right: calc(var(--grid-column-spacing) / 2);
+  margin-left: calc(var(--grid-column-spacing) / 2);
+}
+
+/* Default */
+.localgov-alert-banner {
+  max-width: var(--alert-banner-width);
+  height: auto;
+  padding: var(--spacing-large);
+  margin: var(--spacing-largest) auto;
+  border-width: var(--border-width-large);
+  border-style: var(--border-style);
+  background-color: var(--alert-banner-bg-color);
+
+  .padding-horizontal {
+    padding: 0;
+  }
+
+  @include medium {
+    padding: var(--spacing-largest)
+  }
+}
+
+.localgov-alert-banner,
+.localgov-alert-banner a {
+  color: var(--alert-banner-color);
+}
+
+.localgov-alert-banner a:focus {
+  color: var(--alert-banner-focus-color);
+}
+
+.localgov-alert-banner__close {
+  padding: var(--alert-banner-close-padding-vertical) var(--alert-banner-close-padding-horizontal);
+  color: var(--alert-banner-color);
+  border: var(--alert-banner-close-border);
+  border-color: var(--alert-banner-close-border-color);
+}
+
+.localgov-alert-banner__close:focus,
+.localgov-alert-banner__close:hover {
+  text-decoration: underline;
+  color: var(--alert-banner-close-button-bg-color);
+  border-color: var(--alert-banner-close-button-border-color);
+  background-color: var(--alert-banner-close-button-color);
+}
+
+.localgov-alert-banner__inner {
+  margin: var(--alert-banner-inner-margin-vertical) var(--alert-banner-inner-margin-horizontal);
+  padding: var(--alert-banner-inner-padding-vertical) var(--alert-banner-inner-padding-horizontal);
+}
+
+.localgov-alert-banner__content {
+  padding-right: var(--spacing-smaller);
+}
+
+/* Announcement */
+.localgov-alert-banner--announcement {
+  background-color: var(--alert-banner-bg-color);
+}
+
+/* Minor */
+.localgov-alert-banner--minor {
+  color: var(--alert-banner-color-minor);
+  background-color: var(--alert-banner-bg-color-minor);
+  border-color: var(--alert-banner-minor-border-color);
+  a {
+    color: var(--alert-banner-color-minor);
+  }
+  .localgov-alert-banner__close{
+    color: var(--alert-banner-minor-color);
+    border-color: var(--alert-banner-minor-color);
+  }
+}
+
+/* Major */
+.localgov-alert-banner--major {
+  color: var(--alert-banner-color-major);
+  background-color: var(--alert-banner-bg-color-major);
+  border-color: var(--alert-banner-major-border-color);
+  a {
+    color: var(--alert-banner-color-major);
+  }
+  .localgov-alert-banner__close{
+    color: var(--alert-banner-color-major);
+    border-color: var(--alert-banner-color-major);
+  }
+}
+
+/* Death of a notable person */
+.localgov-alert-banner--notable-person {
+  background-color: var(--alert-banner-bg-color-notable-person);
+}
