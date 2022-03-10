@@ -1,2 +1,5 @@
 bundle: bc
+excluded:
+  - block.block.localgov_skeleton_localgov_events_category_scarfolk
+  - block.block.localgov_theme_localgov_events_category_scarfolk
 required: true
