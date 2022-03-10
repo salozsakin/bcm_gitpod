@@ -2,6 +2,7 @@ name: News
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
+  - 'bc_localgov_newsroom:bc_localgov_newsroom'
   - 'drupal:block'
   - 'drupal:datetime'
   - 'drupal:field'

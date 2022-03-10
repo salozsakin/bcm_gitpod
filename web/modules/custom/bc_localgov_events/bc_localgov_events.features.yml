@@ -2,4 +2,11 @@ bundle: bc
 excluded:
   - block.block.localgov_skeleton_localgov_events_category_scarfolk
   - block.block.localgov_theme_localgov_events_category_scarfolk
+  - block.block.localgov_skeleton_localgov_events_cost_scarfolk
+  - block.block.localgov_skeleton_localgov_events_listing_filters_scarfolk
+  - block.block.localgov_skeleton_localgov_events_neighbourhood_scarfolk
+  - block.block.localgov_skeleton_localgov_events_search_scarfolk
+  - block.block.localgov_theme_localgov_events_listing_filters_scarfolk
+  - block.block.localgov_theme_localgov_events_neighbourhood_scarfolk
+  - block.block.localgov_theme_localgov_events_search_scarfolk
 required: true

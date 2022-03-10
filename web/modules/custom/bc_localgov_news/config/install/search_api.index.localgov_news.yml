@@ -70,8 +70,36 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  add_url: {  }
-  aggregated_field: {  }
+  transliteration:
+    all_fields: true
+    fields:
+      - rendered_item
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+  tokenizer:
+    all_fields: true
+    fields:
+      - rendered_item
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  language_with_fallback: {  }
+  entity_type: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - rendered_item
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
   entity_status: {  }
   html_filter:
     all_fields: true
@@ -91,26 +119,7 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
-  ignorecase:
-    all_fields: true
-    fields:
-      - rendered_item
-      - title
-    weights:
-      preprocess_index: -20
-      preprocess_query: -20
-  language_with_fallback: {  }
-  rendered_item: {  }
-  stemmer:
-    all_fields: true
-    fields:
-      - rendered_item
-    exceptions:
-      mexican: mexic
-      texan: texa
-    weights:
-      preprocess_index: 0
-      preprocess_query: 0
+  aggregated_field: {  }
   stopwords:
     all_fields: true
     fields:
@@ -154,25 +163,17 @@ processor_settings:
     weights:
       preprocess_index: -5
       preprocess_query: -2
-  tokenizer:
+  stemmer:
     all_fields: true
     fields:
       - rendered_item
-    ignored: ._-
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
+    exceptions:
+      mexican: mexic
+      texan: texa
     weights:
-      preprocess_index: -6
-      preprocess_query: -6
-  transliteration:
-    all_fields: true
-    fields:
-      - rendered_item
-      - title
-    weights:
-      preprocess_index: -20
-      preprocess_query: -20
+      preprocess_index: 0
+      preprocess_query: 0
+  add_url: {  }
 tracker_settings:
   default:
     indexing_order: fifo

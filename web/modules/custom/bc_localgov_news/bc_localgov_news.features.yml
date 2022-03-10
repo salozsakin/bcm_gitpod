@@ -6,5 +6,9 @@ excluded:
   - block.block.brucecastle_localgov_news_search
   - block.block.localgov_skeleton_localgov_news_search
   - block.block.localgov_theme_localgov_news_search
+  - block.block.localgov_skeleton_localgov_news_category
+  - block.block.localgov_skeleton_localgov_news_date
+  - block.block.localgov_theme_localgov_news_category
+  - block.block.localgov_theme_localgov_news_date
   - field.field.node.localgov_news_article.localgov_newsroom
 required: true
