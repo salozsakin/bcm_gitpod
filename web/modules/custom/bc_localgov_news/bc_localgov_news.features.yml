@@ -1,0 +1,10 @@
+bundle: bc
+excluded:
+  - block.block.stable_views_block__services_block_service_list_scarfolk
+  - block.block.views_block__services_block_service_list_base
+  - block.block.views_block__services_block_service_list_scarfolk
+  - block.block.brucecastle_localgov_news_search
+  - block.block.localgov_skeleton_localgov_news_search
+  - block.block.localgov_theme_localgov_news_search
+  - field.field.node.localgov_news_article.localgov_newsroom
+required: true
