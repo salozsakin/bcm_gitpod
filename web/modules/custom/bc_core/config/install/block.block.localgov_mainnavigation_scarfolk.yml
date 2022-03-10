@@ -10,7 +10,7 @@ dependencies:
 id: localgov_mainnavigation_scarfolk
 theme: localgov_scarfolk
 region: primary_menu
-weight: -16
+weight: -1
 provider: null
 plugin: 'system_menu_block:main'
 settings:

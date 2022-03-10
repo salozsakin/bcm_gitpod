@@ -3,6 +3,7 @@ description: 'Provides core components required by other features.'
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
+  - 'condition_field:condition_field'
   - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:content_moderation'
@@ -12,6 +13,7 @@ dependencies:
   - 'drupal:image'
   - 'drupal:link'
   - 'drupal:media'
+  - 'drupal:media_library'
   - 'drupal:menu_link_content'
   - 'drupal:node'
   - 'drupal:options'

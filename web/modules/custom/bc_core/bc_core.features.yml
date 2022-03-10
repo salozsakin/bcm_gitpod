@@ -9,3 +9,14 @@ required:
   - block.block.localgov_mainnavigation_scarfolk
   - block.block.localgov_page_header_block_base
   - block.block.localgov_page_header_block_scarfolk
+  - core.entity_form_display.localgov_alert_banner.localgov_alert_banner.default
+  - core.entity_form_display.localgov_alert_banner.localgov_full_page.default
+  - core.entity_form_display.paragraph.localgov_box_link.default
+  - core.entity_form_display.paragraph.localgov_text.default
+  - core.entity_view_display.localgov_alert_banner.localgov_alert_banner.default
+  - core.entity_view_display.paragraph.localgov_box_link.default
+  - core.entity_view_display.paragraph.localgov_text.default
+  - field.field.localgov_alert_banner.localgov_alert_banner.link
+  - field.field.localgov_alert_banner.localgov_alert_banner.short_description
+  - field.field.localgov_alert_banner.localgov_alert_banner.type_of_alert
+  - field.field.localgov_alert_banner.localgov_alert_banner.visibility
