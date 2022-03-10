@@ -54,10 +54,10 @@
   <div{{ attributes.addClass(classes) }}>
     {% if content.field_text_position.0['#markup'] == 'Left' %}
       <div class="image-captions--left">
+        {{ content.field_image }}
         <div class="image-captions__text--left">
           {{ content.field_caption.0 }}
         </div>
-        {{ content.field_image }}
       </div>
     {% endif %}
     {% if content.field_text_position.0['#markup'] == 'Right' %}
