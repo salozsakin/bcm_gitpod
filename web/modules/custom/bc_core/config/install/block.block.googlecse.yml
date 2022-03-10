@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - google_cse
   theme:
     - localgov_scarfolk
 id: googlecse

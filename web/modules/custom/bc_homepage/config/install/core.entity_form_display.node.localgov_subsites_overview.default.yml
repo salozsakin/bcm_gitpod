@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.localgov_subsites_overview.localgov_subsites_content
     - field.field.node.localgov_subsites_overview.localgov_subsites_hide_menu
     - field.field.node.localgov_subsites_overview.localgov_subsites_summary
-    - field.field.node.localgov_subsites_overview.localgov_subsites_theme
     - node.type.localgov_subsites_overview
   module:
     - field_group
@@ -47,8 +46,6 @@ third_party_settings:
     group_banner:
       children:
         - localgov_subsites_banner
-        - localgov_subsites_theme
-        - localgov_subsites_hide_menu
       label: Carousel
       region: content
       parent_name: group_tabs
@@ -107,13 +104,6 @@ content:
       nesting_depth: 0
       require_layouts: 1
     third_party_settings: {  }
-  localgov_subsites_hide_menu:
-    type: boolean_checkbox
-    weight: 39
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   localgov_subsites_pages:
     type: localgov_entity_reference_labels
     weight: 35
@@ -128,21 +118,15 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  localgov_subsites_theme:
-    type: options_select
-    weight: 38
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -156,7 +140,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -187,3 +171,4 @@ content:
 hidden:
   localgov_subsites_colour_accent: true
   localgov_subsites_colour_grad: true
+  localgov_subsites_hide_menu: true

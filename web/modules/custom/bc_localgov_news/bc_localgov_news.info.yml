@@ -1,0 +1,25 @@
+name: News
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'bc_localgov_newsroom:bc_localgov_newsroom'
+  - 'drupal:block'
+  - 'drupal:datetime'
+  - 'drupal:field'
+  - 'drupal:media_library'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:system'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'entity_reference_facet_link:entity_reference_facet_link'
+  - 'facets:facets'
+  - 'field_group:field_group'
+  - 'metatag:metatag'
+  - 'pathauto:pathauto'
+  - 'search_api:search_api'
+  - 'search_api:search_api_db'
+  - 'search_api_autocomplete:search_api_autocomplete'
+package: BC

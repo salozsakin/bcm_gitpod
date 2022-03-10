@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - media
-id: media.home_carousel
-label: 'Home carousel'
-targetEntityType: media
-cache: true
