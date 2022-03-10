@@ -1,0 +1,17 @@
+name: Events
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - date_recur
+  - datetime
+  - facets
+  - node
+  - search_api
+  - search_api_db
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+package: BC
