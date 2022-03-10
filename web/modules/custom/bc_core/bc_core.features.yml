@@ -1,8 +1,10 @@
 bundle: bc
 excluded:
   - field.field.paragraph.wysiwyg.localgov_title
+  - field.field.paragraph.localgov_text.field_text_colour
   - field.field.paragraph.wysiwyg.field_wysiwyg
   - paragraphs.paragraphs_type.wysiwyg
+  - field.storage.paragraph.field_text_colour
   - core.entity_form_display.paragraph.wysiwyg.default
   - core.entity_view_display.paragraph.wysiwyg.default
 required:
@@ -16,6 +18,7 @@ required:
   - core.entity_form_display.localgov_alert_banner.localgov_full_page.default
   - core.entity_form_display.paragraph.localgov_box_link.default
   - core.entity_form_display.paragraph.localgov_text.default
+  - core.entity_form_display.paragraph.localgov_box_links_listing.default
   - core.entity_view_display.localgov_alert_banner.localgov_alert_banner.default
   - core.entity_view_display.paragraph.localgov_box_link.default
   - core.entity_view_display.paragraph.localgov_text.default
@@ -23,3 +26,7 @@ required:
   - field.field.localgov_alert_banner.localgov_alert_banner.short_description
   - field.field.localgov_alert_banner.localgov_alert_banner.type_of_alert
   - field.field.localgov_alert_banner.localgov_alert_banner.visibility
+  - field.field.paragraph.localgov_box_link.localgov_image
+  - field.field.paragraph.localgov_box_link.localgov_link
+  - field.field.paragraph.localgov_box_link.localgov_opens_in_a_new_window
+  - paragraphs.paragraphs_type.localgov_box_link

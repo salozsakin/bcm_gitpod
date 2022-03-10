@@ -7,6 +7,8 @@ dependencies:
     - field.field.paragraph.localgov_box_link.localgov_link
     - field.field.paragraph.localgov_box_link.localgov_opens_in_a_new_window
     - paragraphs.paragraphs_type.localgov_box_link
+  module:
+    - field_formatter_class
 id: paragraph.localgov_box_link.default
 targetEntityType: paragraph
 bundle: localgov_box_link
@@ -16,9 +18,11 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: responsive_3x2
+      view_mode: box_link
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 0
     region: content
 hidden:
