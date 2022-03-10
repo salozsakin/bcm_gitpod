@@ -23,4 +23,3 @@ required:
   - field.field.localgov_alert_banner.localgov_alert_banner.short_description
   - field.field.localgov_alert_banner.localgov_alert_banner.type_of_alert
   - field.field.localgov_alert_banner.localgov_alert_banner.visibility
-  - user.role.emergency_publisher
