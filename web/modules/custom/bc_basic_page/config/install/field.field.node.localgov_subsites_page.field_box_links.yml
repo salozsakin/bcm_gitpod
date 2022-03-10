@@ -12,7 +12,7 @@ id: node.localgov_subsites_page.field_box_links
 field_name: field_box_links
 entity_type: node
 bundle: localgov_subsites_page
-label: 'Box Links'
+label: 'You might also like'
 description: ''
 required: false
 translatable: false
@@ -145,8 +145,5 @@ settings:
         enabled: true
       topic_list_builder:
         weight: 81
-        enabled: false
-      wysiwyg:
-        weight: 82
         enabled: false
 field_type: entity_reference_revisions

@@ -21,7 +21,7 @@ mode: default
 content:
   field_box_links:
     type: layout_paragraphs
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: false
