@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.image_with_caption_desktop
+    - image.style.image_with_caption_mobile
+  module:
+    - localgov_media
+id: image_with_caption
+label: 'Image with caption'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_desktop
+    breakpoint_id: localgov_media.bootstrap4_md_768px
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_mobile
+    breakpoint_id: localgov_media.bootstrap4_xs
+    multiplier: 1x
+breakpoint_group: localgov_media
+fallback_image_style: image_with_caption_mobile

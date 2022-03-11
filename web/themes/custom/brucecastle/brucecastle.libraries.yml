@@ -49,3 +49,13 @@ carousel:
       dist/carousel.css: {}
   js:
     dist/js/components-overrides/carousel/carousel.js: {}
+
+image_caption:
+  css:
+    theme:
+      dist/image-caption.css: {}
+
+basic_page:
+  css:
+    theme:
+      dist/basic-page.css: {}

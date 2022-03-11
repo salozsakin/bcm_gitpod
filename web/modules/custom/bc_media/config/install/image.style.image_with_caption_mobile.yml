@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: image_with_caption_mobile
+label: 'Image with caption mobile 19:9 (450x250px)'
+effects:
+  0dc5dd1b-8628-48ab-8e10-8a8ada3e2ad1:
+    uuid: 0dc5dd1b-8628-48ab-8e10-8a8ada3e2ad1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 450
+      height: 250
+      anchor: center-center

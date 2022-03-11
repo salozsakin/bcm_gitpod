@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Default node template for localgov_subsites_page pages.
+ */
+#}
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'basic-page',
+]
+%}
+
+{{ attach_library('brucecastle/basic_page') }}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="container-fluid">
+    <div class="lgd-row">
+      <div class="lgd-row__two-thirds">
+        <article class="basic-page__main-content">
+          <h1 class="basic-page__title">{{ node.label }}</h1>
+          {% if content.localgov_subsites_summary.0 %}
+            <p class="basic-page__summary">{{ content.localgov_subsites_summary.0 }}</p>
+          {% endif %}
+          {{ content.localgov_subsites_content }}
+        </article>
+      </div>
+      <aside class="lgd-row__one-third sidebar sidebar--second">
+        {% if subsite_nav_block.0 %}
+          <div class="basic-page__side-menu">
+            {{ subsite_nav_block }}
+          </div>
+        {% endif %}
+        {% if content.field_wysiwyg.0 %}
+          {{ content.field_wysiwyg }}
+        {% endif %}
+      </aside>
+    </div>
+    <h2 class="basic-page__related-title">{{ content.field_box_links['#title'] }}</h2>
+    {{ content.field_box_links|without(['#title']) }}
+  </div>
+</div>
