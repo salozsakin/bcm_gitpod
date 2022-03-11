@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.localgov_subsites_overview.localgov_subsites_content
     - field.field.node.localgov_subsites_overview.localgov_subsites_hide_menu
     - field.field.node.localgov_subsites_overview.localgov_subsites_summary
-    - field.field.node.localgov_subsites_overview.localgov_subsites_theme
     - node.type.localgov_subsites_overview
   module:
     - layout_paragraphs
@@ -18,12 +17,12 @@ mode: default
 content:
   localgov_subsites_content:
     type: layout_paragraphs
-    weight: 0
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   links: true
@@ -31,5 +30,4 @@ hidden:
   localgov_subsites_hide_menu: true
   localgov_subsites_pages: true
   localgov_subsites_summary: true
-  localgov_subsites_theme: true
   search_api_excerpt: true

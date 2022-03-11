@@ -1,7 +1,0 @@
-bundle: bc_core
-excluded:
-  - block.block.stable_views_block__services_block_service_list_scarfolk
-  - block.block.views_block__services_block_service_list_base
-  - block.block.views_block__services_block_service_list_scarfolk
-  - metatag.metatag_defaults.node__localgov_news_article
-required: true

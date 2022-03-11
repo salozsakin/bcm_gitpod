@@ -78,6 +78,10 @@ libraries-override:
     css:
       theme:
         css/components/box-links.css: dist/box-links.css
+  localgov_base/alert-banner:
+    css:
+      theme:
+        css/components/alert-banner.css: dist/alert-banner.css
   localgov_base/quote:
     css:
       theme:
