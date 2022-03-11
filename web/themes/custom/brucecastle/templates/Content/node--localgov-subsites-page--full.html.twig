@@ -24,15 +24,21 @@
       <div class="lgd-row__two-thirds">
         <article class="basic-page__main-content">
           <h1 class="basic-page__title">{{ node.label }}</h1>
-          <p class="basic-page__summary">{{ content.localgov_subsites_summary.0 }}</p>
+          {% if content.localgov_subsites_summary.0 %}
+            <p class="basic-page__summary">{{ content.localgov_subsites_summary.0 }}</p>
+          {% endif %}
           {{ content.localgov_subsites_content }}
         </article>
       </div>
       <aside class="lgd-row__one-third sidebar sidebar--second">
-        <div class="basic-page__side-menu">
-          {{ subsite_nav_block }}
-        </div>
-        {{ content.field_wysiwyg }}
+        {% if subsite_nav_block.0 %}
+          <div class="basic-page__side-menu">
+            {{ subsite_nav_block }}
+          </div>
+        {% endif %}
+        {% if content.field_wysiwyg.0 %}
+          {{ content.field_wysiwyg }}
+        {% endif %}
       </aside>
     </div>
     <h2 class="basic-page__related-title">{{ content.field_box_links['#title'] }}</h2>

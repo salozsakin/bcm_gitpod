@@ -55,7 +55,7 @@
   color: var(--c-secondary);
   font-size: var(--font-size-larger);
   font-family: var(--font-secondary);
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: var(--spacing-larger);
 }
 
@@ -67,14 +67,14 @@
   & > ul {
     padding-left: 0;
     list-style: none;
-    font-weight: 700;
+    font-weight: var(--font-bold);
     font-size: var(--font-size-small);
     line-height: 2.4rem;
   }
 
   // Targets only top level links in the side menu
   & > ul > li > a {
-    font-size: 1.8rem;
+    font-size: var(--font-size-menu);
     font-family: var(--font-secondary);
     display: inline-block;
     margin-bottom: var(--spacing);
