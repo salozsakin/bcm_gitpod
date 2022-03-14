@@ -1,4 +1,2 @@
 .card{width:40rem;position:relative;display:inline-block;margin-bottom:3.2rem}.card:hover{cursor:pointer}.card:focus-within,.card:active{box-shadow:0 0 0 0.4rem var(--c-bright-blue)}.card__content{width:100%;background-color:var(--c-wht);padding:1.6rem .8rem;border:1px solid #DDDEDE;border-top:0}.card__date{line-height:1.5}.card__date .icon{display:inline-block;height:1.7rem;margin-top:0.3rem;margin-right:.5rem;vertical-align:text-top;width:1.7rem}
 
-
-/*# sourceMappingURL=card.css.map*/
