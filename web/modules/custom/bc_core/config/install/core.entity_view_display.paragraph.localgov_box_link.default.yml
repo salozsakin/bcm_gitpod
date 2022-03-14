@@ -9,11 +9,19 @@ dependencies:
     - paragraphs.paragraphs_type.localgov_box_link
   module:
     - field_formatter_class
+    - options
 id: paragraph.localgov_box_link.default
 targetEntityType: paragraph
 bundle: localgov_box_link
 mode: default
 content:
+  field_box_link_colour:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   localgov_image:
     type: entity_reference_entity_view
     label: hidden
@@ -26,7 +34,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_box_link_colour: true
   localgov_link: true
   localgov_opens_in_a_new_window: true
   search_api_excerpt: true
