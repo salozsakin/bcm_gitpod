@@ -82,3 +82,11 @@ libraries-override:
     css:
       theme:
         css/components/alert-banner.css: dist/alert-banner.css
+  eu_cookie_compliance/eu_cookie_compliance:
+    css:
+      theme:
+        css/eu_cookie_compliance.css: dist/eu_cookie_compliance.css
+
+libraries-extend:
+ eu_cookie_compliance/eu_cookie_compliance:
+   - brucecastle/eu-cookie-compliance
