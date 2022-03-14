@@ -1,31 +1,56 @@
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
 .banner {
   position: relative;
+  margin-bottom: var(--spacing);
 }
 
 .banner__image img {
   width: 100%;
-  min-height: 300px;
   object-fit: cover;
 }
 
 .banner--primary .banner__content {
-  position: relative;
-  max-width: var(--banner-content-width);
-  margin: calc(var(--banner-content-margin) * -1) auto var(--banner-content-margin);
-  padding: var(--banner-content-padding);
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  padding-top: var(--spacing-smaller);
+  padding-bottom: var(--spacing-smallest);
+  padding-right: var(--spacing-large);
+  padding-left: var(--spacing-large);
   color: var(--banner-content-text-color);
   background-color: var(--banner-content-bg-color);
 }
 
-.banner--primary .field--name-localgov-title {
-  font-size: var(--banner-title-size);
+.banner__content__title {
+  font-size: 3.2rem;
+  margin-bottom: var(--spacing-small);
 }
 
-.banner__link .field--name-localgov-title {
-  text-decoration: underline;
+@include medium {
+  .banner {
+    margin-bottom: var(--spacing-larger);
+  }
+
+  .banner--primary .banner__content {
+    position: absolute;
+    width: auto;
+    max-width: calc(100% - 2.4rem);
+  }
 }
 
-.banner__link:focus .field--name-localgov-title,
-.banner__link:hover .field--name-localgov-title {
-  text-decoration: none;
+@include large {
+  .banner--primary .banner__content {
+    max-width: calc(50% - 56.6rem + 55rem);
+    padding-top: var(--spacing-smaller);
+    padding-bottom: var(--spacing-smallest);
+    padding-right: var(--spacing-mega);
+    padding-left: calc(50% - 56.6rem);
+  }
+
+  .banner__content__title {
+    font-size: var(--font-size-h1);
+  }
 }
