@@ -86,3 +86,7 @@ libraries-override:
     css:
       theme:
         css/components/quote.css: dist/quote.css
+  localgov_base/banner:
+    css:
+      theme:
+        css/components/banner.css: dist/banner.css

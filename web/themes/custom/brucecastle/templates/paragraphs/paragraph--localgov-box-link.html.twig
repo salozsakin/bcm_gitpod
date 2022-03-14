@@ -71,6 +71,7 @@ Using this, we can then set our heading to be one level below the parent's headi
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
+  content.field_box_link_colour.0['#markup'] ? paragraph.bundle|clean_class ~ '--' ~ content.field_box_link_colour.0['#markup'],
 ]
 %}
 
@@ -98,5 +99,5 @@ Using this, we can then set our heading to be one level below the parent's headi
     </a>
   </{{heading_level }}>
 
-  {{ content|without('localgov_link', 'localgov_image') }}
+  {{ content|without('localgov_link', 'localgov_image', 'field_box_link_colour') }}
 </article>
