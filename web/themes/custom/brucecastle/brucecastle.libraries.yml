@@ -59,3 +59,8 @@ basic_page:
   css:
     theme:
       dist/basic-page.css: {}
+
+information_box:
+  css:
+    theme:
+      dist/information-box.css: {}
