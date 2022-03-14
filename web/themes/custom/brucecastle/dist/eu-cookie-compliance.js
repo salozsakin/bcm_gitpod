@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./components/03-organisms/site-header/site-header.scss");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./components/components-overrides/eu-cookie-compliance/eu-cookie-compliance.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/03-organisms/site-header/site-header.scss":
-/*!**************************************************************!*\
-  !*** ./components/03-organisms/site-header/site-header.scss ***!
-  \**************************************************************/
+/***/ "./components/components-overrides/eu-cookie-compliance/eu-cookie-compliance.scss":
+/*!****************************************************************************************!*\
+  !*** ./components/components-overrides/eu-cookie-compliance/eu-cookie-compliance.scss ***!
+  \****************************************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,4 +101,4 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 /******/ });
-//# sourceMappingURL=site-header.js.map
+//# sourceMappingURL=eu-cookie-compliance.js.map
