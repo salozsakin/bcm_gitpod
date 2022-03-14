@@ -11,11 +11,12 @@
   margin-left: calc(var(--grid-column-spacing) / 2);
 }
 
-.sliding-popup-bottom, .sliding-popup-top {
+.sliding-popup-bottom,
+.sliding-popup-top {
   padding: var(--spacing) 0;
 }
 
-#popup-buttons button {
+.eu-cookie-compliance-buttons button {
   background-image: none;
   background-color: var(--b-button-secondary-bg);
   color: var(--b-button-secondary-color);
