@@ -1,0 +1,79 @@
+/**
+ * Extended style rules for eu_cookie_compliance contrib module
+ */
+
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.eu-cookie-compliance-banner {
+  padding: 0 var(--spacing-padding-horizontal);
+  margin-right: calc(var(--grid-column-spacing) / 2);
+  margin-left: calc(var(--grid-column-spacing) / 2);
+}
+
+.sliding-popup-bottom,
+.sliding-popup-top {
+  padding: var(--spacing) 0;
+}
+
+.eu-cookie-compliance-buttons button {
+  background-image: none;
+  background-color: var(--b-button-secondary-bg);
+  color: var(--b-button-secondary-color);
+  box-shadow: none;
+  text-shadow: none;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  line-height: 1;
+  padding: var(--spacing-small) var(--spacing-large);
+  transition: background 0.25s ease-in-out, color 0.1s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    background-image: none;
+    background-color: var(--b-button-secondary-bg);
+    color: var(--b-button-secondary-color);
+    text-decoration-thickness: 0.2rem;
+  }
+
+  &:focus, &:active {
+    text-decoration: none;
+    background-color: var(--b-button-secondary-focus-bg);
+    border-color: var(--b-button-secondary-outline);
+    outline-color: var(--b-button-secondary-outline);
+    color: var(--b-button-secondary-focus-color);
+    box-shadow: 0 4px var(--b-button-secondary-outline);
+  }
+
+  &:visited {
+    color: var(--b-button-secondary-color);
+  }
+}
+
+.agree-button {
+  font-weight: normal;
+  margin-right: var(--spacing-small);
+}
+
+.decline-button {
+  font-weight: 700;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius);
+  border-color: var(--b-button-secondary-color);
+}
+
+.eu-cookie-compliance-message {
+  p {
+    font-weight: normal;
+  }
+  @include small-med {
+    padding-right: var(--spacing);
+  }
+}
+
+.find-more-button {
+  &:hover {
+    background: none;
+    color: var(--b-button-secondary-color);
+    text-decoration-thickness: 0.3rem;
+  }
+}

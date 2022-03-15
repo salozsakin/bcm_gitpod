@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.localgov_subsites_parent
+    - node.type.landing_page
     - node.type.localgov_subsites_page
   module:
     - entity_hierarchy
@@ -21,11 +22,12 @@ settings:
   handler_settings:
     target_bundles:
       localgov_subsites_page: localgov_subsites_page
+      landing_page: landing_page
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: localgov_subsites_overview
+    auto_create_bundle: localgov_subsites_page
   weight_min: -50
   weight_max: 50
   weight_label: Weight

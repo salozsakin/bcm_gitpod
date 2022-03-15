@@ -5,11 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-<<<<<<< HEAD
-        'reference' => 'a6b4aca7de546353c882295a3fb4f656b5d21cf7',
-=======
-        'reference' => 'df43be8fb5da21612b12af3bf62f298ac328509b',
->>>>>>> BC-24/eu-cookie-banner
+        'reference' => 'a34dfe1817304d2e635cf09e60de0630d1468876',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -509,6 +505,15 @@
                 0 => '9.3.3',
             ),
         ),
+        'drupal/components' => array(
+            'pretty_version' => '2.4.0',
+            'version' => '2.4.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/components',
+            'aliases' => array(),
+            'reference' => '8.x-2.4',
+            'dev_requirement' => false,
+        ),
         'drupal/condition_field' => array(
             'pretty_version' => '2.0.0',
             'version' => '2.0.0.0',
@@ -869,6 +874,15 @@
                 0 => '9.3.3',
             ),
         ),
+        'drupal/emulsify_twig' => array(
+            'pretty_version' => '2.0.1',
+            'version' => '2.0.1.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/emulsify_twig',
+            'aliases' => array(),
+            'reference' => '2.0.1',
+            'dev_requirement' => false,
+        ),
         'drupal/entity_browser' => array(
             'pretty_version' => '2.6.0',
             'version' => '2.6.0.0',
@@ -1082,6 +1096,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/google_cse',
             'aliases' => array(),
             'reference' => '8.x-3.5',
+            'dev_requirement' => false,
+        ),
+        'drupal/google_tag' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/google_tag',
+            'aliases' => array(),
+            'reference' => '8.x-1.4',
             'dev_requirement' => false,
         ),
         'drupal/hal' => array(
@@ -1848,11 +1871,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-<<<<<<< HEAD
-            'reference' => 'a6b4aca7de546353c882295a3fb4f656b5d21cf7',
-=======
-            'reference' => 'df43be8fb5da21612b12af3bf62f298ac328509b',
->>>>>>> BC-24/eu-cookie-banner
+            'reference' => 'a34dfe1817304d2e635cf09e60de0630d1468876',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
