@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_components
     - field.field.node.landing_page.localgov_subsites_banner
+    - field.field.node.landing_page.localgov_subsites_parent
     - node.type.landing_page
   module:
     - text
@@ -31,4 +32,5 @@ content:
 hidden:
   field_components: true
   localgov_subsites_banner: true
+  localgov_subsites_parent: true
   search_api_excerpt: true

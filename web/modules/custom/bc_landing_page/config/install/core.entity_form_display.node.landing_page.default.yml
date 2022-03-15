@@ -5,8 +5,10 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_components
     - field.field.node.landing_page.localgov_subsites_banner
+    - field.field.node.landing_page.localgov_subsites_parent
     - node.type.landing_page
   module:
+    - entity_hierarchy
     - field_group
     - layout_paragraphs
     - paragraphs
@@ -34,6 +36,7 @@ third_party_settings:
       children:
         - title
         - body
+        - localgov_subsites_parent
       label: Description
       region: content
       parent_name: group_tabs
@@ -117,6 +120,17 @@ content:
       add_mode: button
       form_display_mode: default
       default_paragraph_type: localgov_banner_primary
+    third_party_settings: {  }
+  localgov_subsites_parent:
+    type: entity_reference_hierarchy_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+      hide_weight: false
     third_party_settings: {  }
   path:
     type: path
