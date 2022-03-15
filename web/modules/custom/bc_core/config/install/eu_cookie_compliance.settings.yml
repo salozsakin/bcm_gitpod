@@ -31,7 +31,7 @@ popup_height: null
 popup_width: 100%
 popup_delay: 1000
 show_more_info: true
-popup_bg_hex: 0779bf
+popup_bg_hex: '006980'
 popup_text_hex: ffffff
 domain: ''
 domains_option: 1
