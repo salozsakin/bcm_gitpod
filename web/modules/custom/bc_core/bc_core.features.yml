@@ -1,12 +1,7 @@
 bundle: bc
 excluded:
-  - field.field.paragraph.wysiwyg.localgov_title
   - field.field.paragraph.localgov_text.field_text_colour
-  - field.field.paragraph.wysiwyg.field_wysiwyg
-  - paragraphs.paragraphs_type.wysiwyg
   - field.storage.paragraph.field_text_colour
-  - core.entity_form_display.paragraph.wysiwyg.default
-  - core.entity_view_display.paragraph.wysiwyg.default
 required:
   - block.block.footer_2
   - block.block.googlecse
@@ -30,3 +25,4 @@ required:
   - field.field.paragraph.localgov_box_link.localgov_link
   - field.field.paragraph.localgov_box_link.localgov_opens_in_a_new_window
   - paragraphs.paragraphs_type.localgov_box_link
+  - google_tag.settings
