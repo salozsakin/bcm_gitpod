@@ -44,7 +44,8 @@
   paragraph.bundle|clean_class,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'lgd-row__two-thirds',
 ]
 %}
 
