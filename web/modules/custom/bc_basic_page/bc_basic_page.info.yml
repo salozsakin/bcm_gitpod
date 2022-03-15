@@ -2,6 +2,7 @@ name: 'Basic Page '
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
+  - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:field'
   - 'drupal:media'
@@ -18,8 +19,11 @@ dependencies:
   - 'entity_hierarchy:entity_hierarchy'
   - 'entity_reference_revisions:entity_reference_revisions'
   - 'eu_cookie_compliance:eu_cookie_compliance'
+  - 'features:features'
+  - 'field_formatter_class:field_formatter_class'
   - 'field_group:field_group'
   - 'layout_paragraphs:layout_paragraphs'
+  - 'localgov_subsites:localgov_subsites'
   - 'paragraphs:paragraphs'
   - 'paragraphs:paragraphs_library'
 package: BC

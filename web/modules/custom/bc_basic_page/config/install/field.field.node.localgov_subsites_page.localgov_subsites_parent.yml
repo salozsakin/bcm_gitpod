@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.localgov_subsites_parent
-    - node.type.localgov_subsites_overview
     - node.type.localgov_subsites_page
   module:
     - entity_hierarchy
@@ -13,7 +12,7 @@ entity_type: node
 bundle: localgov_subsites_page
 label: Parent
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -22,7 +21,6 @@ settings:
   handler_settings:
     target_bundles:
       localgov_subsites_page: localgov_subsites_page
-      localgov_subsites_overview: localgov_subsites_overview
     sort:
       field: _none
       direction: ASC

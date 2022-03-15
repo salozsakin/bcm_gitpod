@@ -7,6 +7,8 @@ dependencies:
     - field.field.paragraph.image_captions.field_text_position
     - paragraphs.paragraphs_type.image_captions
   module:
+    - field_formatter_class
+    - options
     - text
 id: paragraph.image_captions.default
 targetEntityType: paragraph
@@ -24,11 +26,19 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: image_with_caption
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 0
     region: content
+  field_text_position:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
-  field_text_position: true
   search_api_excerpt: true

@@ -1,0 +1,108 @@
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.basic-page {
+  margin-top: var(--spacing-large);
+
+  .lgd-row__two-thirds,
+  .lgd-row__one-third {
+    margin: 0;
+  }
+
+  .lgd-row__two-thirds {
+    .paragraph {
+      margin-bottom: var(--spacing-larger);
+    }
+
+    .paragraph--type--page-section {
+      margin-bottom: 0;
+    }
+  }
+
+  .paragraph--type--localgov-text {
+    max-width: 55rem;
+    margin: 0 auto;
+  }
+
+  .sidebar .field--name-field-wysiwyg {
+    background-color: var(--c-tertiary);
+    color: var(--c-text-inverse);
+    border: 0.5rem solid var(--c-tint-tertiary);
+    padding: var(--spacing-larger);
+    margin-bottom: var(--spacing-larger);
+  }
+
+  @include medium {
+    .lgd-row__two-thirds {
+      width: calc(100% / 3 * 2);
+    }
+
+    .sidebar {
+      width: calc(100% / 3);
+    }
+
+    .basic-page__main-content {
+      padding-right: var(--spacing-larger);
+    }
+  }
+}
+
+.basic-page__title {
+  font-size: 3.2rem;
+}
+
+.basic-page__summary {
+  color: var(--c-secondary);
+  font-size: var(--font-size-larger);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-larger);
+}
+
+.basic-page__side-menu {
+  background-color: #EDEBEE;
+  padding: var(--spacing-larger);
+  margin-bottom: var(--spacing-larger);
+
+  & > ul {
+    padding-left: 0;
+    list-style: none;
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-small);
+    line-height: 2.4rem;
+  }
+
+  // Targets only top level links in the side menu
+  & > ul > li > a {
+    font-size: var(--font-size-menu);
+    font-family: var(--font-secondary);
+    display: inline-block;
+    margin-bottom: var(--spacing);
+  }
+}
+
+.basic-page__related-title {
+  margin-bottom: 0;
+}
+
+@include large {
+  .basic-page {
+    margin-top: var(--spacing-largest);
+
+    .lgd-row__two-thirds .paragraph {
+      margin-bottom: var(--spacing-largest);
+    }
+  }
+
+  .basic-page__title {
+    font-size: var(--font-size-h1);
+  }
+
+  .basic-page__summary {
+    margin-bottom: var(--spacing-largest);
+  }
+
+  .basic-page__side-menu {
+    margin-top: var(--spacing-small);
+  }
+}

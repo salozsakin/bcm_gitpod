@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: image_with_caption_desktop
+label: 'Image with caption desktop 16:9 (750x420px)'
+effects:
+  9850b186-7b34-4c10-a6bf-8eb6d051adda:
+    uuid: 9850b186-7b34-4c10-a6bf-8eb6d051adda
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 420
+      anchor: center-center

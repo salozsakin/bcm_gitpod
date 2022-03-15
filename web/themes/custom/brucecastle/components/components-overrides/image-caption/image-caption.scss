@@ -1,0 +1,68 @@
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.image-captions {
+  position: relative;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.image-captions__text--left {
+  background-color: var(--c-secondary);
+  color: var(--c-text-inverse);
+  padding: var(--spacing-small);
+  text-align: right;
+}
+
+.image-captions--right {
+  background-color: var(--c-tertiary);
+  padding: var(--spacing-large);
+}
+
+.image-captions__text--right {
+  color: var(--c-text-inverse);
+  padding-top: var(--spacing-small);
+}
+
+@include large {
+  .image-captions {
+    .field--type-image {
+      padding-left: var(--spacing-large);
+    }
+  }
+
+  .image-captions__text--left {
+    position: absolute;
+    bottom: var(--spacing-large);
+    padding: var(--spacing-small) var(--spacing-large);
+  }
+
+  .image-captions--right {
+    background-color: transparent;
+    padding: 0;
+
+    .field--type-image {
+      position: relative;
+      z-index: 1;
+      width: 75%;
+    }
+
+    p {
+      width: 25%;
+      padding-left: var(--spacing-large);
+    }
+  }
+
+  .image-captions__text--right {
+    position: absolute;
+    bottom: -2.4rem;
+    background-color: var(--c-tertiary);
+    padding: var(--spacing-large);
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -19,12 +19,21 @@ targetEntityType: node
 bundle: localgov_subsites_page
 mode: default
 content:
+  field_box_links:
+    type: layout_paragraphs
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_wysiwyg:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   localgov_subsites_content:
     type: layout_paragraphs
@@ -35,11 +44,16 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  localgov_subsites_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
-  field_box_links: true
   links: true
   localgov_subsites_banner: true
   localgov_subsites_parent: true
-  localgov_subsites_summary: true
   localgov_subsites_topic: true
   search_api_excerpt: true

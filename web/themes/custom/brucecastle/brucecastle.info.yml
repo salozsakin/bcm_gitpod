@@ -82,3 +82,7 @@ libraries-override:
     css:
       theme:
         css/components/alert-banner.css: dist/alert-banner.css
+  localgov_base/quote:
+    css:
+      theme:
+        css/components/quote.css: dist/quote.css
