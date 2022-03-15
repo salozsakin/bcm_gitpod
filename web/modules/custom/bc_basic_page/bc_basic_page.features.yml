@@ -1,2 +1,4 @@
 bundle: bc
+excluded:
+  - pathauto.pattern.localgov_subsites_page
 required: true
