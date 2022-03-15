@@ -86,3 +86,7 @@ libraries-override:
     css:
       theme:
         css/components/quote.css: dist/quote.css
+
+libraries-extend:
+ eu_cookie_compliance/eu_cookie_compliance:
+   - brucecastle/eu-cookie-compliance
