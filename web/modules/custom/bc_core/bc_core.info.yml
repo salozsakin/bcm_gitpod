@@ -25,6 +25,7 @@ dependencies:
   - 'eu_cookie_compliance:eu_cookie_compliance'
   - 'field_formatter_class:field_formatter_class'
   - 'google_cse:google_cse'
+  - 'google_tag:google_tag'
   - 'localgov:workflows'
   - 'localgov_alter_banner:localgov_alert_banner'
   - 'localgov_core:localgov_core'
