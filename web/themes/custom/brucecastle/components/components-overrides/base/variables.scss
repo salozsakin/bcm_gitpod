@@ -336,12 +336,9 @@ body {
   --service-statuses-list-border-color: var(--color-accent);
 
   /* Banner */
-  --banner-content-width: var(--width-medium);
-  --banner-content-margin: calc(var(--spacing-largest) * 2);
-  --banner-content-padding: var(--spacing-largest);
-  --banner-content-bg-color: var(--color-accent);
+  --banner-content-bg-color: var(--c-secondary);
   --banner-content-text-color: var(--color-white);
-  --banner-title-size: var(--font-size-larger);
+  --banner-title-size: var(--font-size-largest);
 
   /* Teaser View Mode */
   --teaser-image-with: 33%;

@@ -86,6 +86,10 @@ libraries-override:
     css:
       theme:
         css/components/quote.css: dist/quote.css
+  localgov_base/banner:
+    css:
+      theme:
+        css/components/banner.css: dist/banner.css
 
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:

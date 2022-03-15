@@ -1,0 +1,31 @@
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
+.information-box {
+  border: 0.1rem solid var(--c-tertiary);
+  margin: var(--spacing) auto;
+}
+
+.information-box__title {
+  background-color: var(--c-tertiary);
+  color: var(--c-text-inverse);
+  padding: var(--spacing);
+}
+
+.information-box__content {
+  padding: 0 var(--spacing);
+}
+
+@include medium {
+  .information-box {
+    margin: var(--spacing-larger) auto;
+  }
+
+  .information-box__title {
+    padding: var(--spacing) var(--spacing-mega);
+  }
+
+  .information-box__content {
+    padding: var(--spacing-smallest) var(--spacing-mega);
+  }
+}

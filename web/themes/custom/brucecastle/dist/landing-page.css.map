@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./components/components-overrides/landing-page/landing-page.scss"],"names":[],"mappings":"AAAA,uEACE,eAAgB,CAChB,aAAc","file":"landing-page.css","sourcesContent":[".landing-page__content .layout--onecol .paragraph--type--localgov-text {\n  max-width: 64rem;\n  margin: 0 auto;\n}\n"],"sourceRoot":""}
