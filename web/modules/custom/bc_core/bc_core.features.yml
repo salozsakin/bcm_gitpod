@@ -14,9 +14,12 @@ required:
   - core.entity_form_display.paragraph.localgov_box_link.default
   - core.entity_form_display.paragraph.localgov_text.default
   - core.entity_form_display.paragraph.localgov_box_links_listing.default
+  - core.entity_form_display.paragraph.localgov_banner_primary.default
   - core.entity_view_display.localgov_alert_banner.localgov_alert_banner.default
   - core.entity_view_display.paragraph.localgov_box_link.default
   - core.entity_view_display.paragraph.localgov_text.default
+  - core.entity_view_display.paragraph.localgov_banner_primary.default
+  - core.entity_view_display.paragraph.localgov_box_links_listing.default
   - field.field.localgov_alert_banner.localgov_alert_banner.link
   - field.field.localgov_alert_banner.localgov_alert_banner.short_description
   - field.field.localgov_alert_banner.localgov_alert_banner.type_of_alert
@@ -24,5 +27,13 @@ required:
   - field.field.paragraph.localgov_box_link.localgov_image
   - field.field.paragraph.localgov_box_link.localgov_link
   - field.field.paragraph.localgov_box_link.localgov_opens_in_a_new_window
+  - field.field.paragraph.localgov_banner_primary.localgov_button
+  - field.field.paragraph.localgov_banner_primary.localgov_header_text
+  - field.field.paragraph.localgov_banner_primary.localgov_image
+  - field.field.paragraph.localgov_banner_primary.localgov_subsites_banner_text
+  - field.field.paragraph.localgov_banner_primary.localgov_title
+  - field.field.paragraph.localgov_banner_primary.localgov_url
+  - field.field.paragraph.localgov_box_links_listing.localgov_paragraphs
   - paragraphs.paragraphs_type.localgov_box_link
+  - paragraphs.paragraphs_type.localgov_banner_primary
   - google_tag.settings
