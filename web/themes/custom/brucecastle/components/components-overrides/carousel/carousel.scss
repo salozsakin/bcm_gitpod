@@ -52,8 +52,7 @@
 .home-page-carousel__content {
   background-color: var(--c-tertiary);
   padding: var(--spacing-large);
-  margin-right: var(--spacing-smaller);
-  margin-left: var(--spacing-smaller);
+  margin-top: -0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,6 +79,9 @@
     height: calc(100% - 0.6rem);
     top: 0;
     left: var(--spacing);
+    margin-top: 0;
+    margin-right: var(--spacing-smaller);
+    margin-left: var(--spacing-smaller);
     background-color: rgba(0, 0, 0, 0.6);
     padding: var(--spacing-larger) var(--spacing-mega);
     flex-direction: column-reverse;
