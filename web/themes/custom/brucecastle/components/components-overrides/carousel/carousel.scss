@@ -5,6 +5,10 @@
   position: relative;
   margin-bottom: var(--spacing);
 
+  img {
+    margin: 0 auto;
+  }
+
   .slick-slider.slick-dotted {
     margin-bottom: 0;
   }
