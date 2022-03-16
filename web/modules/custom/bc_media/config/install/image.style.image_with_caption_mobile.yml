@@ -4,11 +4,11 @@ dependencies: {  }
 name: image_with_caption_mobile
 label: 'Image with caption mobile 19:9 (450x250px)'
 effects:
-  0dc5dd1b-8628-48ab-8e10-8a8ada3e2ad1:
-    uuid: 0dc5dd1b-8628-48ab-8e10-8a8ada3e2ad1
-    id: image_scale_and_crop
+  442d82c0-de6d-42cf-a70f-fc9e8e9a3926:
+    uuid: 442d82c0-de6d-42cf-a70f-fc9e8e9a3926
+    id: image_scale
     weight: 1
     data:
       width: 450
-      height: 250
-      anchor: center-center
+      height: null
+      upscale: false

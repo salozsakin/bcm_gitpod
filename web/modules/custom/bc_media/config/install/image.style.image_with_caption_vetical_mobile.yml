@@ -4,11 +4,11 @@ dependencies: {  }
 name: image_with_caption_vetical_mobile
 label: 'Image with caption vertical mobile 3:4 (450x600px)'
 effects:
-  95a1371d-0613-4437-8180-4c78043d42b0:
-    uuid: 95a1371d-0613-4437-8180-4c78043d42b0
-    id: image_scale_and_crop
+  83d09778-21ef-4eaa-8f6e-d340a3478217:
+    uuid: 83d09778-21ef-4eaa-8f6e-d340a3478217
+    id: image_scale
     weight: 1
     data:
       width: 450
-      height: 600
-      anchor: center-center
+      height: null
+      upscale: false

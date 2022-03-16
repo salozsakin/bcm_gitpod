@@ -4,11 +4,11 @@ dependencies: {  }
 name: image_with_caption_desktop
 label: 'Image with caption desktop 16:9 (750x420px)'
 effects:
-  9850b186-7b34-4c10-a6bf-8eb6d051adda:
-    uuid: 9850b186-7b34-4c10-a6bf-8eb6d051adda
-    id: image_scale_and_crop
+  ff646102-e5c1-4e8c-833b-711e63945319:
+    uuid: ff646102-e5c1-4e8c-833b-711e63945319
+    id: image_scale
     weight: 1
     data:
       width: 750
-      height: 420
-      anchor: center-center
+      height: null
+      upscale: false
