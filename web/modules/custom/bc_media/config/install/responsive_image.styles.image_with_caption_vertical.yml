@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.image_with_caption_vertical_desktop
+    - image.style.image_with_caption_vetical_mobile
+  module:
+    - localgov_media
+id: image_with_caption_vertical
+label: 'Image with caption vertical'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_vertical_desktop
+    breakpoint_id: localgov_media.bootstrap4_md_768px
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_vetical_mobile
+    breakpoint_id: localgov_media.bootstrap4_xs
+    multiplier: 1x
+breakpoint_group: localgov_media
+fallback_image_style: image_with_caption_vertical_desktop

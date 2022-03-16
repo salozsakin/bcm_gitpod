@@ -65,4 +65,11 @@
     display: flex;
     justify-content: flex-end;
   }
+
+  .image-captions--vertical {
+    .image-captions__text--right {
+      height: auto;
+      min-height: 14.5rem;
+    }
+  }
 }

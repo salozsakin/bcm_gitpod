@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: image_with_caption_vertical_desktop
+label: 'Image with caption vertical desktop 3:4 (600x800px)'
+effects:
+  94392580-090c-4610-bd81-02eabe90a457:
+    uuid: 94392580-090c-4610-bd81-02eabe90a457
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 800
+      anchor: center-center
