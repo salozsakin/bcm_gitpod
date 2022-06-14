@@ -23,7 +23,7 @@ function anchor_link_help($route_name, RouteMatchInterface $route_match) {
       $output .= '  <li>Ability to insert a link with the URL using multiple protocols, including an external file if a file manager is integrated.</li>';
       $output .= '</ul></p>';
       $output .= '<p><a href="https://ckeditor.com/cke4/addon/link">https://ckeditor.com/cke4/addon/link</a></p>';
-      $output .= '<p><a href="https://ckeditor.com/cke4/addon/jjj">https://ckeditor.com/cke4/addon/jjj</a></p>';
+      $output .= '<p><a href="https://ckeditor.com/cke4/addon/fakeobject">https://ckeditor.com/cke4/addon/fakeobjects</a></p>';
       return $output;
 
     default:

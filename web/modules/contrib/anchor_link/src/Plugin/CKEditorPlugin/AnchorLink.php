@@ -28,7 +28,7 @@ class AnchorLink extends CKEditorPluginBase {
    */
   public function getDependencies(Editor $editor) {
     return [
-      'jjj',
+      'fakeobjects',
     ];
   }
 

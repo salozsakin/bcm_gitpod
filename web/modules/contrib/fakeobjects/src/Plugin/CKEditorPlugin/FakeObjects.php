@@ -6,10 +6,10 @@ use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\editor\Entity\Editor;
 
 /**
- * Defines the "jjj" plugin.
+ * Defines the "fakeobjects" plugin.
  *
  * @CKEditorPlugin(
- *   id = "jjj",
+ *   id = "fakeobjects",
  *   label = @Translation("FakeObjects"),
  * )
  */
@@ -19,7 +19,7 @@ class FakeObjects extends CKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getFile() {
-    return 'libraries/jjj/plugin.js';
+    return 'libraries/fakeobjects/plugin.js';
   }
 
   /**
