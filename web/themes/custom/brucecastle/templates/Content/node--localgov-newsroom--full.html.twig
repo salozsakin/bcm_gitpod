@@ -87,9 +87,9 @@
   {{ attach_library('localgov_base/sidebar') }}
   {{ attach_library('localgov_base/news') }}
 {% endif %}
-<h1>{{ node.label }}</h1>
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
+  <h1>{{ node.label }}</h1>
   {{ title_prefix }}
   {{ title_suffix }}
 

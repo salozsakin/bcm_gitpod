@@ -154,3 +154,10 @@ tbody td {
 tbody tr {
   border-bottom: var(--table-border);
 }
+
+.node--type-localgov-newsroom {
+  h1 {
+    border-bottom: var( --page-title-border);
+    padding-bottom: var(--vertical-rhythm-spacing);
+  }
+}
