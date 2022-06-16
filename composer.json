@@ -23,6 +23,7 @@
         "drupal/google_cse": "^3.5",
         "drupal/google_tag": "^1.4",
         "drupal/image_lazy_loader": "^2.0",
+        "drupal/media_embed_extra": "^1.0@beta",
         "drupal/password_policy": "^3.1",
         "drupal/seckit": "^2.0",
         "drupal/username_enumeration_prevention": "^1.2",
