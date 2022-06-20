@@ -157,10 +157,16 @@
 
 /* Search Region */
 .lgd-region--search {
-  /* Hide search temporarily for MVP launch */
-  display: none;
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
+
+  .form-submit {
+      border: var(--primary);
+
+    &:hover {
+    border: white;
+   }
+  }
 }
 
 @media screen and (min-width: 48rem) {
@@ -220,4 +226,9 @@
 
 .no-js .lgd-header__toggle {
   display: none !important;
+}
+
+.block-localgov-sitewide-search-block {
+  display: flex;
+  flex-direction: row-reverse;
 }
