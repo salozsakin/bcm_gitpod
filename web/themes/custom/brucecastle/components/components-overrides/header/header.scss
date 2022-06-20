@@ -54,6 +54,11 @@
 .lgd-header__nav--primary.lgd-header__nav--active {
   display: flex;
   min-height: calc(100vh - 11rem);
+
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
 }
 
 @media screen and (min-width: 48rem) {
@@ -171,7 +176,7 @@
 
 @media screen and (min-width: 48rem) {
   .lgd-region--search {
-    margin-left: auto;
+    margin-left: 5px;
   }
 }
 
@@ -208,6 +213,7 @@
 .lgd-region--search .form-submit {
   color: var(--header-search-button-color);
   background-color: var(--header-search-button-bg-color);
+  height: 5rem;
 }
 
 .lgd-region--search .form-submit:hover,
@@ -231,4 +237,14 @@
 .block-localgov-sitewide-search-block {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.sitewide-search-block__search-icon {
+  width: 10%;
+  background-color: var(--color-white);
+  height: 50px;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
