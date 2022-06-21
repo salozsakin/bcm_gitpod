@@ -34,8 +34,7 @@
       const openClass = 'accordion-pane__content--open';
       const breakpoint = accordion.dataset.accordionTabsSwitch || null;
       const mq = window.matchMedia(`(max-width: '${breakpoint}')`);
-      // const moreIcon = accordion.querySelectorAll('.accordion-pane__more-icon');
-      // const lessIcon = accordion.querySelectorAll('.accordion-pane__less-icon');
+      const panesToClose = [];
 
       const create = function create() {
         // Only initialise accordion if it hasn't already been done.
@@ -51,13 +50,14 @@
           const button = document.createElement('button');
           const text = document.createTextNode(titleText);
           const id = `accordion-content-${index}-${i}`;
+
+          // Create icons
           let moreIcon = document.createElement('img');
-          moreIcon.setAttribute('src', '/themes/custom/brucecastle/images/icons/plus-circle.svg');
           moreIcon.setAttribute('class', 'accordion-pane__more-icon');
           let lessIcon = document.createElement('img');
-          lessIcon.setAttribute('src', '/themes/custom/brucecastle/images/icons/minus-circle.svg');
           lessIcon.setAttribute('class', 'accordion-pane__less-icon');
           lessIcon.style.display = 'none';
+
           // Add id attribute to all pane content elements.
           content[0].setAttribute('id', id);
 
@@ -82,7 +82,6 @@
                 const openPaneButton = accordion.querySelectorAll(
                   `[aria-controls="${openPaneId}"]`,
                 );
-                // openPane[0].classList.remove(openClass);
                 openPaneButton[0].setAttribute('aria-expanded', 'false');
               }
 
@@ -92,6 +91,7 @@
               targetPane[0].classList.add(openClass);
               moreIcon.style.display = 'none';
               lessIcon.style.display = 'block';
+              panesToClose.push(targetPane[0]);
             } else {
               // If target pane is currently open, close it.
               e.target.setAttribute('aria-expanded', 'false');
@@ -100,6 +100,17 @@
               moreIcon.style.display = 'block';
               lessIcon.style.display = 'none';
             }
+
+            // Add click event listener to the close all button
+            const closeAll = document.querySelectorAll('.accordion__close-button');
+            const closeButton = closeAll[0];
+            closeButton.addEventListener('click', e => {
+              for (let j = 0; j < numberOfPanes; j++) {
+                panesToClose[j].classList.remove(openClass);
+                moreIcon.style.display = 'block';
+                lessIcon.style.display = 'none';
+              };
+            });
           });
 
           // Add show/hide button to each accordion pane title element.
