@@ -274,3 +274,19 @@
     }
   }
 }
+
+#views-exposed-form-localgov-sitewide-search-sitewide-search-page {
+  display: flex;
+
+  .js-form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .js-form-wrapper {
+    display: flex;
+    align-items: end;
+  }
+}
