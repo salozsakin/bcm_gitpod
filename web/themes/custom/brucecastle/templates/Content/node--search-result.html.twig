@@ -103,7 +103,11 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('search-result__content', 'node__content') }}>
-    {{ content.localgov_subsites_summary }}
+    {% if content.localgov_subsites_summary == true %}
+      {{ content.localgov_subsites_summary }}
+    {% elseif content.body[0]["#text"] == true %}
+      {{ content.body[0]["#text"]|striptags|slice(0, 160) ~ '...' }}
+    {% endif %}
     <a class="search-result__link"  href="{{ url }}">{{ 'https://www.brucecastle.org' ~ url }}</a>
   </div>
 

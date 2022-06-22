@@ -14,6 +14,7 @@
 @import '../../00-base/00-global/00-grid/_breakpoints.scss';
 @import '../../00-base/00-global/_02-breakpoints.scss';
 @import '../../00-base/01-colors/_01-colors-used.scss';
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
 
 .lgd-header {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
@@ -56,7 +57,7 @@
   display: flex;
   min-height: calc(100vh - 11rem);
 
-  @media (max-width: 992px) {
+  @include small {
     flex-direction: column-reverse;
     justify-content: flex-end;
   }
@@ -177,7 +178,7 @@
 
 @media screen and (min-width: 48rem) {
   .lgd-region--search {
-    margin-left: 5px;
+    margin-left: 0.5rem;
   }
 }
 
@@ -266,11 +267,11 @@
     display: none;
     position: absolute;
     z-index: 1;
-    top: 8rem;
+    top: 15rem;
     border: var(--border);
 
-    @media(max-width: 883px) {
-      top: 15rem;
+    @include medium {
+      top: 8rem;
     }
   }
 
