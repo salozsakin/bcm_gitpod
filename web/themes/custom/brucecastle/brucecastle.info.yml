@@ -98,6 +98,10 @@ libraries-override:
     css:
       theme:
         css/components/image-with-caption.css: dist/image-caption.css
+  localgov_base/sitewide-search:
+    css:
+      theme:
+        css/components/sitewide-search.css: dist/sitewide-search.css
 
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:
