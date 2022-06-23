@@ -88,8 +88,10 @@
   {{ attach_library('localgov_base/news') }}
 {% endif %}
 
+{{ attach_library('brucecastle/news') }}
+
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
-  <h1>{{ node.label }}</h1>
+  <h1 class="heading-lined">{{ node.label }}</h1>
   {{ title_prefix }}
   {{ title_suffix }}
 
