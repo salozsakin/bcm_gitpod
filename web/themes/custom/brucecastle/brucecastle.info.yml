@@ -62,10 +62,6 @@ libraries-override:
     css:
       base:
         css/base/variables.css: dist/variables.css
-#  localgov_base/global:
-#    css:
-#      base:
-#        css/base/base.css: dist/base.css
   localgov_base/header:
     css:
       theme:
