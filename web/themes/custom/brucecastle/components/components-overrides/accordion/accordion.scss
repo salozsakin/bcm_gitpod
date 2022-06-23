@@ -50,7 +50,8 @@
         background-size: cover;
         height: 2rem;
         width: 2rem;
-        border:none;
+        border: none;
+        pointer-events: none;
       }
     }
   }
@@ -63,7 +64,8 @@
   background-size: cover;
   height: 2rem;
   width: 2rem;
-  border:none;
+  border: none;
+  pointer-events:n one;
 }
 
 .accordion-pane__less-icon {
@@ -73,7 +75,8 @@
   background-size: cover;
   height: 2rem;
   width: 2rem;
-  border:none;
+  border: none;
+  pointer-events: none;
 }
 
 .accordion-pane__content {

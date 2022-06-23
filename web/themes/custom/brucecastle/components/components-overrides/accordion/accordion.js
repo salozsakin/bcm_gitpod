@@ -29,7 +29,7 @@
       const openClass = 'accordion-pane__content--open';
       const breakpoint = accordion.dataset.accordionTabsSwitch || null;
       const mq = window.matchMedia(`(max-width: '${breakpoint}')`);
-      const panesToClose = [];
+      let panesToClose = [];
 
       const create = function create() {
         // Only initialise accordion if it hasn't already been done.
@@ -98,13 +98,11 @@
             const closeAll = document.querySelectorAll('.accordion__close-button');
             const closeButton = closeAll[0];
             closeButton.addEventListener('click', e => {
-              for (let j = 0; j < numberOfPanes; j++) {
+              for (let j = 0; j < panesToClose.length; j++) {
                 panesToClose[j].classList.remove(openClass);
                 moreIcon.style.display = 'block';
                 lessIcon.style.display = 'none';
               };
-              panesToClose[0].classList.remove(openClass);
-              panesToClose[1].classList.remove(openClass);
             });
           });
 
