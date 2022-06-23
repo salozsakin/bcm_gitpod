@@ -62,10 +62,6 @@ libraries-override:
     css:
       base:
         css/base/variables.css: dist/variables.css
-#  localgov_base/global:
-#    css:
-#      base:
-#        css/base/base.css: dist/base.css
   localgov_base/header:
     css:
       theme:
@@ -104,6 +100,10 @@ libraries-override:
     css:
       theme:
         css/components/sidebar.css: dist/sidebar.css
+  localgov_base/news:
+    css:
+      theme:
+        css/components/news.css: dist/news.css
 
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:
