@@ -29,7 +29,7 @@
       const openClass = 'accordion-pane__content--open';
       const breakpoint = accordion.dataset.accordionTabsSwitch || null;
       const mq = window.matchMedia(`(max-width: '${breakpoint}')`);
-      let panesToClose = [];
+      const panesToClose = [];
 
       const create = function create() {
         // Only initialise accordion if it hasn't already been done.
