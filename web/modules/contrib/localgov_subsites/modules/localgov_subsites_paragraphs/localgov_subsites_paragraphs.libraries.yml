@@ -8,7 +8,7 @@ localgov_accordion:
     base:
       css/localgov-accordion.css: {}
   js:
-    js/accordion.js: {}
+    js/localgov-accordion.js: {}
 
 localgov_box_links_listing:
   css:

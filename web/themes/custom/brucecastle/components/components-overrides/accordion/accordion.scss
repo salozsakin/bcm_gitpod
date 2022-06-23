@@ -14,7 +14,7 @@
 }
 
 .paragraph--type--localgov-accordion-pane {
-  border-bottom: var(--c-primary) 2px solid;
+  border-bottom: var(--c-primary) 0.2rem solid;
 }
 
 .accordion-pane__title {
@@ -28,7 +28,7 @@
   }
 
   button {
-    background-color: white;
+    background-color:var(--color-white);
     width: 100%;
     border: none;
     color: var(--color-grey-dark);
@@ -44,32 +44,44 @@
       text-decoration: none;
 
       .accordion-pane__more-icon {
-        -webkit-mask: url('/themes/custom/brucecastle/images/icons/plus-circle-hover.svg') no-repeat center;
-        mask: url('/themes/custom/brucecastle/images/icons/plus-circle-hover.svg') no-repeat center;
-        background: var(--c-primary);
-        height: 5rem;
-        width: 5rem;
+        background-image: url('/themes/custom/brucecastle/images/icons/plus-circle-hover.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 2rem;
+        width: 2rem;
+        border:none;
       }
     }
   }
 }
 
 .accordion-pane__more-icon {
-  -webkit-mask: url('/themes/custom/brucecastle/images/icons/plus-circle.svg') no-repeat center;
-  mask: url('/themes/custom/brucecastle/images/icons/plus-circle.svg') no-repeat center;
-  background-color: var(--color-grey-dark);
-  height: 5rem;
-  width: 5rem;
+  background-image: url('/themes/custom/brucecastle/images/icons/plus-circle.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  border:none;
 }
 
 .accordion-pane__less-icon {
-  -webkit-mask: url('/themes/custom/brucecastle/images/icons/minus-circle.svg') no-repeat center;
-  mask: url('/themes/custom/brucecastle/images/icons/minus-circle.svg') no-repeat center;
-  background-color: var(--c-primary);
-  height: 5rem;
-  width: 5rem;
+  background-image: url('/themes/custom/brucecastle/images/icons/minus-circle.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  border:none;
 }
 
 .accordion-pane__content {
+  display: none;
+}
+
+
+.accordion-pane__content--open {
+  display: block;
   padding: 0 var(--button-padding-horizontal);
 }

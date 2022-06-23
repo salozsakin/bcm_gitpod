@@ -96,9 +96,6 @@ libraries-override:
     css:
       theme:
         css/components/image-with-caption.css: dist/image-caption.css
-  localgov_base/accordion:
-    js:
-      js/accordion.js: dist/accordion.js
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:
    - brucecastle/eu-cookie-compliance

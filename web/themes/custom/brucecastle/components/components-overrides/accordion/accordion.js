@@ -1,10 +1,5 @@
-/**
- * @file
- * Localgov Accordion behaviour.
- */
-
 (Drupal => {
-  Drupal.behaviors.localgovAccordion = {
+  Drupal.behaviors.accordion = {
     /**
      * Attach accordion behaviour.
      *
@@ -52,9 +47,9 @@
           const id = `accordion-content-${index}-${i}`;
 
           // Create icons
-          let moreIcon = document.createElement('img');
+          const moreIcon = document.createElement('div');
           moreIcon.setAttribute('class', 'accordion-pane__more-icon');
-          let lessIcon = document.createElement('img');
+          const lessIcon = document.createElement('div');
           lessIcon.setAttribute('class', 'accordion-pane__less-icon');
           lessIcon.style.display = 'none';
 
@@ -87,7 +82,6 @@
 
               // Show new pane.
               e.target.setAttribute('aria-expanded', 'true');
-              e.target.classList.add('blue');
               targetPane[0].classList.add(openClass);
               moreIcon.style.display = 'none';
               lessIcon.style.display = 'block';
@@ -95,7 +89,6 @@
             } else {
               // If target pane is currently open, close it.
               e.target.setAttribute('aria-expanded', 'false');
-              e.target.classList.remove('blue');
               targetPane[0].classList.remove(openClass);
               moreIcon.style.display = 'block';
               lessIcon.style.display = 'none';
@@ -110,6 +103,8 @@
                 moreIcon.style.display = 'block';
                 lessIcon.style.display = 'none';
               };
+              panesToClose[0].classList.remove(openClass);
+              panesToClose[1].classList.remove(openClass);
             });
           });
 
