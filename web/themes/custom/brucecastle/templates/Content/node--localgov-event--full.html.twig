@@ -114,11 +114,17 @@ better readability.
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ] %}
 
-{% set date = content.localgov_event_date[0]['#date']['start_date']['#text'] %}
-{% set dates = date|split(',') %}
-{% set dayOfWeek = dates[0] %}
-{% set dateAndYear = dates[1] %}
-{% set time = dates[2] %}
+{% set startDate = content.localgov_event_date[0]['#date']['start_date']['#text'] %}
+{% set startDates = startDate|split(',') %}
+{% set startDayOfWeek = startDates[0] %}
+{% set startDateAndYear = startDates[1] %}
+{% set startTime = startDates[2] %}
+
+{% set endDate = content.localgov_event_date[0]['#date']['end_date']['#text'] %}
+{% set endDates = endDate|split(',') %}
+{% set endDayOfWeek = endDates[0] %}
+{% set endDateAndYear = endDates[1] %}
+{% set endTime = endDates[2] %}
 
 {{ attach_library('brucecastle/basic_page') }}
 {{ attach_library('brucecastle/event') }}
@@ -133,11 +139,26 @@ better readability.
             <div class="localgov_event__dates">
               <div class="localgov_event__date">
                 <img src="/themes/custom/brucecastle/images/icons/calendar.svg"/>
-                <p>
-                  {{ dayOfWeek }}
-                  {{ dateAndYear }}
-                  <span>{{ time }}</span>
-                </p>
+                 {% if endDateAndYear != startDateAndYear and endTime %}
+                  <p>
+                    {{ startDayOfWeek }}
+                    {{ startDateAndYear }}
+                    <span>{{ startTime }}</span>
+                  </p>
+                  <p class="localgov_event__date__to">to</p>
+                  <p>
+                    {{ endDayOfWeek }}
+                    {{ endDateAndYear }}
+                    <span>{{ endTime }}</span>
+                  </p>
+                   {% else %}
+                     <p>
+                       {{ startDayOfWeek }}
+                       {{ startDateAndYear }}
+                       <span>{{ startTime }} - {{ endDayOfWeek }}</span>
+                     </p>
+                {% endif %}
+
               </div>
             </div>
             <div class="localgov_event__location">
