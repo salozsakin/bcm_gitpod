@@ -285,7 +285,7 @@
     &:hover,
     &:focus {
       background-color: $brand-primary;
-      border: 1px white solid;
+      border: 0.1rem white solid;
     }
 
     @include media-breakpoint-up(md) {
