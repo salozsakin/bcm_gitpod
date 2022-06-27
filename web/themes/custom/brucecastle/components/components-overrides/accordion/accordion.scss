@@ -14,7 +14,13 @@
 }
 
 .paragraph--type--localgov-accordion-pane {
-  border-bottom: var(--c-primary) 0.2rem solid;
+  border-bottom: var(--c-primary) 0.1rem solid;
+}
+
+.basic-page .lgd-row__two-thirds .paragraph {
+  .paragraph--type--localgov-accordion-pane {
+    margin-bottom: var(--spacing-smallest);
+  }
 }
 
 .accordion-pane__title {
