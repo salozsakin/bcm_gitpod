@@ -158,7 +158,6 @@ better readability.
                        <span>{{ startTime }} - {{ endDayOfWeek }}</span>
                      </p>
                 {% endif %}
-
               </div>
             </div>
             <div class="localgov_event__location">
@@ -180,13 +179,15 @@ better readability.
         <div class="lgd-row__two-thirds">
           <article{{ attributes.addClass(classes).removeAttribute('role') }}>
             <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
+              {% if content.localgov_event_image %}
               {{ content.localgov_event_image }}
+              {% endif %}
               {{ content.body }}
             </div>
           </article>
           <a href="/events" class="localgov_event__back-link">
             <img src="/themes/custom/brucecastle/images/icons/chevron-teal.svg">
-            Back to events</a>
+            {{ 'Back to events'|t }}</a>
         </div>
       </div>
     </div>
