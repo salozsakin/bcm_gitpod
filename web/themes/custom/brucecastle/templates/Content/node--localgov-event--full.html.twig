@@ -173,7 +173,9 @@ better readability.
             {% endif %}
           </div>
           <div class="localgov_event__categories">
+            {% if content.localgov_event_categories %}
             {{ content.localgov_event_categories }}
+            {% endif %}
           </div>
         </aside>
         <div class="lgd-row__two-thirds">
