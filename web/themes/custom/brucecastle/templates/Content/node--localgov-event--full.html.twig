@@ -172,11 +172,11 @@ better readability.
               </button>
             {% endif %}
           </div>
-          <div class="localgov_event__categories">
-            {% if content.localgov_event_categories %}
-            {{ content.localgov_event_categories }}
-            {% endif %}
-          </div>
+          {% if content.localgov_event_categories %}
+            <div class="localgov_event__categories">
+              {{ content.localgov_event_categories }}
+            </div>
+          {% endif %}
         </aside>
         <div class="lgd-row__two-thirds">
           <article{{ attributes.addClass(classes).removeAttribute('role') }}>
