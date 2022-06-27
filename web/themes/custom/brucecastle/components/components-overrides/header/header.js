@@ -2,13 +2,13 @@
   Drupal.behaviors.headerSearch = {
     attach: function (context) {
       context = context || document;
-      const searchBox = context.getElementById('block-brucecastle-localgov-sitewide-search-block-scarfolk');
+      const searchBox = context.getElementById('block-googlecse-2');
       const searchButton = context.createElement('button');
       const searchIcon = context.createElement('img');
-      const searchTextBox = context.getElementById('views-exposed-form-localgov-sitewide-search-sitewide-search-page-block');
+      const searchTextBox = context.getElementById('google-cse-search-box-form');
       searchIcon.setAttribute("src", "/themes/custom/brucecastle/images/icons/search-icon.svg");
-      searchIcon.setAttribute("class", "sitewide-search-block__search-icon");
-      searchButton.setAttribute("class", "sitewide-search-block__search-button");
+      searchIcon.setAttribute("class", "google-cse-search-block__search-icon");
+      searchButton.setAttribute("class", "google-cse-search-block__search-button");
       searchButton.appendChild(searchIcon);
       searchBox.appendChild(searchButton);
 
