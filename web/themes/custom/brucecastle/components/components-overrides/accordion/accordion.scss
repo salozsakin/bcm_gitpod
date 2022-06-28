@@ -21,6 +21,10 @@
   .paragraph--type--localgov-accordion-pane {
     margin-bottom: var(--spacing-smallest);
   }
+
+  .field--name-localgov-body-text {
+    margin-bottom: var(--vertical-rhythm-spacing);
+  }
 }
 
 .accordion-pane__title {
@@ -59,6 +63,17 @@
         border: none;
         pointer-events: none;
       }
+
+      .accordion-pane__less-icon {
+        background-image: url('/themes/custom/brucecastle/images/icons/minus-circle-hover.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 2.4rem;
+        width: 2.4rem;
+        border: none;
+        pointer-events: none;
+      }
     }
   }
 }
@@ -79,8 +94,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 2rem;
-  width: 2rem;
+  height: 2.4rem;
+  width: 2.4rem;
   border: none;
   pointer-events: none;
 }
