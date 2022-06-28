@@ -53,26 +53,25 @@
       color: var(--c-primary);
       text-decoration: none;
 
-      .accordion-pane__more-icon {
-        background-image: url('/themes/custom/brucecastle/images/icons/plus-circle-hover.svg');
+      .accordion-pane__more-icon,
+      .accordion-pane__less-icon {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 2rem;
-        width: 2rem;
         border: none;
         pointer-events: none;
       }
 
+      .accordion-pane__more-icon {
+        background-image: url('/themes/custom/brucecastle/images/icons/plus-circle-hover.svg');
+        height: 2rem;
+        width: 2rem;
+      }
+
       .accordion-pane__less-icon {
         background-image: url('/themes/custom/brucecastle/images/icons/minus-circle-hover.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         height: 2.4rem;
         width: 2.4rem;
-        border: none;
-        pointer-events: none;
       }
     }
   }
