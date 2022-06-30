@@ -75,24 +75,37 @@
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+.event-page__sidebar {
+  .field__item,
+  .localgov_event__call-to-action {
+    background-color: var(--button-bg-color);
+    padding: var(--button-padding-horizontal) var(--button-padding-vertical);
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    font-size: var(--font-size-small);
+    border: var(--border);
+
+    &:hover {
+      background-color: var(--button-bg-color-hover);
+      color: var(--button-text-color-hover);
+      text-decoration: underline;
+    }
+  }
+
+  .localgov_event__call-to-action  {
+    color: var(--button-text-color);
+    text-decoration: none;
+  }
 
   .field__item {
-    background-color: var(--button-bg-color);
-    padding: 1rem;
-    margin: 0.5rem 0.5rem 0.5rem 0;
-
     a {
       color: var(--button-text-color);
       text-decoration: none;
     }
 
     &:hover {
-      background-color: var(--button-bg-color-hover);
-      color: var(--button-text-color-hover);
-      border: 0.2rem solid var(--button-border-color);
-
       a {
-        text-decoration: underline;
         color: var(--button-text-color-hover);
       }
     }

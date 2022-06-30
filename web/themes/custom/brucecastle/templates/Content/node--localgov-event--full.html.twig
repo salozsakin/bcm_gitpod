@@ -134,7 +134,7 @@ better readability.
     <div class="lgd-row">
       <h1>{{ node.label }}</h1>
       <div class="localgov_event__container">
-        <aside class="lgd-row__one-third sidebar sidebar--second">
+        <aside class="lgd-row__one-third sidebar sidebar--second event-page__sidebar">
           <div class="basic-page__side-menu">
             <div class="localgov_event__dates">
               <div class="localgov_event__date">
@@ -165,11 +165,11 @@ better readability.
               <p>Bruce Castle</p>
             </div>
             {% if content.localgov_event_call_to_action[0]['#url'] %}
-              <button class="localgov_event__call-to-action"
+              <a class="localgov_event__call-to-action"
                       href={{ content.localgov_event_call_to_action[0]['#url'] }}>
                 {{ content.localgov_event_call_to_action[0]['#title'] }}
                 <div class="localgov_event__call-to-action__chevron"></div>
-              </button>
+              </a>
             {% endif %}
           </div>
           {% if content.localgov_event_categories %}
