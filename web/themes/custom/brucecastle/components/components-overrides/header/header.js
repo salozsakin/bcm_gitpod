@@ -2,7 +2,7 @@
   Drupal.behaviors.headerSearch = {
     attach: function (context) {
       context = context || document;
-      const searchBox = context.getElementById('block-googlecse-2');
+      const searchBox = context.querySelector('.block-google-cse');
       const searchButton = context.createElement('button');
       const searchIcon = context.createElement('img');
       const searchTextBox = context.getElementById('google-cse-search-box-form');
