@@ -136,37 +136,41 @@ better readability.
       <div class="localgov_event__container">
         <aside class="lgd-row__one-third sidebar sidebar--second event-page__sidebar">
           <div class="basic-page__side-menu">
-            <div class="localgov_event__dates">
-              <div class="localgov_event__date">
-                <img src="/themes/custom/brucecastle/images/icons/calendar.svg"/>
-                 {% if endDateAndYear != startDateAndYear and endTime %}
-                  <p>
-                    {{ startDayOfWeek }}
-                    {{ startDateAndYear }}
-                    <span>{{ startTime }}</span>
-                  </p>
-                  <p class="localgov_event__date__to">to</p>
-                  <p>
-                    {{ endDayOfWeek }}
-                    {{ endDateAndYear }}
-                    <span>{{ endTime }}</span>
-                  </p>
-                   {% else %}
-                     <p>
-                       {{ startDayOfWeek }}
-                       {{ startDateAndYear }}
-                       <span>{{ startTime }} - {{ endDayOfWeek }}</span>
-                     </p>
-                {% endif %}
+            {% if startDate == true %}
+              <div class="localgov_event__dates">
+                <div class="localgov_event__date">
+                  <img src="/themes/custom/brucecastle/images/icons/calendar.svg"/>
+                  {% if endDateAndYear != startDateAndYear and endTime %}
+                    <p>
+                      {{ startDayOfWeek }}
+                      {{ startDateAndYear }}
+                      <span>{{ startTime }}</span>
+                    </p>
+                    <p class="localgov_event__date__to">to</p>
+                    <p>
+                      {{ endDayOfWeek }}
+                      {{ endDateAndYear }}
+                      <span>{{ endTime }}</span>
+                    </p>
+                  {% else %}
+                    <p>
+                      {{ startDayOfWeek }}
+                      {{ startDateAndYear }}
+                      <span>{{ startTime }} - {{ endDayOfWeek }}</span>
+                    </p>
+                  {% endif %}
+                </div>
               </div>
-            </div>
+            {% endif %}
+            {% if content.localgov_event_locality[0]['#title'] %}
             <div class="localgov_event__location">
               <img src="/themes/custom/brucecastle/images/icons/map-location.svg"/>
-              <p>Bruce Castle</p>
+              <p>{{ content.localgov_event_locality[0]['#title'] }}</p>
             </div>
+            {% endif %}
             {% if content.localgov_event_call_to_action[0]['#url'] %}
               <a class="localgov_event__call-to-action"
-                      href={{ content.localgov_event_call_to_action[0]['#url'] }}>
+                 href={{ content.localgov_event_call_to_action[0]['#url'] }}>
                 {{ content.localgov_event_call_to_action[0]['#title'] }}
                 <div class="localgov_event__call-to-action__chevron"></div>
               </a>
@@ -182,7 +186,7 @@ better readability.
           <article{{ attributes.addClass(classes).removeAttribute('role') }}>
             <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
               {% if content.localgov_event_image %}
-              {{ content.localgov_event_image }}
+                {{ content.localgov_event_image }}
               {% endif %}
               {{ content.body }}
             </div>
