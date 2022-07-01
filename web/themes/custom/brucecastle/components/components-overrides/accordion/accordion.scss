@@ -21,6 +21,10 @@
   .paragraph--type--localgov-accordion-pane {
     margin-bottom: var(--spacing-smallest);
   }
+
+  .field--name-localgov-body-text {
+    margin-bottom: var(--vertical-rhythm-spacing);
+  }
 }
 
 .accordion-pane__title {
@@ -43,6 +47,27 @@
     justify-content: space-between;
     align-items: center;
 
+    .accordion-pane__more-icon,
+    .accordion-pane__less-icon {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: none;
+      pointer-events: none;
+    }
+
+    .accordion-pane__more-icon {
+      background-image: url('/themes/custom/brucecastle/images/icons/plus-circle.svg');
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .accordion-pane__less-icon {
+      background-image: url('/themes/custom/brucecastle/images/icons/minus-circle.svg');
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+
     &:hover,
     &:focus,
     &:active {
@@ -51,38 +76,13 @@
 
       .accordion-pane__more-icon {
         background-image: url('/themes/custom/brucecastle/images/icons/plus-circle-hover.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 2rem;
-        width: 2rem;
-        border: none;
-        pointer-events: none;
+      }
+
+      .accordion-pane__less-icon {
+        background-image: url('/themes/custom/brucecastle/images/icons/minus-circle-hover.svg');
       }
     }
   }
-}
-
-.accordion-pane__more-icon {
-  background-image: url('/themes/custom/brucecastle/images/icons/plus-circle.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 2rem;
-  width: 2rem;
-  border: none;
-  pointer-events: none;
-}
-
-.accordion-pane__less-icon {
-  background-image: url('/themes/custom/brucecastle/images/icons/minus-circle.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 2rem;
-  width: 2rem;
-  border: none;
-  pointer-events: none;
 }
 
 .accordion-pane__content {
