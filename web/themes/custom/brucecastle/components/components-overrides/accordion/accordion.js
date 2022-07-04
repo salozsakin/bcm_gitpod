@@ -67,19 +67,9 @@
           button.addEventListener('click', e => {
             const targetPaneId = e.target.getAttribute('aria-controls');
             const targetPane = accordion.querySelectorAll(`#${targetPaneId}`);
-            const openPane = accordion.querySelectorAll(`.${openClass}`);
 
             // Check the current state of the button and the content it controls.
             if (e.target.getAttribute('aria-expanded') === 'false') {
-              // Close currently open pane.
-              if (openPane.length) {
-                const openPaneId = openPane[0].getAttribute('id');
-                const openPaneButton = accordion.querySelectorAll(
-                  `[aria-controls="${openPaneId}"]`,
-                );
-                openPaneButton[0].setAttribute('aria-expanded', 'false');
-              }
-
               // Show new pane.
               e.target.setAttribute('aria-expanded', 'true');
               targetPane[0].classList.add(openClass);
@@ -102,6 +92,10 @@
                 panesToClose[j].classList.remove(openClass);
                 moreIcon.style.display = 'block';
                 lessIcon.style.display = 'none';
+                panesToClose[j]
+                  .closest('.accordion-pane')
+                  .querySelector('button')
+                  .setAttribute('aria-expanded', 'false');
               };
             });
           });
