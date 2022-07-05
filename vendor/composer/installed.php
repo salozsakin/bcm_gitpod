@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a34dfe1817304d2e635cf09e60de0630d1468876',
+        'reference' => '820c802616de19a22a5c8e12a3607daa66d69c42',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -1479,6 +1479,15 @@
             'reference' => '8.x-1.6',
             'dev_requirement' => false,
         ),
+        'drupal/search_api_solr' => array(
+            'pretty_version' => '4.2.7',
+            'version' => '4.2.7.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/search_api_solr',
+            'aliases' => array(),
+            'reference' => '4.2.7',
+            'dev_requirement' => false,
+        ),
         'drupal/seckit' => array(
             'pretty_version' => '2.0.0',
             'version' => '2.0.0.0',
@@ -1871,7 +1880,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a34dfe1817304d2e635cf09e60de0630d1468876',
+            'reference' => '820c802616de19a22a5c8e12a3607daa66d69c42',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
@@ -2072,6 +2081,15 @@
             'reference' => 'f9a6e59780f630b6ba71b8bb133a8bff2672b19e',
             'dev_requirement' => false,
         ),
+        'maennchen/zipstream-php' => array(
+            'pretty_version' => '2.2.1',
+            'version' => '2.2.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maennchen/zipstream-php',
+            'aliases' => array(),
+            'reference' => '211e9ba1530ea5260b45d90c9ea252f56ec52729',
+            'dev_requirement' => false,
+        ),
         'masterminds/html5' => array(
             'pretty_version' => '2.7.5',
             'version' => '2.7.5.0',
@@ -2119,6 +2137,15 @@
             'replaced' => array(
                 0 => '1.10.2',
             ),
+        ),
+        'myclabs/php-enum' => array(
+            'pretty_version' => '1.8.3',
+            'version' => '1.8.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../myclabs/php-enum',
+            'aliases' => array(),
+            'reference' => 'b942d263c641ddb5190929ff840c68f78713e937',
+            'dev_requirement' => false,
         ),
         'nette/finder' => array(
             'pretty_version' => 'v2.5.3',
@@ -2439,6 +2466,15 @@
                 1 => '1.0',
             ),
         ),
+        'psr/event-dispatcher' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/event-dispatcher',
+            'aliases' => array(),
+            'reference' => 'dbefd12671e8a14ec7f180cab83036ed26714bb0',
+            'dev_requirement' => false,
+        ),
         'psr/event-dispatcher-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
@@ -2729,6 +2765,15 @@
             'aliases' => array(),
             'reference' => '3fad28475bfbdbf8aa5c440f8a8f89824983d85e',
             'dev_requirement' => true,
+        ),
+        'solarium/solarium' => array(
+            'pretty_version' => '6.2.3',
+            'version' => '6.2.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../solarium/solarium',
+            'aliases' => array(),
+            'reference' => 'f91185d07d9d3f40ef92810e182e621c51635e8b',
+            'dev_requirement' => false,
         ),
         'squizlabs/php_codesniffer' => array(
             'pretty_version' => '3.6.2',
