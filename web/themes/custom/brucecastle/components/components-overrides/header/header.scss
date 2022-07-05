@@ -13,6 +13,8 @@
 
 @import '../../00-base/00-global/00-grid/_breakpoints.scss';
 @import '../../00-base/00-global/_02-breakpoints.scss';
+@import '../../00-base/01-colors/_01-colors-used.scss';
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
 
 .lgd-header {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
@@ -54,6 +56,11 @@
 .lgd-header__nav--primary.lgd-header__nav--active {
   display: flex;
   min-height: calc(100vh - 11rem);
+
+  @include small {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
 }
 
 @media screen and (min-width: 48rem) {
@@ -157,15 +164,21 @@
 
 /* Search Region */
 .lgd-region--search {
-  /* Hide search temporarily for MVP launch */
-  display: none;
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
+
+  .form-submit {
+    border: var(--primary);
+
+    &:hover {
+      border: white;
+    }
+  }
 }
 
 @media screen and (min-width: 48rem) {
   .lgd-region--search {
-    margin-left: auto;
+    margin-left: 0.5rem;
   }
 }
 
@@ -202,6 +215,7 @@
 .lgd-region--search .form-submit {
   color: var(--header-search-button-color);
   background-color: var(--header-search-button-bg-color);
+  height: 5rem;
 }
 
 .lgd-region--search .form-submit:hover,
@@ -220,4 +234,62 @@
 
 .no-js .lgd-header__toggle {
   display: none !important;
+}
+
+.block-localgov-sitewide-search-block {
+  display: none;
+}
+
+.block-google-cse {
+  flex-direction: column;
+
+  .google-cse-search-box-form {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 8rem;
+    //border: var(--border);
+    justify-content: space-between;
+    align-items: start;
+
+    .form-text {
+      border: var(--border);
+      min-width: 30rem;
+      height: 5rem;
+    }
+
+    label {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  #google-cse-results {
+    display: none;
+  }
+
+  .google-cse-search-block__search-button {
+    width: 5rem;
+    background-color: $brand-primary;
+    border: none;
+    display: none;
+
+    &:hover,
+    &:focus {
+      background-color: $brand-primary;
+      border: 0.1rem white solid;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
 }

@@ -36,4 +36,4 @@ required:
   - field.field.paragraph.localgov_box_links_listing.localgov_paragraphs
   - paragraphs.paragraphs_type.localgov_box_link
   - paragraphs.paragraphs_type.localgov_banner_primary
-  - google_tag.settings
+  - search.page.google_cse_search

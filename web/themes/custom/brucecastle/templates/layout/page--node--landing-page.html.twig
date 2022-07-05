@@ -100,6 +100,8 @@ tabs region on all localgov_drupal websites. Yay!
   {{ page.messages }}
 {% endif %}
 
+{{ attach_library('brucecastle/header') }}
+
 <main class="main" id="main-content"> {# The "skip to content" link jumps to here. #}
 
   {% if has_content_top %}

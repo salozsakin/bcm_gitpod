@@ -66,6 +66,8 @@ libraries-override:
     css:
       theme:
         css/components/header.css: dist/header.css
+    js:
+      js/header.js: dist/js/components-overrides/header.js
   localgov_base/menu-main:
     css:
       theme:
@@ -108,6 +110,10 @@ libraries-override:
     css:
       theme:
         css/components/news.css: dist/news.css
+  localgov_base/sitewide-search:
+    css:
+      theme:
+        css/components/sitewide-search.css: dist/sitewide-search.css
 
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:
