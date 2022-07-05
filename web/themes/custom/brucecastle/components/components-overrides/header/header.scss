@@ -244,18 +244,24 @@
   flex-direction: column;
 
   .google-cse-search-box-form {
-    display: none;
     position: absolute;
     z-index: 1;
-    top: 8rem;
-    //border: var(--border);
     justify-content: space-between;
     align-items: start;
 
+    @include media-breakpoint-up(md) {
+      display: none;
+      top: 5rem;
+    }
+
     .form-text {
       border: var(--border);
-      min-width: 30rem;
+      min-width: 25rem;
       height: 5rem;
+
+      @include media-breakpoint-up(md) {
+        min-width: 30rem;
+      }
     }
 
     label {
