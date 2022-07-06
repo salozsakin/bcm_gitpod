@@ -55,17 +55,21 @@
     {% if content.field_text_position.0['#markup'] == 'Left' %}
       <div class="image-captions--left">
         {{ content.field_image }}
-        <div class="image-captions__text--left">
-          {{ content.field_caption.0 }}
-        </div>
+        {% if content.field_caption.0 %}
+          <div class="image-captions__text--left">
+            {{ content.field_caption.0 }}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
     {% if content.field_text_position.0['#markup'] == 'Right' %}
       <div class="image-captions--right">
         {{ content.field_image }}
-        <div class="image-captions__text--right">
-          {{ content.field_caption.0 }}
-        </div>
+        {% if content.field_caption.0 %}
+          <div class="image-captions__text--right">
+            {{ content.field_caption.0 }}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </div>
