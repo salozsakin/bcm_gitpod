@@ -76,3 +76,8 @@ accordion:
       dist/accordion.css: {}
   js:
     dist/js/components-overrides/accordion/accordion.js: {}
+
+events-listing:
+  css:
+    theme:
+      dist/events-listing.css: {}
