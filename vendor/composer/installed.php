@@ -406,6 +406,15 @@
                 0 => '9.3.3',
             ),
         ),
+        'drupal/anchor_link' => array(
+            'pretty_version' => '2.5.0',
+            'version' => '2.5.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/anchor_link',
+            'aliases' => array(),
+            'reference' => '8.x-2.5',
+            'dev_requirement' => false,
+        ),
         'drupal/automated_cron' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -950,6 +959,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/facets',
             'aliases' => array(),
             'reference' => '2.0.1',
+            'dev_requirement' => false,
+        ),
+        'drupal/fakeobjects' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/fakeobjects',
+            'aliases' => array(),
+            'reference' => '8.x-1.1',
             'dev_requirement' => false,
         ),
         'drupal/features' => array(
