@@ -30,6 +30,11 @@ settings:
             - Undo
             - Redo
         -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
           name: Lists
           items:
             - BulletedList
