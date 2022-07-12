@@ -81,6 +81,7 @@ Taking this approach also means we can have consistent styling for the
 tabs region on all localgov_drupal websites. Yay!
 #}
 {% if has_tabs %}
+  {{ attach_library('brucecastle/drupal-local-tabs') }}
   {{ page.tabs }}
 {% endif %}
 
