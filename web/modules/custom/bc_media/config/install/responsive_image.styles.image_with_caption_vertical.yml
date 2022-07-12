@@ -20,4 +20,4 @@ image_style_mappings:
     breakpoint_id: localgov_media.bootstrap4_xs
     multiplier: 1x
 breakpoint_group: localgov_media
-fallback_image_style: image_with_caption_vertical_desktop
+fallback_image_style: image_with_caption_vetical_mobile
