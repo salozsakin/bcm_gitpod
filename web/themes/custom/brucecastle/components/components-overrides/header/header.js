@@ -174,7 +174,6 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
-      window.addEventListener('resize', Drupal.debounce(handleCheckIfWindowActuallyResized, 50, false));
 
       // Menu Search.
       const searchBox = context.querySelector('.block-google-cse');
