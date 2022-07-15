@@ -68,6 +68,9 @@ libraries-override:
         css/components/header.css: dist/header.css
     js:
       js/header.js: dist/js/components-overrides/header.js
+    dependencies:
+      - core/drupal
+      - core/drupal.debounce
   localgov_base/menu-main:
     css:
       theme:
