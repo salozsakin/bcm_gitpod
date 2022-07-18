@@ -38,6 +38,36 @@
     text-decoration: none;
   }
 
+  h2 {
+    button {
+      font-size: var(--font-size-h2);
+    }
+  }
+
+  h3 {
+    button {
+      font-size: var(--font-size-h3);
+    }
+  }
+
+  h4 {
+    button {
+      font-size: var(--font-size-h4);
+    }
+  }
+
+  h5 {
+    button {
+      font-size: var(--font-size-h5);
+    }
+  }
+
+  h6 {
+    button {
+      font-size: var(--font-size-h6);
+    }
+  }
+
   button {
     background-color:var(--color-white);
     width: 100%;
