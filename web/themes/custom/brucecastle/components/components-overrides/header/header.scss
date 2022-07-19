@@ -246,17 +246,21 @@
   .google-cse-search-box-form {
     position: absolute;
     z-index: 1;
-    justify-content: space-between;
     align-items: start;
+    width: 100%;
+
+    .form-item {
+      flex-grow: 1;
+    }
 
     @include media-breakpoint-up(md) {
       display: none;
       top: 5rem;
+      width: initial;
     }
 
     .form-text {
       border: var(--border);
-      min-width: 25rem;
       height: 5rem;
 
       @include media-breakpoint-up(md) {
