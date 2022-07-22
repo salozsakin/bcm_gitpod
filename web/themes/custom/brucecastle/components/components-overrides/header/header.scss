@@ -304,6 +304,30 @@
   }
 }
 
+.search-form, .google-cse {
+  margin: 4rem 0;
+
+  .js-form-wrapper {
+    display: flex;
+
+    .form-item {
+      width: 100%;
+    }
+
+    .button {
+      margin: var(--spacing-large) 0;
+    }
+  }
+
+  .search-help-link {
+    display: none;
+  }
+}
+
+form.gsc-search-box {
+  display: none;
+}
+
 button,
 input {
   -webkit-appearance: none;
