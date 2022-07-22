@@ -3,10 +3,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.image_vertical
-    - core.entity_view_mode.media.medium_8_7
-    - core.entity_view_mode.media.responsive_3x2
-    - core.entity_view_mode.media.scale_crop_7_3_large
-    - core.entity_view_mode.media.square
   module:
     - editor
     - linkit
@@ -36,7 +32,7 @@ filters:
   filter_align:
     id: filter_align
     provider: filter
-    status: true
+    status: false
     weight: -49
     settings: {  }
   filter_url:
@@ -88,11 +84,7 @@ filters:
     settings:
       default_view_mode: image_vertical
       allowed_view_modes:
-        default: default
-        medium_8_7: medium_8_7
-        responsive_3x2: responsive_3x2
-        scale_crop_7_3_large: scale_crop_7_3_large
-        square: square
+        image_vertical: image_vertical
       allowed_media_types:
         audio: audio
         document: document
