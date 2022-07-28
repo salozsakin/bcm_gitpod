@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.wysiwyg
+  module:
+    - eu_cookie_compliance
+    - filter
+    - google_cse
+    - localgov_geo
+    - media
+    - system
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false

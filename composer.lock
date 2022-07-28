@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39f631b44d2ee9cb97841b544d2008d3",
+    "content-hash": "68145591c367b9af559d3d51c4086aff",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2403,6 +2403,60 @@
             }
         },
         {
+            "name": "drupal/anchor_link",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/anchor_link.git",
+                "reference": "8.x-2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/anchor_link-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "849e94b2687ffc1f7984604fda929d7201933757"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/fakeobjects": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.5",
+                    "datestamp": "1612887940",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-2.x": "8.2.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vardot",
+                    "homepage": "https://www.drupal.org/vardot",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Rajab Natshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
+                }
+            ],
+            "description": "This plugin module adds the better link dialog and anchor related features to CKEditor in Drupal 8.",
+            "homepage": "https://www.drupal.org/project/anchor_link",
+            "support": {
+                "source": "http://cgit.drupalcode.org/anchor_link",
+                "issues": "https://www.drupal.org/project/issues/anchor_link"
+            }
+        },
+        {
             "name": "drupal/components",
             "version": "2.4.0",
             "source": {
@@ -2564,16 +2618,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.3.17",
+            "version": "9.3.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "20c4f2c5ad062295d5c40f42bc27547570513c8c"
+                "reference": "a2e0d65f7a4f31712ae829e1ff96827a8bb9e438"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/20c4f2c5ad062295d5c40f42bc27547570513c8c",
-                "reference": "20c4f2c5ad062295d5c40f42bc27547570513c8c",
+                "url": "https://api.github.com/repos/drupal/core/zipball/a2e0d65f7a4f31712ae829e1ff96827a8bb9e438",
+                "reference": "a2e0d65f7a4f31712ae829e1ff96827a8bb9e438",
                 "shasum": ""
             },
             "require": {
@@ -2819,7 +2873,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2022-06-21T20:57:41+00:00"
+            "time": "2022-07-20T15:11:47+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -2873,16 +2927,16 @@
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.3.17",
+            "version": "9.3.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "f14b8cb930b1cfde94b37f3dfa968733e1085eb5"
+                "reference": "a552529d38bc45b0b9a0ba9e60fce687b5cb3366"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/f14b8cb930b1cfde94b37f3dfa968733e1085eb5",
-                "reference": "f14b8cb930b1cfde94b37f3dfa968733e1085eb5",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/a552529d38bc45b0b9a0ba9e60fce687b5cb3366",
+                "reference": "a552529d38bc45b0b9a0ba9e60fce687b5cb3366",
                 "shasum": ""
             },
             "require": {
@@ -2891,7 +2945,7 @@
                 "doctrine/annotations": "1.13.2",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.3.17",
+                "drupal/core": "9.3.19",
                 "egulias/email-validator": "3.1.2",
                 "guzzlehttp/guzzle": "6.5.8",
                 "guzzlehttp/promises": "1.5.1",
@@ -2952,7 +3006,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
-            "time": "2022-06-21T20:57:41+00:00"
+            "time": "2022-07-20T15:11:47+00:00"
         },
         {
             "name": "drupal/crop",
@@ -4100,6 +4154,59 @@
                 "source": "git://git.drupal.org/project/facets.git",
                 "issues": "https://www.drupal.org/project/issues/facets",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
+        {
+            "name": "drupal/fakeobjects",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fakeobjects.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fakeobjects-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "0a7a3ead609d1efd62f4f4803a41317970d8292d"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1592829875",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Quillen (kevinquillen)",
+                    "homepage": "https://www.drupal.org/u/kevinquillen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
+                }
+            ],
+            "description": "Adds the FakeObjects plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
+            "homepage": "http://drupal.org/project/fakeobjects",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/fakeobjects",
+                "issues": "http://drupal.org/project/issues/fakeobjects"
             }
         },
         {
@@ -5445,6 +5552,52 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/linkit",
                 "issues": "http://drupal.org/project/linkit"
+            }
+        },
+        {
+            "name": "drupal/media_embed_extra",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_embed_extra.git",
+                "reference": "1.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_embed_extra-1.0.0-beta1.zip",
+                "reference": "1.0.0-beta1",
+                "shasum": "acfbfe8b6699e04563ac6a90bdab702c5dcd0437"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/media": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta1",
+                    "datestamp": "1613522478",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ericmaster",
+                    "homepage": "https://www.drupal.org/user/334757"
+                }
+            ],
+            "description": "Extra options for media embed widget.",
+            "homepage": "https://www.drupal.org/project/media_embed_extra",
+            "support": {
+                "source": "http://cgit.drupalcode.org/media_embed_extra",
+                "issues": "https://www.drupal.org/project/issues/media_embed_extra"
             }
         },
         {
@@ -17478,6 +17631,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/media_embed_extra": 10,
         "drupal/webp": 10
     },
     "prefer-stable": true,

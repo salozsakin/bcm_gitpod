@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies: {  }
 name: image_with_caption_vertical_desktop
-label: 'Image with caption vertical desktop 3:4 (600x800px)'
+label: 'Image with caption vertical desktop(600px width)'
 effects:
-  d092e58f-a8a8-415b-a6c8-58cd671fdba0:
-    uuid: d092e58f-a8a8-415b-a6c8-58cd671fdba0
+  e86cfb51-a84c-49c4-9514-452f20d4be77:
+    uuid: e86cfb51-a84c-49c4-9514-452f20d4be77
     id: image_scale
     weight: 1
     data:

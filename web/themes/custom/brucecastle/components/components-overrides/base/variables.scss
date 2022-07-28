@@ -15,6 +15,10 @@ html {
   font-size: 62.5%;
 }
 
+.toolbar-menu {
+  font-size: small;
+}
+
 body {
   /* Widths and Spacing */
   --width-extra-large: 118rem; /* 1180px */
@@ -156,8 +160,8 @@ body {
   --header-services-button-color-hover: var(--color-white);
   --header-logo-width: 10rem;
   --header-search-button-color: var(--color-white);
-  --header-search-button-bg-color: var(--color-accent);
-  --header-search-button-color-hover: var(--color-accent);
+  --header-search-button-bg-color: var(--c-primary);
+  --header-search-button-color-hover: var(--c-primary);
   --header-search-button-bg-color-hover: var(--color-white);
   --header-search-input-border: none;
 
@@ -200,7 +204,7 @@ body {
 
   /* Checkbox Items */
   --checkbox-select-focus-color: var(--color-focus);
-  --checkbox-select-outline-color: var(--color-black);
+  --checkbox-select-outline-color: var(--c-secondary);
 
   /* Radio Items */
   --radio-select-focus-color: var(--color-focus);
@@ -210,11 +214,11 @@ body {
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);
   --button-text-color: var(--color-white);
-  --button-text-color-hover: var(--color-accent);
+  --button-text-color-hover: var(--c-primary);
   --button-icon-color: var(--button-text-color);
   --button-icon-color-hover: var(--color-accent);
-  --button-border-color: var(--color-accent);
-  --button-bg-color: var(--color-accent);
+  --button-border-color: var(--c-primary);
+  --button-bg-color: var(--c-primary);
   --button-bg-color-hover: var(--color-white);
   --button-font-family: var(--font-primary);
   --button-border-radius: 0;
@@ -236,7 +240,7 @@ body {
   --option-hover-color: var(--color-accent);
 
   /* Sidebar Items */
-  --sidebar-exposed-form-bg-color: var(--color-grey-light);
+  --sidebar-exposed-form-bg-color: var(--c-light-grey);
   --sidebar-exposed-form-padding-vertical: var(--spacing-larger);
   --sidebar-exposed-form-padding-horizontal: var(--spacing-larger);
   --sidebar-exposed-form-item-spacing: var(--spacing);

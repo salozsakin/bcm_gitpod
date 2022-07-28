@@ -81,6 +81,7 @@ Taking this approach also means we can have consistent styling for the
 tabs region on all localgov_drupal websites. Yay!
 #}
 {% if has_tabs %}
+  {{ attach_library('brucecastle/drupal-local-tabs') }}
   {{ page.tabs }}
 {% endif %}
 
@@ -99,6 +100,8 @@ tabs region on all localgov_drupal websites. Yay!
 {% if has_messages %}
   {{ page.messages }}
 {% endif %}
+
+{{ attach_library('brucecastle/header') }}
 
 <main class="main" id="main-content"> {# The "skip to content" link jumps to here. #}
 

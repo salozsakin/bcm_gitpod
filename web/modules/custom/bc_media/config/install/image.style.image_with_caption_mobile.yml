@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies: {  }
 name: image_with_caption_mobile
-label: 'Image with caption mobile 19:9 (450x250px)'
+label: 'Image with caption mobile (450px width)'
 effects:
-  442d82c0-de6d-42cf-a70f-fc9e8e9a3926:
-    uuid: 442d82c0-de6d-42cf-a70f-fc9e8e9a3926
+  435655e3-4d9d-49be-853e-561c20e8a4e3:
+    uuid: 435655e3-4d9d-49be-853e-561c20e8a4e3
     id: image_scale
     weight: 1
     data:
