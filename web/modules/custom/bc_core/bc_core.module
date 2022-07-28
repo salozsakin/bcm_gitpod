@@ -1,0 +1,46 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bc_core_form_editor_media_dialog_alter(&$form, FormStateInterface &$form_state) {
+
+  if (isset($form_state->getUserInput()['editor_object'])) {
+    $editor_object = $form_state->getUserInput()['editor_object'];
+    $media_embed_element = $editor_object['attributes'];
+  }
+  else {
+    // Retrieve the user input from form state.
+    $media_embed_element = $form_state->get('media_embed_element');
+  }
+
+  $form['hspace'] = [
+    '#title' => t('hspace'),
+    '#type' => 'number',
+    '#step' => '1',
+    '#default_value' => empty($media_embed_element['data-hspace']) ? '' : $media_embed_element['data-hspace'],
+    '#parents' => ['attributes', 'data-hspace'],
+  ];
+
+  $form['vspace'] = [
+    '#title' => t('vspace'),
+    '#type' => 'number',
+    '#step' => '1',
+    '#default_value' => empty($media_embed_element['data-vspace']) ? '' : $media_embed_element['data-vspace'],
+    '#parents' => ['attributes', 'data-vspace'],
+  ];
+  $form['align'] = [
+    '#title' => t('Align'),
+    '#type' => 'radios',
+    '#options' => [
+      'none' => t('None'),
+      'left' => t('Left'),
+      'center' => t('Center'),
+      'right' => t('Right'),
+    ],
+    '#default_value' => empty($media_embed_element['data-align']) ? 'none' : $media_embed_element['data-align'],
+    '#parents' => ['attributes', 'data-align'],
+  ];
+}

@@ -55,7 +55,7 @@ filters:
     status: true
     weight: -47
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p class="alert alert-info alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow"> <h1> <pre> <mark> <ul type class="list-checked"> <u> <img src alt data-entity-type data-entity-uuid data-align data-caption data-width data-height> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption data-width data-height alt title> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title name class="external-link pdf-link btn btn-start col-sm-6 mt-3"> <hr>'
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p class="alert alert-info alert-danger alert-primary alert-success callout callout-primary callout-success callout-danger callout-teal callout-carbon callout-yellow"> <h1> <pre> <mark> <ul type class="list-checked"> <u> <img src alt data-entity-type data-entity-uuid data-align vspace hspace data-caption data-width data-height data-border> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption data-width data-height data-vspace data-hspace alt title data-border> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title name class="external-link pdf-link btn btn-start col-sm-6 mt-3"> <hr>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -88,7 +88,6 @@ filters:
         custom_size: custom_size
         wysiwyg_default_image: wysiwyg_default_image
       allowed_media_types:
-        audio: audio
         document: document
         image: image
         remote_video: remote_video
