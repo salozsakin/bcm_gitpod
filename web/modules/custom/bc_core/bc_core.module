@@ -1,41 +1,13 @@
 <?php
 
-function bc_core_form_google_search_block_form_alter($form, &$form_id) {
-  $form_id = 'google_cse_search_box_form';
-  $form['#action'] = 'search/google/';
-  $form['container'] = array(
-    '#type' => 'container',
-    '#attributes' => array(
-      'class' => array('container-inline'),
-    ),
-  );
-  $form['container']['query'] = array(
-    '#type' => 'textfield',
-    '#size' => 15,
-  );
-  $form['container']['sa'] = array(
-    '#type' => 'submit',
-    '#value' => t('Search'),
-  );
+/**
+ * @file
+ * Hook functions for bc_core.
+ */
 
-  $form['#submit'][] = 'bc_core_google_search_block_form_submit';
-
-  return $form;
-
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bc_core_form_google_cse_search_box_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, string $form_id) {
+  $form['#action'] = '/search/google';
 }
-
-function bc_core_google_search_block_form_submit($form, $form_state) {
-  $form_state['redirect'] = 'search/google/' . $form_state['values']['query'];
-}
-
-///*
-//* Implements hook_preprocess_block().
-//*/
-//function bc_core_preprocess_block(array &$variables) {;
-//
-//  $block_manager = \Drupal::service('plugin.manager.block');
-//
-//  if ($variables['plugin_id'] = 'googlecse_2') {
-//    $input = \Drupal::request()->query->get('q');
-//  }
-//}

@@ -1,0 +1,4 @@
+.block-local-tasks-block{position:fixed;bottom:2rem;z-index:999;left:50%;transform:translateX(-50%)}.block-local-tasks-block>ul{list-style:none;padding:0;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:space-evenly;justify-content:space-evenly}.block-local-tasks-block>ul li{padding:0;margin:0;margin-bottom:1rem}.block-local-tasks-block>ul li::before{content:none}.block-local-tasks-block>ul li a{display:block;padding:0.5rem 2rem;border:0.2rem solid #006980;border:0.2rem solid var(--c-secondary);min-width:10rem;text-align:center}.block-local-tasks-block>ul li a.is-active{background-color:var(--c-white)}
+
+
+/*# sourceMappingURL=block-drupal-tasks-tabs.css.map*/
