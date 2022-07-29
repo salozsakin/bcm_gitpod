@@ -216,6 +216,7 @@ function localgov_events_form_views_exposed_form_alter(&$form, FormStateInterfac
       '#attributes' => [
         'type' => 'date',
         'class' => ['js-date-picker-start', 'visually-hidden'],
+        'tabindex' => -1,
       ],
     ];
     unset($form['start']);
@@ -225,6 +226,7 @@ function localgov_events_form_views_exposed_form_alter(&$form, FormStateInterfac
       '#attributes' => [
         'type' => 'date',
         'class' => ['js-date-picker-end', 'visually-hidden'],
+        'tabindex' => -1,
       ],
     ];
     unset($form['end']);
