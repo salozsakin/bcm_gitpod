@@ -183,8 +183,8 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       else {
         const searchButton = document.createElement("button");
         const searchIcon = document.createElement("img");
-        const searchTextBox = context.getElementById(
-          'google-cse-search-box-form',
+        const searchTextBox = context.querySelector(
+          '.google-cse-search-box-form',
         );
         searchIcon.setAttribute(
           'src',
@@ -221,4 +221,3 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     }
   };
 }(Drupal));
-

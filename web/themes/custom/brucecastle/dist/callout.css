@@ -1,2 +1,4 @@
 .callout{padding:1.5rem;text-align:center;color:var(--color-white);font-size:var(--font-size-large);font-weight:bold;word-break:break-word}.callout a{color:var(--color-white)}.callout a:focus{color:var(--color-white);background-color:var(--color-grey-dark)}.callout-primary{background-color:var(--color-accent)}.callout-success{background-color:var(--color-success)}.callout-danger{background-color:var(--color-danger)}.callout-teal{background-color:teal}.callout-carbon{background-color:var(--color-grey-dark)}.callout-yellow,.callout-yellow a{color:var(--color-grey-dark);background-color:var(--color-yellow)}
 
+
+/*# sourceMappingURL=callout.css.map*/
