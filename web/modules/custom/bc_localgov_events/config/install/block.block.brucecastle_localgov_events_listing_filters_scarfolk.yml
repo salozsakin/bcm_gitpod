@@ -11,7 +11,7 @@ dependencies:
 id: brucecastle_localgov_events_listing_filters_scarfolk
 theme: brucecastle
 region: sidebar_first
-weight: -9
+weight: -16
 provider: null
 plugin: 'views_exposed_filter_block:localgov_events_listing-page_all_events'
 settings:

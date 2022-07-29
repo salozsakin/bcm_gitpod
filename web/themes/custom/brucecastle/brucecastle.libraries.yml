@@ -77,7 +77,14 @@ accordion:
   js:
     dist/js/components-overrides/accordion/accordion.js: {}
 
+<<<<<<< HEAD
 drupal-local-tabs:
   css:
     theme:
       dist/block-drupal-tasks-tabs.css: {}
+=======
+events-listing:
+  css:
+    theme:
+      dist/events-listing.css: {}
+>>>>>>> BC-29/event-listing
