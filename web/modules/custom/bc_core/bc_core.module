@@ -31,6 +31,15 @@ function bc_core_form_editor_media_dialog_alter(&$form, FormStateInterface &$for
     '#default_value' => empty($media_embed_element['data-vspace']) ? '' : $media_embed_element['data-vspace'],
     '#parents' => ['attributes', 'data-vspace'],
   ];
+
+  $form['border'] = [
+    '#title' => t('border'),
+    '#type' => 'textfield',
+    '#step' => '1',
+    '#default_value' => empty($media_embed_element['data-border']) ? '' : $media_embed_element['data-border'],
+    '#parents' => ['attributes', 'data-border'],
+  ];
+
   $form['align'] = [
     '#title' => t('Align'),
     '#type' => 'radios',
