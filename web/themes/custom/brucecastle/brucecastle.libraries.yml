@@ -86,3 +86,10 @@ events-listing:
   css:
     theme:
       dist/events-listing.css: {}
+
+paragraph-localgov-text:
+  css:
+    theme:
+      dist/paragraph-localgov-text.css: {}
+  js:
+    dist/js/components-overrides/paragraph-localgov-text/paragraph-localgov-text.js: {}
