@@ -5,76 +5,80 @@
   }
 }
 
-.events-listing__filters form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .date-picker {
-    order: 1;
-    border: none;
-    padding: 0;
-
-    legend {
-      display: none;
-    }
-
-    .form-item {
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-
-      &:first-child {
-        margin-top: 2.2rem;
-      }
-    }
-
-    .fieldset-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
+.events-listing__filters {
+  .lgd-region {
+    width: 100%;
   }
 
-  .form-item-field-localgov-event-tags-target-id {
-    order: 2;
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 
-    .form-select {
+    .date-picker {
+      order: 1;
       border: none;
       padding: 0;
-      margin-top: 2.4rem;
+      margin-left: 1rem;
 
-      &:focus {
-        outline: none;
-
-        option:checked {
-          // Overriding user agent stylesheet
-          background-color: #006980 !important;
-          color: #ffffff !important;
-        }
+      legend {
+        display: none;
       }
 
-      option {
-        display: inline-block;
-        padding: 1rem;
-        background-color: var(--c-primary);
-        color: var(--color-white);
+      .form-item {
         margin-right: 1rem;
         margin-bottom: 1rem;
 
-        &:hover,
+        &:first-child {
+          margin-top: 2.4rem;
+        }
+      }
+
+      .fieldset-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .form-item-field-localgov-event-tags-target-id {
+      order: 2;
+
+      .form-select {
+        border: none;
+        padding: 0;
+        margin-top: 2.4rem;
+
         &:focus {
-          background-color: var(--c-secondary);
+          outline: none;
+
+          option:checked {
+            // Overriding user agent stylesheet
+            background-color: #006980 !important;
+            color: #ffffff !important;
+          }
+        }
+
+        option {
+          display: inline-block;
+          padding: 1rem;
+          background-color: var(--c-primary);
+          color: var(--color-white);
+          margin-right: 1rem;
+          margin-bottom: 1rem;
+
+          &:hover,
+          &:focus {
+            background-color: var(--c-secondary);
+          }
         }
       }
     }
-  }
 
-  .form-actions {
-    order: 3;
-    margin-top: 2.4rem;
-
-    input[type="submit"] {
-      padding: 1rem;
+    .form-actions {
+      order: 3;
+      margin-top: 2.4rem;
+      margin-left: auto;
     }
   }
 }
