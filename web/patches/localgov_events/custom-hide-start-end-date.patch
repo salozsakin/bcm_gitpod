@@ -12,6 +12,7 @@ index f40036fe2..8aaeea34e 100644
          'type' => 'date',
 -        'class' => ['js-date-picker-start'],
 +        'class' => ['js-date-picker-start', 'visually-hidden'],
++        'tabindex' => -1',
        ],
      ];
      unset($form['start']);
@@ -23,6 +24,7 @@ index f40036fe2..8aaeea34e 100644
          'type' => 'date',
 -        'class' => ['js-date-picker-end'],
 +        'class' => ['js-date-picker-end', 'visually-hidden'],
++        'tabindex' => -1',
        ],
      ];
      unset($form['end']);
