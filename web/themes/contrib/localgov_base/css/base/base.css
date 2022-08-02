@@ -28,10 +28,12 @@ body {
   font-family: var(--font-primary);
   font-size: var(--font-size);
   line-height: var(--line-height);
+  color: var(--color-text);
 }
 
 a {
   color: var(--color-link);
+  transition: var(--transition-time);
 }
 
 a:hover {
@@ -39,7 +41,6 @@ a:hover {
 }
 
 a:focus {
-  transition: var(--transition-time);
   text-decoration: none;
   color: var(--color-black);
   outline: 3px solid transparent;
@@ -49,11 +50,17 @@ a:focus {
 }
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
+.h5,
 h6,
+.h6,
 .heading {
   margin-bottom: var(--vertical-rhythm-spacing);
   font-family: var(--font-secondary);
@@ -61,36 +68,60 @@ h6,
 
 h1,
 .h1 {
+  font-family: var(--font-heading-1);
   font-size: var(--font-size-h1);
+  color: var(--heading-1-color);
+  line-height: var(--heading-1-line-height);
+  font-weight: var(--heading-1-font-weight);
 }
 
 h2,
 .h2 {
+  font-family: var(--font-heading-2);
   font-size: var(--font-size-h2);
+  color: var(--heading-2-color);
+  line-height: var(--heading-2-line-height);
+  font-weight: var(--heading-2-font-weight);
 }
 
 h3,
 .h3 {
+  font-family: var(--font-heading-3);
   font-size: var(--font-size-h3);
+  color: var(--heading-3-color);
+  line-height: var(--heading-3-line-height);
+  font-weight: var(--heading-3-font-weight);
 }
 
 h4,
 .h4 {
+  font-family: var(--font-heading-4);
   font-size: var(--font-size-h4);
   font-weight: bold;
+  color: var(--heading-4-color);
+  line-height: var(--heading-4-line-height);
+  font-weight: var(--heading-4-font-weight);
 }
 
 h5,
 .h5 {
+  font-family: var(--font-heading-5);
   font-size: var(--font-size-h5);
   font-variant: small-caps;
+  color: var(--heading-5-color);
+  line-height: var(--heading-5-line-height);
+  font-weight: var(--heading-5-font-weight);
 }
 
 h6,
 .h6 {
   text-decoration: underline;
+  font-family: var(--font-heading-6);
   font-size: var(--font-size-h6);
   font-variant: small-caps;
+  color: var(--heading-6-color);
+  line-height: var(--heading-6-line-height);
+  font-weight: var(--heading-6-font-weight);
 }
 
 img {

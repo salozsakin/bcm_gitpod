@@ -113,7 +113,7 @@ class ConditionFieldItem extends FieldItemBase {
       '#type' => 'checkboxes',
       '#title' => $this->t('Enabled plugins'),
       '#options' => $condition_plugins,
-      '#default_value' => $enabled_plugins
+      '#default_value' => $enabled_plugins,
     ];
 
     return $element;

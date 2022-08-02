@@ -47,24 +47,24 @@ class OfficeHoursFormatterStatus extends OfficeHoursFormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
-    $settings = $this->getSettings();
-
     // Alter the default settings, to calculate the cache correctly.
     // The status formatter has no UI for this setting.
     $this->setSetting('show_closed', 'next');
-
+    $settings = $this->getSettings();
     /** @var \Drupal\office_hours\Plugin\Field\FieldType\OfficeHoursItemListInterface $items */
+    $field_definition = $items->getFieldDefinition();
     $elements += [
       '#theme' => 'office_hours_status',
+      '#parent' => $field_definition,
       '#is_open' => $items->isOpen(),
       '#open_text' => (string) $this->t($settings['current_status']['open_text']),
       '#closed_text' => (string) $this->t($settings['current_status']['closed_text']),
       '#position' => $this->settings['current_status']['position'],
-      '#cache' => [
-        'max-age' => $this->getStatusTimeLeft($items, $langcode),
-        'tags' => ['office_hours:field.status'],
-      ],
     ];
+
+    // Add a ['#cache']['max-age'] attribute to $elements.
+    // Note: This invalidates a previous Cache in Status Formatter.
+    $this->addCacheMaxAge($items, $elements);
 
     return $elements;
   }

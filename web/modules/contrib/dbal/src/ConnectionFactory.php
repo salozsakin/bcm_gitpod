@@ -72,6 +72,9 @@ class ConnectionFactory {
       if (isset($info['port'])) {
         $options['port'] = $info['port'];
       }
+      if (isset($info['pdo'])) {
+        $options['driverOptions'] = $info['pdo'];
+      }
       $this->cache[$target] = DriverManager::getConnection($options, new Configuration());
       if ($info['driver'] == 'sqlite') {
         $this->sqliteDatabases($this->cache[$target], $info['prefix'], $info['database']);

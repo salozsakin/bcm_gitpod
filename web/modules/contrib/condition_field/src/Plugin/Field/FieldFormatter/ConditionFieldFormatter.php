@@ -71,8 +71,7 @@ class ConditionFieldFormatter extends FormatterBase implements ContainerFactoryP
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      // TODO: no output.
-      $elements[$delta] = ['#markup' => $this->viewValue($item)];
+      $elements[$delta] = $this->viewValue($item);
     }
 
     return $elements;
@@ -84,11 +83,27 @@ class ConditionFieldFormatter extends FormatterBase implements ContainerFactoryP
    * @param \Drupal\Core\Field\FieldItemInterface $item
    *   One field item.
    *
-   * @return string
-   *   The textual output generated.
+   * @return array
+   *   The generated output.
    */
   protected function viewValue(FieldItemInterface $item) {
-    return implode(', ', array_keys($item->conditions));
+    $summaries = [];
+    $conditions = $item->conditions;
+    foreach ($conditions as $condition_id => $config) {
+      /** @var \Drupal\Core\Condition\ConditionInterface $condition */
+      $condition = $this->manager->createInstance($condition_id, isset($config) ? $config : []);
+      $label = $condition->getPluginDefinition()['label'];
+      $summary = $condition->summary();
+      $summaries[$condition_id] = $this->t(
+        '<strong>@label</strong>: @summary',
+        ['@label' => $label, '@summary' => $summary]
+      );
+    }
+
+    return [
+      '#theme' => 'item_list',
+      '#items' => $summaries
+    ];
   }
 
 }
