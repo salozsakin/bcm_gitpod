@@ -93,3 +93,8 @@ paragraph-localgov-text:
       dist/paragraph-localgov-text.css: {}
   js:
     dist/js/components-overrides/paragraph-localgov-text/paragraph-localgov-text.js: {}
+
+google_search:
+  css:
+    theme:
+      dist/google-search.css: { }
