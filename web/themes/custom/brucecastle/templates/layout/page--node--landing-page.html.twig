@@ -70,6 +70,8 @@ probably always return true, but no harm in checking.
 ]
 %}
 
+{{ attach_library('brucecastle/header') }}
+
 {#
 We create a dedicated tabs region and place it at the top of the page.
 This is to make sure tabs don't interfere with any other content, but
@@ -80,6 +82,7 @@ content to cover tabs and other issues.
 Taking this approach also means we can have consistent styling for the
 tabs region on all localgov_drupal websites. Yay!
 #}
+
 {% if has_tabs %}
   {{ page.tabs }}
 {% endif %}
