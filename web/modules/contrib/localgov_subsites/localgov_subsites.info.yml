@@ -1,5 +1,5 @@
 name: LocalGov Subsites
-description: Provides subsite sections using page builder paragraph types for LocalGovDrupal.
+description: Provides subsite sections using page builder paragraph types for LocalGov Drupal.
 core_version_requirement: ^8.9 || ^9
 type: module
 package: LocalGov Drupal
@@ -15,8 +15,8 @@ dependencies:
   - entity_hierarchy:entity_hierarchy
   - entity_hierarchy:entity_hierarchy_breadcrumb
   - field_group:field_group
-  - paragraphs:paragraphs
+  - paragraphs:paragraphs (>=8.x-1.13)
   - layout_paragraphs:layout_paragraphs
-  - localgov_subsites:localgov_subsites_paragraphs
+  - localgov_paragraphs:localgov_subsites_paragraphs
   - localgov_core:localgov_core
   - localgov_topics:localgov_topics

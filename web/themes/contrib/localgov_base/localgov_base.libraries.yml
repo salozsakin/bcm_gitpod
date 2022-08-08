@@ -1,5 +1,5 @@
 # The global library is added via localgov_base.theme file.
-# This is so we can do a check that the "Remove CSS" theme setting 
+# This is so we can do a check that the "Remove CSS" theme setting
 # is not turned on.
 global:
   css:
@@ -15,7 +15,7 @@ global:
       css/components/messages.css: {}
   # Declare dependencies for other libraries that we want to load
   # on every page.
-  dependencies:  
+  dependencies:
     - localgov_base/grid
     - localgov_base/header
     - localgov_base/footer
@@ -172,6 +172,12 @@ link-and-summary:
       css/components/link-and-summary.ie11.css: {}
       css/components/link-and-summary.css: {}
 
+link:
+  css:
+    theme:
+      css/components/link.ie11.css: {}
+      css/components/link.css: {}
+
 key-contacts:
   css:
     theme:
@@ -267,3 +273,8 @@ leaflet:
     theme:
       css/components/leaflet.ie11.css: {}
       css/components/leaflet.css: {}
+
+video:
+  css:
+    theme:
+      css/components/video.css: {}

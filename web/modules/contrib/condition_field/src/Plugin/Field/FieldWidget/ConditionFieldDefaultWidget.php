@@ -25,7 +25,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   }
  * )
  */
-class ConditionFieldDefaultWidget extends WidgetBase implements ContainerFactoryPluginInterface {
+class ConditionFieldDefaultWidget extends WidgetBase {
 
   /**
    * The condition plugin manager.
@@ -137,7 +137,7 @@ class ConditionFieldDefaultWidget extends WidgetBase implements ContainerFactory
    * @return array
    *   The form array with the visibility UI added in.
    *
-   * @see Drupal\block\BlockForm::buildVisibilityInterface()
+   * @see \Drupal\block\BlockForm::buildVisibilityInterface()
    */
   protected function buildVisibilityInterface(array $form, FormStateInterface $form_state, array $condition_config = []) {
     $enabled_plugins = $this->fieldDefinition->getSetting('enabled_plugins');

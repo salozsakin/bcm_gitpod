@@ -53,7 +53,7 @@
   $(document).on('leaflet.map', function(e, settings, lMap, mapid) {
 
     // Executes once per mapid.
-    $(document).once('leaflet_map_event_' + mapid).each(function() {
+    once('leaflet_map_event_' + mapid, 'html').forEach(function() {
       // Set the start center and the start zoom, and initialize the reset_map control.
       if (!Drupal.Leaflet[mapid].start_center && !Drupal.Leaflet[mapid].start_zoom) {
         Drupal.Leaflet[mapid].start_center = Drupal.Leaflet[mapid].lMap.getCenter();
@@ -83,6 +83,15 @@
         if (content.length) {
           let url = content.data('leaflet-ajax-popup');
           Drupal.ajax({url: url}).execute().done(function () {
+
+            // Copy the html we received via AJAX to the popup, so we won't
+            // have to make another AJAX call (#see 3258780).
+            e.popup.setContent(element.innerHTML);
+
+            //Call update() so Leaflet refreshes the map, panning it if
+            // necessary to bring the full popup into view (#see 3258780).
+            e.popup.update();
+
             // Attach drupal behaviors on new content.
             Drupal.attachBehaviors(element, drupalSettings);
           });
@@ -151,15 +160,11 @@
       self.lMap.fitWorld();
     }
 
-    // Add attribution.
-    if (self.settings.attributionControl && self.map_definition.attribution) {
-      self.lMap.attributionControl.setPrefix(self.map_definition.attribution.prefix);
-      self.attributionControl.addAttribution(self.map_definition.attribution.text);
-    }
-
     // Add Fullscreen Control, if requested.
-    if (self.settings.fullscreen_control) {
-      self.lMap.addControl(new L.Control.Fullscreen());
+    if (self.settings.fullscreen && self.settings.fullscreen.control) {
+      L.control.fullscreen(
+        JSON.parse(self.settings.fullscreen.options)
+      ).addTo(self.lMap);
     }
 
   };
@@ -380,13 +385,16 @@
       icon_options.iconSize = new L.Point(parseInt(options.iconSize.x), parseInt(options.iconSize.y));
     }
     if (options.iconAnchor && options.iconAnchor.x && options.iconAnchor.y) {
-      icon_options.iconAnchor = new L.Point(parseFloat(options.iconAnchor.x), parseFloat(options.iconAnchor.y));
+      icon_options.iconAnchor = new L.Point(parseInt(options.iconAnchor.x), parseInt(options.iconAnchor.y));
     }
     if (options.popupAnchor && options.popupAnchor.x && options.popupAnchor.y) {
       icon_options.popupAnchor = new L.Point(parseInt(options.popupAnchor.x), parseInt(options.popupAnchor.y));
     }
     if (options.shadowUrl) {
       icon_options.shadowUrl = options.shadowUrl;
+    }
+    if (options.iconRetinaUrl) {
+      icon_options.iconRetinaUrl = options.iconRetinaUrl;
     }
     if (options.shadowSize && options.shadowSize.x && options.shadowSize.y) {
       icon_options.shadowSize = new L.Point(parseInt(options.shadowSize.x), parseInt(options.shadowSize.y));
@@ -409,11 +417,11 @@
     if (options.iconSize) {
       icon.options.iconSize = new L.Point(parseInt(options.iconSize.x, 10), parseInt(options.iconSize.y, 10));
     }
-    if (options.iconAnchor && !isNaN(options.iconAnchor.x) && !isNaN(options.iconAnchor.y)) {
-      icon.options.iconAnchor = new L.Point(parseFloat(options.iconAnchor.x), parseFloat(options.iconAnchor.y));
+    if (options.iconAnchor && options.iconAnchor.x && options.iconAnchor.y) {
+      icon.options.iconAnchor = new L.Point(parseInt(options.iconAnchor.x), parseInt(options.iconAnchor.y));
     }
     if (options.popupAnchor && !isNaN(options.popupAnchor.x) && !isNaN(options.popupAnchor.y)) {
-      icon.options.popupAnchor = new L.Point(parseFloat(options.popupAnchor.x), parseFloat(options.popupAnchor.y));
+      icon.options.popupAnchor = new L.Point(parseInt(options.popupAnchor.x), parseInt(options.popupAnchor.y));
     }
 
     return icon;

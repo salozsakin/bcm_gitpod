@@ -22,7 +22,7 @@ use Solarium\Exception\UnexpectedValueException;
  * This base class provides access to the response and decoded data. If you need more functionality
  * like resultset parsing use one of the subclasses
  */
-class Result implements ResultInterface, \JsonSerializable
+class Result implements ResultInterface
 {
     /**
      * Response object.
@@ -126,14 +126,5 @@ class Result implements ResultInterface, \JsonSerializable
         }
 
         return $this->data;
-    }
-
-    #[\ReturnTypeWillChange]
-    /**
-     * {@inheritdoc}
-     */
-    public function jsonSerialize()
-    {
-        return $this->getData();
     }
 }

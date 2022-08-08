@@ -67,7 +67,6 @@ class PivotFacet extends AbstractFacet
         return $this;
     }
 
-    #[\ReturnTypeWillChange]
     /**
      * {@inheritdoc}
      */

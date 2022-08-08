@@ -2,6 +2,7 @@
 
 namespace Drupal\leaflet\Plugin\Field\FieldWidget;
 
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\geofield\Plugin\GeofieldBackendManager;
 use Drupal\leaflet\LeafletSettingsElementsTrait;
 use Drupal\Core\Field\FieldDefinitionInterface;
@@ -56,9 +57,16 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
   /**
    * The token service.
    *
-   * @var \Drupal\core\Utility\Token
+   * @var \Drupal\Core\Utility\Token
    */
   protected $token;
+
+  /**
+   * The language manager.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  private $languageManager;
 
   /**
    * Get maps available for use with Leaflet.
@@ -96,8 +104,10 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
    *   The module handler.
    * @param \Drupal\Core\Utility\LinkGeneratorInterface $link_generator
    *   The Link Generator service.
-   * @param \Drupal\core\Utility\Token $token
+   * @param \Drupal\Core\Utility\Token $token
    *   The token service.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $languageManager
+   *   The language manager.
    */
   public function __construct(
     $plugin_id,
@@ -111,7 +121,8 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
     LeafletService $leaflet_service,
     ModuleHandlerInterface $module_handler,
     LinkGeneratorInterface $link_generator,
-    Token $token
+    Token $token,
+    LanguageManagerInterface $languageManager
   ) {
     parent::__construct(
       $plugin_id,
@@ -127,6 +138,7 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
     $this->moduleHandler = $module_handler;
     $this->link = $link_generator;
     $this->token = $token;
+    $this->languageManager = $languageManager;
   }
 
   /**
@@ -145,7 +157,8 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
       $container->get('leaflet.service'),
       $container->get('module_handler'),
       $container->get('link_generator'),
-      $container->get('token')
+      $container->get('token'),
+      $container->get('language_manager')
     );
   }
 
@@ -154,7 +167,8 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
    */
   public static function defaultSettings() {
     $base_layers = self::getLeafletMaps();
-    return [
+    // Inherit basic defaultSettings from GeofieldDefaultWidget:
+    return array_merge(parent::defaultSettings(), [
       'map' => [
         'leaflet_map' => array_shift($base_layers),
         'height' => 400,
@@ -162,7 +176,6 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
         'map_position' => self::getDefaultSettings()['map_position'],
         'locate' => TRUE,
         'scroll_zoom_enabled' => TRUE,
-        'fullscreen_control' => TRUE,
       ],
       'input' => [
         'show' => TRUE,
@@ -175,22 +188,26 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
         'drawRectangle' => TRUE,
         'drawPolygon' => TRUE,
         'drawCircle' => FALSE,
+        'drawText' => FALSE,
         'editMode' => TRUE,
         'dragMode' => TRUE,
         'cutPolygon' => FALSE,
         'removalMode' => TRUE,
-        'rotateMode'=>FALSE,
+        'rotateMode' => FALSE,
       ],
       'reset_map' => self::getDefaultSettings()['reset_map'],
       'path' => self::getDefaultSettings()['path'],
+      'fullscreen' => self::getDefaultSettings()['fullscreen'],
       'geocoder' => self::getDefaultSettings()['geocoder'],
-    ];
+    ]);
   }
 
   /**
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
+    // Inherit basic settings form from GeofieldDefaultWidget:
+    $form = parent::settingsForm($form, $form_state);
     $map_settings = $this->getSetting('map');
     $default_settings = self::defaultSettings();
     $form['map'] = [
@@ -213,13 +230,13 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
     $form['map']['locate'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Automatically locate user current position'),
-      '#description' => t("This option initially centers the map to the user position (only in case of empty map)."),
+      '#description' => $this->t("This option initially centers the map to the user position (only in case of empty map)."),
       '#default_value' => $map_settings['locate'] ?? $default_settings['map']['locate'],
     ];
     $form['map']['auto_center'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Automatically center map on existing features'),
-      '#description' => t("This option overrides the widget's default center (in case of not empty map)."),
+      '#description' => $this->t("This option overrides the widget's default center (in case of not empty map)."),
       '#default_value' => $map_settings['auto_center'] ?? $default_settings['map']['auto_center'],
     ];
 
@@ -230,16 +247,8 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
     $form['map']['scroll_zoom_enabled'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Enable Scroll Wheel Zoom on click'),
-      '#description' => t("This option enables zooming by mousewheel as soon as the user clicked on the map."),
+      '#description' => $this->t("This option enables zooming by mousewheel as soon as the user clicked on the map."),
       '#default_value' => $map_settings['scroll_zoom_enabled'] ?? $default_settings['map']['scroll_zoom_enabled'],
-    ];
-
-    $form['map']['fullscreen_control'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Fullscreen Control'),
-      '#description' => $this->t('Enable the Fullscreen View of the Map.'),
-      '#default_value' => $map_settings['fullscreen_control'] ?? $default_settings['map']['fullscreen_control'],
-      '#return_value' => 1,
     ];
 
     $input_settings = $this->getSetting('input');
@@ -274,10 +283,10 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
       '#type' => 'select',
       '#title' => $this->t('Toolbar position.'),
       '#options' => [
-        'topleft' => 'topleft',
-        'topright' => 'topright',
-        'bottomleft' => 'bottomleft',
-        'bottomright' => 'bottomright',
+        'topleft' => $this->t('topleft'),
+        'topright' => $this->t('topright'),
+        'bottomleft' => $this->t('bottomleft'),
+        'bottomright' => $this->t('bottomright'),
       ],
       '#default_value' => $toolbar_settings['position'] ?? $default_settings['toolbar']['position'],
     ];
@@ -313,8 +322,15 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
 
     $form['toolbar']['drawCircle'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Adds button to draw circle. (unsupported by GeoJSON'),
+      '#title' => $this->t('Adds button to draw circle. (unsupported by GeoJSON)'),
       '#default_value' => $toolbar_settings['drawCircle'] ?? $default_settings['toolbar']['drawCircle'],
+      '#disabled' => TRUE,
+    ];
+
+    $form['toolbar']['drawText'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Adds button to draw text. (unsupported by GeoJSON)'),
+      '#default_value' => $toolbar_settings['drawText'] ?? $default_settings['toolbar']['drawText'],
       '#disabled' => TRUE,
     ];
 
@@ -350,6 +366,9 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
 
     // Generate the Leaflet Map Reset Control.
     $this->setResetMapControl($form, $this->getSettings());
+
+    // Set Fullscreen Element.
+    $this->setFullscreenElement($form, $this->getSettings());
 
     // Set Map Geometries Options Element.
     $this->setMapPathOptionsElement($form, $this->getSettings());
@@ -390,12 +409,15 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
       $this->fieldDefinition->getTargetEntityTypeId() => $items->getEntity(),
     ];
 
-    // Extend options to reset_map and geocoder to uniform with Leafket
+    // Extend options to reset_map and geocoder to uniform with Leaflet
     // Formatter and Leaflet View processing.
-    $options = array_merge($map_settings, ['reset_map' => $this->getSetting('reset_map')], ['path' => $this->getSetting('path')], ['geocoder' => $this->getSetting('geocoder')]);
+    $map_settings['reset_map'] = $this->getSetting('reset_map');
+    $map_settings['fullscreen'] = $this->getSetting('fullscreen');
+    $map_settings['path'] = $this->getSetting('path');
+    $map_settings['geocoder'] = $this->getSetting('geocoder');
 
     // Set Map additional map Settings.
-    $this->setAdditionalMapOptions($map, $options);
+    $this->setAdditionalMapOptions($map, $map_settings);
 
     // Attach class to wkt input element, so we can find it in js.
     $json_element_name = 'leaflet-widget-input';
@@ -433,9 +455,11 @@ class LeafletDefaultWidget extends GeofieldDefaultWidget {
     $js_settings['inputReadonly'] = !empty($input_settings['readonly']);
     $js_settings['toolbarSettings'] = $this->getSetting('toolbar') ?? $default_settings['toolbar'];
     $js_settings['scrollZoomEnabled'] = !empty($map_settings['scroll_zoom_enabled']) ? $map_settings['scroll_zoom_enabled'] : FALSE;
+    $js_settings['fullscreen'] = $this->getSetting('fullscreen');
     $js_settings['path'] = str_replace(["\n", "\r"], "", $this->token->replace($this->getSetting('path'), $token_context));
     $js_settings['geocoder'] = $this->getSetting('geocoder');
     $js_settings['map_position'] = $map_settings['map_position'] ?? [];
+    $js_settings['langcode'] = $this->languageManager->getCurrentLanguage()->getId();
 
     // Leaflet.widget plugin.
     $element['map']['#attached']['library'][] = 'leaflet/leaflet-widget';

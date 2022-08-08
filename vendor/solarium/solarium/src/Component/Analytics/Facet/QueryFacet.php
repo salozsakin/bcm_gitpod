@@ -66,7 +66,6 @@ class QueryFacet extends AbstractFacet
         return $this;
     }
 
-    #[\ReturnTypeWillChange]
     /**
      * {@inheritdoc}
      */

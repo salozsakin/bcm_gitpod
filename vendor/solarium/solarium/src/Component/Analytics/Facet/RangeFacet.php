@@ -276,7 +276,6 @@ class RangeFacet extends AbstractFacet
         return $this;
     }
 
-    #[\ReturnTypeWillChange]
     /**
      * {@inheritdoc}
      */
