@@ -17,6 +17,7 @@ tooling:
     service: node
   yarn:
     service: node
+    cmd: yarn --cwd /app/web/themes/custom/brucecastle
 services:
   appserver:
     type: php:8.0

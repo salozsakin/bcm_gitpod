@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Hook functions for bc_core.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bc_core_form_google_cse_search_box_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, string $form_id) {
+  $form['#action'] = '/search/google';
+}
