@@ -104,6 +104,10 @@ libraries-override:
     css:
       theme:
         css/components/news.css: dist/news.css
+  localgov_base/callout:
+    css:
+      theme:
+        css/components/callout.css: dist/callout.css
 
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:
