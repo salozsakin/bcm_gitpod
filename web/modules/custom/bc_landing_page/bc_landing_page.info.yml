@@ -18,4 +18,5 @@ dependencies:
   - 'field_group:field_group'
   - 'layout_paragraphs:layout_paragraphs'
   - 'paragraphs:paragraphs'
+  - 'pathauto:pathauto'
 package: BC
