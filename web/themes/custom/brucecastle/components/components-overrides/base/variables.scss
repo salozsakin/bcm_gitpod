@@ -204,7 +204,7 @@ body {
 
   /* Checkbox Items */
   --checkbox-select-focus-color: var(--color-focus);
-  --checkbox-select-outline-color: var(--color-black);
+  --checkbox-select-outline-color: var(--c-secondary);
 
   /* Radio Items */
   --radio-select-focus-color: var(--color-focus);
@@ -214,11 +214,11 @@ body {
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);
   --button-text-color: var(--color-white);
-  --button-text-color-hover: var(--c-primary);
+  --button-text-color-hover: var(--c-secondary);
   --button-icon-color: var(--button-text-color);
   --button-icon-color-hover: var(--color-accent);
-  --button-border-color: var(--c-primary);
-  --button-bg-color: var(--c-primary);
+  --button-border-color: var(--c-secondary);
+  --button-bg-color: var(--c-secondary);
   --button-bg-color-hover: var(--color-white);
   --button-font-family: var(--font-primary);
   --button-border-radius: 0;
@@ -240,7 +240,7 @@ body {
   --option-hover-color: var(--color-accent);
 
   /* Sidebar Items */
-  --sidebar-exposed-form-bg-color: var(--color-grey-light);
+  --sidebar-exposed-form-bg-color: var(--c-light-grey);
   --sidebar-exposed-form-padding-vertical: var(--spacing-larger);
   --sidebar-exposed-form-padding-horizontal: var(--spacing-larger);
   --sidebar-exposed-form-item-spacing: var(--spacing);

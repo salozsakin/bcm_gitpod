@@ -96,6 +96,14 @@ libraries-override:
     css:
       theme:
         css/components/image-with-caption.css: dist/image-caption.css
+  localgov_base/sidebar:
+    css:
+      theme:
+        css/components/sidebar.css: dist/sidebar.css
+  localgov_base/news:
+    css:
+      theme:
+        css/components/news.css: dist/news.css
   localgov_base/callout:
     css:
       theme:
