@@ -69,3 +69,10 @@ landing_page:
   css:
     theme:
       dist/landing-page.css: {}
+
+accordion:
+  css:
+    theme:
+      dist/accordion.css: {}
+  js:
+    dist/js/components-overrides/accordion/accordion.js: {}

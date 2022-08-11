@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a34dfe1817304d2e635cf09e60de0630d1468876',
+        'reference' => '820c802616de19a22a5c8e12a3607daa66d69c42',
         'name' => 'localgovdrupal/localgov-project',
         'dev' => true,
     ),
@@ -405,6 +405,15 @@
             'replaced' => array(
                 0 => '9.3.3',
             ),
+        ),
+        'drupal/anchor_link' => array(
+            'pretty_version' => '2.5.0',
+            'version' => '2.5.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/anchor_link',
+            'aliases' => array(),
+            'reference' => '8.x-2.5',
+            'dev_requirement' => false,
         ),
         'drupal/automated_cron' => array(
             'dev_requirement' => false,
@@ -950,6 +959,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/facets',
             'aliases' => array(),
             'reference' => '2.0.1',
+            'dev_requirement' => false,
+        ),
+        'drupal/fakeobjects' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/fakeobjects',
+            'aliases' => array(),
+            'reference' => '8.x-1.1',
             'dev_requirement' => false,
         ),
         'drupal/features' => array(
@@ -1871,7 +1889,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a34dfe1817304d2e635cf09e60de0630d1468876',
+            'reference' => '820c802616de19a22a5c8e12a3607daa66d69c42',
             'dev_requirement' => false,
         ),
         'localgovdrupal/localgov_alert_banner' => array(
