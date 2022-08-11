@@ -98,10 +98,6 @@ libraries-override:
     css:
       theme:
         css/components/image-with-caption.css: dist/image-caption.css
-  localgov_base/callout:
-    css:
-      theme:
-        css/components/callout.css: dist/callout.css
   localgov_base/sidebar:
     css:
       theme:
@@ -110,6 +106,10 @@ libraries-override:
     css:
       theme:
         css/components/news.css: dist/news.css
+  localgov_base/callout:
+    css:
+      theme:
+        css/components/callout.css: dist/callout.css
 
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:

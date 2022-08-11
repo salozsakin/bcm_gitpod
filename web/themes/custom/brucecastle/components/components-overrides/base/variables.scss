@@ -214,11 +214,11 @@ body {
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);
   --button-text-color: var(--color-white);
-  --button-text-color-hover: var(--c-primary);
+  --button-text-color-hover: var(--c-secondary);
   --button-icon-color: var(--button-text-color);
   --button-icon-color-hover: var(--color-accent);
-  --button-border-color: var(--c-primary);
-  --button-bg-color: var(--c-primary);
+  --button-border-color: var(--c-secondary);
+  --button-bg-color: var(--c-secondary);
   --button-bg-color-hover: var(--color-white);
   --button-font-family: var(--font-primary);
   --button-border-radius: 0;
