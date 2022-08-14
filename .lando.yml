@@ -4,7 +4,7 @@ domain: brucecastle.local.com
 config:
   webroot: web
   via: nginx:1.17
-  database: mysql:5.7
+  database: mysql:8.0
   xdebug: true
   config:
     vhosts: .lando/nginx/brucecastle.local.com
