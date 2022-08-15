@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\date_recur_modular\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Field\Annotation\FieldWidget;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\date_recur\DateRecurPartGrid;
@@ -24,6 +25,7 @@ use Drupal\date_recur_modular\DateRecurModularWidgetOptions;
  *
  * It supports the following modes:
  *  - Non recurring.
+ *  - Daily.
  *  - Multiday.
  *  - Weekly:
  *    - hard coded interval of 1. Or 2 if fortnightly is chosen.
@@ -52,6 +54,8 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
 
   protected const MODE_ONCE = 'once';
 
+  protected const MODE_DAILY = 'daily';
+
   protected const MODE_MULTIDAY = 'multiday';
 
   protected const MODE_WEEKLY = 'weekly';
@@ -73,6 +77,7 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
   protected function getModes(): array {
     return [
       static::MODE_ONCE => $this->t('Once'),
+      static::MODE_DAILY => $this->t('Daily'),
       static::MODE_MULTIDAY => $this->t('Multiple days'),
       static::MODE_WEEKLY => $this->t('Weekly'),
       static::MODE_FORTNIGHTLY => $this->t('Fortnightly'),
@@ -101,7 +106,12 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
     $frequency = $rule->getFrequency();
     $parts = $rule->getParts();
 
-    if ('DAILY' === $frequency) {
+    if ($parts['COUNT'] === '999') {
+      /** @var int|null $count */
+      $count = $parts['COUNT'] ?? NULL;
+      return static::MODE_DAILY;
+    }
+    elseif ('DAILY' === $frequency) {
       /** @var int|null $count */
       $count = $parts['COUNT'] ?? NULL;
       return $count && $count > 1 ? static::MODE_MULTIDAY : static::MODE_ONCE;
@@ -389,7 +399,12 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
       $byDayStr = implode(',', $weekDays);
 
       $rule = [];
-      if ($mode === static::MODE_MULTIDAY) {
+      if ($mode === static::MODE_DAILY) {
+        $rule['FREQ'] = 'DAILY';
+        $rule['INTERVAL'] = 1;
+        $rule['COUNT'] = 999;
+      }
+      elseif ($mode === static::MODE_MULTIDAY) {
         $rule['FREQ'] = 'DAILY';
         $rule['INTERVAL'] = 1;
         $rule['COUNT'] = $value['daily_count'];
@@ -431,7 +446,10 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
       }
 
       // Ends mode.
-      if ($endsMode === DateRecurModularWidgetOptions::ENDS_MODE_OCCURRENCES && $mode !== static::MODE_MULTIDAY) {
+      if ($mode === static::MODE_DAILY) {
+        $value['ends_count'] = $rule['COUNT'];
+      }
+      elseif ($endsMode === DateRecurModularWidgetOptions::ENDS_MODE_OCCURRENCES && $mode !== static::MODE_MULTIDAY) {
         $rule['COUNT'] = (int) $value['ends_count'];
       }
       elseif ($endsMode === DateRecurModularWidgetOptions::ENDS_MODE_ON_DATE && $endsDate instanceof DrupalDateTime) {
