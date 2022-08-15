@@ -125,6 +125,7 @@ better readability.
 {% set endDayOfWeek = endDates[0] %}
 {% set endDateAndYear = endDates[1] %}
 {% set endTime = endDates[2] %}
+{% set nextOccurrence = next_occurrence %}
 
 {{ attach_library('brucecastle/basic_page') }}
 {{ attach_library('brucecastle/event') }}
@@ -142,8 +143,9 @@ better readability.
                   <img src="/themes/custom/brucecastle/images/icons/calendar.svg"/>
                   {% if endDateAndYear != startDateAndYear and endTime %}
                     <p>
-                      {{ startDayOfWeek }}
-                      {{ startDateAndYear }}
+{#                      {{ startDayOfWeek }}#}
+{#                      {{ startDateAndYear }}#}
+                      {{ nextOccurrence }}
                       <span>{{ startTime }}</span>
                     </p>
                     <p class="localgov_event__date__to">to</p>
@@ -154,8 +156,9 @@ better readability.
                     </p>
                   {% else %}
                     <p>
-                      {{ startDayOfWeek }}
-                      {{ startDateAndYear }}
+{#                      {{ startDayOfWeek }}#}
+{#                      {{ startDateAndYear }}#}
+                      {{ nextOccurrence }}
                       <span>{{ startTime }} - {{ endDayOfWeek }}</span>
                     </p>
                   {% endif %}

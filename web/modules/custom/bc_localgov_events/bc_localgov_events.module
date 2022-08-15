@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 use Drupal\node\NodeInterface;
 use RRule\RRule;
@@ -15,29 +16,59 @@ use RRule\RSet;
  * @throws Exception
  */
 function bc_localgov_events_preprocess_node(&$variables) {
-
-  // @TODO: WIP
-
+  // Get the node object for the current page.
+  /** @var Node $node */
   $node = $variables['node'];
+  if (!is_null($node)) {
+    // Only do logic for event-type nodes.
+    $content_types = [
+      'localgov_event',
+    ];
+    if (in_array($node->bundle(), $content_types, true)) {
+      // Check if the field has an actual event_date, if not, do nothing.
+      if ($node->hasField('localgov_event_date')) {
+        // Get the node rrule string for the RRule object.
+        $rrule_string = $node->get('localgov_event_date')->rrule;
+        // Get the node start and end dates.
+        $date_start = $node->get('localgov_event_date')->value;
+        $date_end = $node->get('localgov_event_date')->end_value;
 
-  // @TODO: Add bunch of checks for fields and RRule.
+        // In case the event is not recurring, just returning the earliest start date.
+        if (is_null($rrule_string)) {
+          $datetime_start = new DateTime($date_start);
+          $variables['next_occurrence'] = $datetime_start->format('l jS F Y');
+          return;
+        }
 
-  $rrule_string = $node->get('localgov_event_date')->rrule;
-  $date_start = $node->get('localgov_event_date')->value;
-  $date_end = $node->get('localgov_event_date')->end_value;
-  $rrule = new RRule($rrule_string, $date_start);
-  $rrule_occurrences = $rrule->getOccurrences();
-  $last_occurrence = end($rrule_occurrences);
-  $last_occurrence_date = $last_occurrence->format('Y-m-d');
-  $today = date('Y-m-d');
-  $occurring_today = $rrule->occursAt($today);
-  $calculated_occurrences = $rrule->count();
-  $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
+        // Build the RRule object with the recurrence string and date start.
+        $rrule = new RRule($rrule_string, $date_start);
+        // Get all the possible occurrences that are parsed from the rrule string.
+        $rrule_occurrences = $rrule->getOccurrences();
+        // Find the last possible event occurrance date.
+        $last_occurrence = end($rrule_occurrences);
+        // Format the last date for comparison purposes.
+        $last_occurrence_date = $last_occurrence->format('Y-m-d');
 
-  $content_types = [
-    'localgov_event',
-  ];
+        // Get todays date.
+        $today = date('Y-m-d');
+        // For future-proofing, check if event occurs today.
+        $occurring_today = $rrule->occursAt($today);
+        // For future-proofing, check how many total events are.
+        $calculated_occurrences = $rrule->count();
+        // Get the next event occurrence from today to the last day.
+        $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
 
+        // If we cant find the future occurrence, just display the last occurrence formatted.
+        if (empty($future_occurrences)) {
+          $variables['next_occurrence'] = $last_occurrence->format('l jS F Y');
+        }
+        // Get the first next future occurrence date and format it.
+        else {
+          $variables['next_occurrence'] = reset($future_occurrences)->format('l jS F Y');
+        }
+      }
+    }
+  }
 }
 
 /**
