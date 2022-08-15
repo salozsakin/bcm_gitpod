@@ -1,6 +1,44 @@
 <?php
 
 use Drupal\views\ViewExecutable;
+use Drupal\node\NodeInterface;
+use RRule\RRule;
+use RRule\RSet;
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Prepares data to display on the event page with the current or
+ * next occurrence of the event.
+ *
+ * @param $variables
+ * @throws Exception
+ */
+function bc_localgov_events_preprocess_node(&$variables) {
+
+  // @TODO: WIP
+
+  $node = $variables['node'];
+
+  // @TODO: Add bunch of checks for fields and RRule.
+
+  $rrule_string = $node->get('localgov_event_date')->rrule;
+  $date_start = $node->get('localgov_event_date')->value;
+  $date_end = $node->get('localgov_event_date')->end_value;
+  $rrule = new RRule($rrule_string, $date_start);
+  $rrule_occurrences = $rrule->getOccurrences();
+  $last_occurrence = end($rrule_occurrences);
+  $last_occurrence_date = $last_occurrence->format('Y-m-d');
+  $today = date('Y-m-d');
+  $occurring_today = $rrule->occursAt($today);
+  $calculated_occurrences = $rrule->count();
+  $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
+
+  $content_types = [
+    'localgov_event',
+  ];
+
+}
 
 /**
  * Implements hook_views_pre_render().
