@@ -14,7 +14,6 @@
 @import '../../00-base/00-global/00-grid/_breakpoints.scss';
 @import '../../00-base/00-global/_02-breakpoints.scss';
 @import '../../00-base/01-colors/_01-colors-used.scss';
-@import '../../00-base/00-global/00-grid/_breakpoints.scss';
 
 .lgd-header {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
@@ -172,6 +171,9 @@
 
   .form-submit {
     border: var(--primary);
+    color: var(--header-search-button-color);
+    background-color: var(--header-search-button-bg-color);
+    height: 5rem;
 
     &:hover {
       border: white;
@@ -213,12 +215,6 @@
 
 .lgd-region--search .form-actions {
   margin-top: auto;
-}
-
-.lgd-region--search .form-submit {
-  color: var(--header-search-button-color);
-  background-color: var(--header-search-button-bg-color);
-  height: 5rem;
 }
 
 .lgd-region--search .form-submit:hover,

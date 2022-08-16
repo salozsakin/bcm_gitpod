@@ -1,6 +1,7 @@
 a,
 .link {
   @include link;
+
   font-family: $font-heading;
 }
 
@@ -29,5 +30,6 @@ a,
 
 .link--secondary {
   @include fntpair('body-small');
+
   font-family: $font-body;
 }
