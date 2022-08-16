@@ -37,6 +37,7 @@ dependencies:
   - 'localgov_subsites:localgov_subsites'
   - 'paragraphs:paragraphs'
   - 'paragraphs:paragraphs_library'
+  - 'pathauto:pathauto'
   - 'role_delegation:role_delegation'
   - 'scheduled_transitions:scheduled_transitions'
 package: BC

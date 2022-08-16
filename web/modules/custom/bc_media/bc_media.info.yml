@@ -3,9 +3,13 @@ description: 'Feature for image styles and related settings'
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
+  - 'crop:crop'
   - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:file'
   - 'drupal:image'
   - 'drupal:media'
+  - 'drupal:path'
   - 'drupal:responsive_image'
   - 'drupal:system'
   - 'drupal:views'
