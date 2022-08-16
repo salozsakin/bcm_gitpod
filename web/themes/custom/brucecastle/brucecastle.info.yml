@@ -110,7 +110,6 @@ libraries-override:
     css:
       theme:
         css/components/callout.css: dist/callout.css
-
 libraries-extend:
  eu_cookie_compliance/eu_cookie_compliance:
    - brucecastle/eu-cookie-compliance

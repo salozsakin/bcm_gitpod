@@ -176,7 +176,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       handleWindowResized();
 
       // Menu Search.
-      const searchBox = context.querySelector('.block-google-cse');
+      const searchBox = context.querySelector('.google-cse');
       if (!searchBox) {
         return;
       }

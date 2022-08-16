@@ -14,7 +14,6 @@
 @import '../../00-base/00-global/00-grid/_breakpoints.scss';
 @import '../../00-base/00-global/_02-breakpoints.scss';
 @import '../../00-base/01-colors/_01-colors-used.scss';
-@import '../../00-base/00-global/00-grid/_breakpoints.scss';
 
 .lgd-header {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
@@ -172,6 +171,9 @@
 
   .form-submit {
     border: var(--primary);
+    color: var(--header-search-button-color);
+    background-color: var(--header-search-button-bg-color);
+    height: 5rem;
 
     &:hover {
       border: white;
@@ -215,12 +217,6 @@
   margin-top: auto;
 }
 
-.lgd-region--search .form-submit {
-  color: var(--header-search-button-color);
-  background-color: var(--header-search-button-bg-color);
-  height: 5rem;
-}
-
 .lgd-region--search .form-submit:hover,
 .lgd-region--search .form-submit:focus {
   color: var(--header-search-button-color-hover);
@@ -243,10 +239,10 @@
   display: none;
 }
 
-.block-google-cse {
+.google-cse {
   flex-direction: column;
 
-  .google-cse-search-box-form {
+  form {
     position: absolute;
     z-index: 1;
     align-items: start;
