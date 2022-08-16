@@ -67,7 +67,7 @@ libraries-override:
       theme:
         css/components/header.css: dist/header.css
     js:
-      js/header.js: dist/js/components-overrides/header.js
+      js/header.js: dist/js/components-overrides/header/header.js
   localgov_base/menu-main:
     css:
       theme:
