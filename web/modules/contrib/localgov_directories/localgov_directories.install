@@ -239,3 +239,29 @@ function localgov_directories_update_8006() {
     return t('Unable to update directories view as sort order has already been changed. You may want to manually add sorting by localgov_directory_title_sort');
   }
 }
+
+/**
+ * Directories Search API database becomes its own module.
+ */
+function localgov_directories_update_8007() {
+  // Prevent clash as config already installed.
+  // So it's enabled, but don't run install.
+  $config = Drupal::configFactory()->getEditable('core.extension');
+  $modules = $config->get('module');
+  $modules['localgov_directories_db'] = 0;
+  $config->set('module', $modules);
+  $config->save();
+}
+
+/**
+ * Add schema version for Directories Search API DB module.
+ */
+function localgov_directories_update_8008() {
+  $config = \Drupal::config('core.extension');
+  $modules = $config->get('module');
+  if (isset($modules['localgov_directories_db']) &&
+    !\Drupal::keyValue('system.schema')->has('localgov_directories_db')
+  ) {
+    \Drupal::keyValue('system.schema')->set('localgov_directories_db', 8000);
+  }
+}

@@ -5,8 +5,11 @@ views.style.leaflet_map:
   label: 'Leaflet map'
   mapping:
     data_source:
-      type: string
-      label: 'Data source'
+      type: sequence
+      label: 'Data sources'
+      sequence:
+        type: string
+        label: 'Data source'
     entity_source:
       type: string
       label: 'Entity source'
@@ -37,9 +40,6 @@ views.style.leaflet_map:
     disable_wheel:
       type: boolean
       label: 'Disable wheel'
-    fullscreen_control:
-      type: boolean
-      label: 'Fulllscreen control'
     gesture_handling:
       type: boolean
       label: 'Gesture handling'
@@ -163,6 +163,19 @@ views.style.leaflet_map:
     leaflet_markercluster:
       type: mapping
       label: 'Leaflet Markercluster'
+      mapping:
+        control:
+          type: boolean
+          label: 'Control'
+        options:
+          type: text
+          label: 'Options'
+        include_path:
+          type: boolean
+          label: 'Include Path'
+    fullscreen:
+      type: mapping
+      label: 'Leaflet Fullscreen'
       mapping:
         control:
           type: boolean

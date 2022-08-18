@@ -26,7 +26,7 @@ function fakeobjects_requirements($phase) {
         'title' => t('FakeObjects'),
         'value' => t('Plugin not detected'),
         'severity' => REQUIREMENT_ERROR,
-        'description' => t('Before you can use the FakeObjects module, you need to download the plugin from ckeditor.com and place it in /libraries/fakeobjects. Check the README.txt for more information. <a href=":plugin_url">Get the plugin here</a>.', [':plugin_url' => 'http://ckeditor.com/addon/jjj']),
+        'description' => t('Before you can use the FakeObjects module, you need to download the plugin from ckeditor.com and place it in /libraries/fakeobjects. Check the README.txt for more information. <a href=":plugin_url">Get the plugin here</a>.', [':plugin_url' => 'http://ckeditor.com/addon/fakeobjects']),
       ];
     }
   }

@@ -58,12 +58,12 @@ secondary-menu:
       css/components/secondary-menu.ie11.css: {}
       css/components/secondary-menu.css: {}
 
-#header-js:
-#  js:
-#    js/header.js: {}
-#  dependencies:
-#    - core/drupal
-#    - core/drupal.debounce
+header-js:
+  js:
+    js/header.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
 
 footer:
   css:
@@ -172,6 +172,12 @@ link-and-summary:
       css/components/link-and-summary.ie11.css: {}
       css/components/link-and-summary.css: {}
 
+link:
+  css:
+    theme:
+      css/components/link.ie11.css: {}
+      css/components/link.css: {}
+
 key-contacts:
   css:
     theme:
@@ -267,3 +273,8 @@ leaflet:
     theme:
       css/components/leaflet.ie11.css: {}
       css/components/leaflet.css: {}
+
+video:
+  css:
+    theme:
+      css/components/video.css: {}

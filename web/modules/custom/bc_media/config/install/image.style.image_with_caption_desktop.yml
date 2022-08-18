@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies: {  }
 name: image_with_caption_desktop
-label: 'Image with caption desktop 16:9 (750x420px)'
+label: 'Image with caption desktop (750px width)'
 effects:
-  ff646102-e5c1-4e8c-833b-711e63945319:
-    uuid: ff646102-e5c1-4e8c-833b-711e63945319
+  d60cc259-c6b4-48f3-bd8a-1ea14f18d63c:
+    uuid: d60cc259-c6b4-48f3-bd8a-1ea14f18d63c
     id: image_scale
     weight: 1
     data:

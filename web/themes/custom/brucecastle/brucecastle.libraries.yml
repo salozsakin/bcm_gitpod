@@ -77,6 +77,23 @@ accordion:
   js:
     dist/js/components-overrides/accordion/accordion.js: {}
 
+drupal-local-tabs:
+  css:
+    theme:
+      dist/block-drupal-tasks-tabs.css: {}
+
+events-listing:
+  css:
+    theme:
+      dist/events-listing.css: {}
+
+paragraph-localgov-text:
+  css:
+    theme:
+      dist/paragraph-localgov-text.css: {}
+  js:
+    dist/js/components-overrides/paragraph-localgov-text/paragraph-localgov-text.js: {}
+
 google_search:
   css:
     theme:

@@ -82,6 +82,7 @@ tabs region on all localgov_drupal websites. Yay!
 #}
 
 {% if has_tabs %}
+  {{ attach_library('brucecastle/drupal-local-tabs') }}
   {{ page.tabs }}
 {% endif %}
 

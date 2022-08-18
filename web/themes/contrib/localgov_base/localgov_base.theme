@@ -1,29 +1,35 @@
 <?php
+
 /**
- * @file Theme hooks to support the LocalGov Base Theme.
+ * @file
+ * Theme hooks to support the LocalGov Base Theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
-function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
   }
 
-  $form['localgov_base_remove_css'] = array(
+  $form['localgov_base_remove_css'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Remove CSS libraries from base theme.'),
     '#default_value' => theme_get_setting('localgov_base_remove_css'),
     '#description'   => t("Check this box to disable the base theme's CSS"),
-  );
+  ];
 
-  $form['localgov_base_remove_js'] = array(
+  $form['localgov_base_remove_js'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Remove JS libraries from base theme.'),
     '#default_value' => theme_get_setting('localgov_base_remove_js'),
     '#description'   => t("Check this box to disable the base theme's JavaScript"),
-  );
+  ];
 }
 
 /**
@@ -35,7 +41,8 @@ function localgov_base_preprocess_page(&$variables) {
   // **Twig templates** if they will eventually produce empty content or not.
   // @see https://www.drupal.org/node/953034
   // @see https://www.drupal.org/forum/support/module-development-and-code-questions/2016-04-07/drupal-8-regions-with-and-empty#comment-12149518
-  $system_region = system_region_list('localgov_base', $show = REGIONS_ALL);
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  $system_region = system_region_list($active_theme, $show = REGIONS_ALL);
 
   foreach ($system_region as $key => $value) {
     $region = $key;
@@ -48,10 +55,11 @@ function localgov_base_preprocess_page(&$variables) {
     if (!in_array($region, $excluded_regions)) {
       $copy = $variables['page'][$region];
       $rendered = Drupal::service('renderer')->renderPlain($copy);
-    } else {
+    }
+    else {
       $rendered = Drupal::service('renderer')->renderPlain($variables['page'][$region]);
     }
-    $variables[$has] =  (!empty(trim(strip_tags($rendered)))) ? true : false;
+    $variables[$has] = !empty(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>')));
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
 
@@ -87,8 +95,8 @@ function localgov_base_preprocess_file_link(&$variables) {
 }
 
 /**
-* Implements hook_views_pre_render().
-*/
+ * Implements hook_views_pre_render().
+ */
 function localgov_base_views_pre_render(ViewExecutable $view) {
   if (isset($view) && ($view->storage->id() == 'localgov_sitewide_search')) {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
