@@ -176,7 +176,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       handleWindowResized();
 
       // Menu Search.
-      const searchBox = context.querySelector('.google-cse');
+      const searchBox = context.querySelector('.block-google-cse');
       if (!searchBox) {
         return;
       }
@@ -184,7 +184,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         const searchButton = document.createElement("button");
         const searchIcon = document.createElement("img");
         const searchTextBox = context.querySelector(
-          '.google-cse-search-box-form',
+          '.block-google-cse form',
         );
         searchIcon.setAttribute(
           'src',

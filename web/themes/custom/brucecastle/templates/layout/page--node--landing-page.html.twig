@@ -70,8 +70,6 @@ probably always return true, but no harm in checking.
 ]
 %}
 
-{{ attach_library('brucecastle/header') }}
-
 {#
 We create a dedicated tabs region and place it at the top of the page.
 This is to make sure tabs don't interfere with any other content, but
@@ -89,6 +87,7 @@ tabs region on all localgov_drupal websites. Yay!
 {% endif %}
 
 {% block header %}
+  {{ attach_library('brucecastle/header') }}
   {% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
 {% endblock %}
 
@@ -103,8 +102,6 @@ tabs region on all localgov_drupal websites. Yay!
 {% if has_messages %}
   {{ page.messages }}
 {% endif %}
-
-{{ attach_library('brucecastle/header') }}
 
 <main class="main" id="main-content"> {# The "skip to content" link jumps to here. #}
 

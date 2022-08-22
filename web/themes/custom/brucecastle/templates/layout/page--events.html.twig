@@ -88,6 +88,7 @@ tabs region on all localgov_drupal websites. Yay!
 {% endif %}
 
 {% block header %}
+  {{ attach_library('brucecastle/header') }}
   {% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
 {% endblock %}
 
