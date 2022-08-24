@@ -5,18 +5,27 @@
  * Hook functions for bc_localgov_events.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_views_exposed_form_alter().
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
  */
-function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function bc_localgov_events_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $view = $form_state->getStorage('view');
   if ($form_id == 'views_exposed_form' && $view['view']->id() == 'localgov_events_listing') {
     $form['pick_a_date'] = [
       '#type' => 'date',
       '#title' => t('Pick a date'),
       '#date_date_element' => 'date',
+      '#states' => [
+        'disabled' => [
+          ':input[name="dates"]' => ['!value' => 'choose'],
+        ],
+      ],
     ];
 
   }
@@ -29,6 +38,14 @@ function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\F
 function bc_localgov_events_views_pre_view(ViewExecutable $view) {
   if ($view->id() == 'localgov_events_listing') {
     $filters = $view->getExposedInput();
+    // If the user selected the 'dates' filter - Today, Tomorrow, This week, This month, Next month,
+    // the 'start' and 'end' filter will be automatically selected, so the pick a date filter needs to be set to empty.
+    if (isset($filters['start'], $filters['end'], $filters['dates'])) {
+      $filters['pick_a_date'] = '';
+      $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
+      $view->setExposedInput($filters);
+    }
+
     if (isset($filters['pick_a_date']) && $filters['pick_a_date'] != '') {
       $filters['start'] = $filters['pick_a_date'];
       $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
