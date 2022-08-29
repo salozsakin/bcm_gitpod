@@ -399,6 +399,11 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
       $byDayStr = implode(',', $weekDays);
 
       $rule = [];
+      if ($mode === static::MODE_ONCE) {
+        $rule['FREQ'] = 'DAILY';
+        $rule['INTERVAL'] = 1;
+        $rule['COUNT'] = 1;
+      }
       if ($mode === static::MODE_DAILY) {
         $rule['FREQ'] = 'DAILY';
         $rule['INTERVAL'] = 1;
@@ -446,7 +451,10 @@ class DateRecurModularAlphaWidget extends DateRecurModularWidgetBase {
       }
 
       // Ends mode.
-      if ($mode === static::MODE_DAILY) {
+      if ($mode === static::MODE_ONCE) {
+        $value['ends_count'] = $rule['COUNT'];
+      }
+      elseif ($mode === static::MODE_DAILY) {
         $value['ends_count'] = $rule['COUNT'];
       }
       elseif ($endsMode === DateRecurModularWidgetOptions::ENDS_MODE_OCCURRENCES && $mode !== static::MODE_MULTIDAY) {
