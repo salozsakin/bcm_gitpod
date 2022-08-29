@@ -4,7 +4,7 @@
  * @file
  * Hook functions for bc_localgov_events.
  */
-
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -37,3 +37,49 @@ function bc_localgov_events_views_pre_view(ViewExecutable $view) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the FORM_ID() form.
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ */
+function bc_localgov_events_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // All localgov event forms should be added here.
+  $event_forms = [
+    'node_localgov_event_form',
+    'node_localgov_event_edit_form'
+  ];
+  // If current form is one of the above, add custom validation.
+  if (in_array($form_id, $event_forms, true)) {
+    $form['#validate'][] = '_bc_localgov_events_form_validate';
+  }
+}
+
+/**
+ * Validates submission values in the bc_localgov_events_form_alter() function.
+ * @param array $form
+ * @param FormStateInterface $form_state
+ */
+function _bc_localgov_events_form_validate(array &$form, FormStateInterface $form_state) {
+  // Check if the form actually has the value - It should but just in case it doesnt skip custom validation.
+  if ($form_state->hasValue('localgov_event_date')) {
+    // Get the event dates from the form_state.
+    $event_dates = $form_state->getValue('localgov_event_date');
+    $event_dates = reset($event_dates);
+
+    // Get start and end DateTime objects.
+    $date_start = $event_dates['start'];
+    $date_end = $event_dates['end'];
+
+    // Get the different in epoch between end and start dates.
+    $diff = $date_end->getTimestamp() - $date_start->getTimestamp();
+
+    // If the time difference is positive we dont even need to error because it will be picked up by standard Date
+    // validation, f the difference is less than a minute, error on that field.
+    if ($diff >= 0 && $diff < 60) {
+      $form_state->setErrorByName('localgov_event_date][0][end][time', t('The event duration is less than a minute!'));
+    }
+  }
+}
+
