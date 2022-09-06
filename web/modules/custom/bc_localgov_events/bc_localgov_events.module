@@ -40,6 +40,12 @@ function bc_localgov_events_preprocess_node(&$variables) {
           return;
         }
 
+        // Remove Z character at the end of the recuring str as RRule doesnt like that,
+        // having that will cause a fatal error because $date_start doesnt have the Z.
+        if (str_ends_with($rrule_string, 'Z')) {
+          $rrule_string = rtrim($rrule_string, 'Z');
+        }
+
         // Build the RRule object with the recurrence string and date start.
         $rrule = new RRule($rrule_string, $date_start);
         // Get all the possible occurrences that are parsed from the rrule string.
