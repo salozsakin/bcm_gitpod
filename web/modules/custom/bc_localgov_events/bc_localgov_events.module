@@ -9,8 +9,11 @@ use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_views_exposed_form_alter().
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
  */
-function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function bc_localgov_events_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $view = $form_state->getStorage('view');
   if ($form_id == 'views_exposed_form' && $view['view']->id() == 'localgov_events_listing') {
     $form['pick_a_date'] = [
@@ -25,14 +28,20 @@ function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\F
 
 /**
  * Implements hook_views_query_alter().
+ * @param ViewExecutable $view
  */
 function bc_localgov_events_views_pre_view(ViewExecutable $view) {
   if ($view->id() == 'localgov_events_listing') {
+    // Get user exposed input.
     $filters = $view->getExposedInput();
     if (isset($filters['pick_a_date']) && $filters['pick_a_date'] != '') {
       $filters['start'] = $filters['pick_a_date'];
+
+      // Add one day to end date so events for that day are included.
       $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
       $filters['dates'] = 'choose';
+
+      // Update user exposed input with date logic above.
       $view->setExposedInput($filters);
     }
   }
