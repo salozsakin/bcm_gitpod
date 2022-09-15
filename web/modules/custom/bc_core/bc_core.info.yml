@@ -18,6 +18,7 @@ dependencies:
   - 'drupal:node'
   - 'drupal:options'
   - 'drupal:path_alias'
+  - 'drupal:search'
   - 'drupal:system'
   - 'drupal:taxonomy'
   - 'drupal:text'

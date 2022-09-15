@@ -80,11 +80,14 @@ content to cover tabs and other issues.
 Taking this approach also means we can have consistent styling for the
 tabs region on all localgov_drupal websites. Yay!
 #}
+
 {% if has_tabs %}
+  {{ attach_library('brucecastle/drupal-local-tabs') }}
   {{ page.tabs }}
 {% endif %}
 
 {% block header %}
+  {{ attach_library('brucecastle/header') }}
   {% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
 {% endblock %}
 

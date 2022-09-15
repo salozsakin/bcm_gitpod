@@ -1,0 +1,14 @@
+// Wysiwyg alignment.
+[data-align="right"],
+[data-align="center"] {
+  display: flex;
+  flex-direction: row;
+}
+
+[data-align="right"] {
+  justify-content: flex-end;
+}
+
+[data-align="center"] {
+  justify-content: center;
+}

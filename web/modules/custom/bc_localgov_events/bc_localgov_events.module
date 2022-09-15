@@ -175,31 +175,31 @@ function localgov_events_views_pre_render(ViewExecutable $view) {
       /** End Custom code-block to handle Once events with multiple-day duration. */
 
       /** Apparently this is not needed - So commenting out this block for now until the logic is tested thoroughly. */
-//      if (!empty($daily_results)) {
-//        foreach ($daily_results as $n => $ev) {
-//          $result_row = new Drupal\views\ResultRow(array(
-//            '_entity' => $ev,
-//            '_relationship_entities' => array(),
-//            'index' => $index,
-//            'date_recur__node__localgov_event_date_node_field_data_localg' => $ev->get('localgov_event_date')->value,
-//            'date_recur__node__localgov_event_date_node_field_data_localg_1' => $ev->get('localgov_event_date')->end_value,
-//            'nid' => $ev->nid->value
-//          ));
-//          array_push($view->result, $result_row);
-//          $index++;
-//        }
-//      }
+      //      if (!empty($daily_results)) {
+      //        foreach ($daily_results as $n => $ev) {
+      //          $result_row = new Drupal\views\ResultRow(array(
+      //            '_entity' => $ev,
+      //            '_relationship_entities' => array(),
+      //            'index' => $index,
+      //            'date_recur__node__localgov_event_date_node_field_data_localg' => $ev->get('localgov_event_date')->value,
+      //            'date_recur__node__localgov_event_date_node_field_data_localg_1' => $ev->get('localgov_event_date')->end_value,
+      //            'nid' => $ev->nid->value
+      //          ));
+      //          array_push($view->result, $result_row);
+      //          $index++;
+      //        }
+      //      }
 
       if (!empty($today_events)) {
         foreach ($today_events as $n => $ev) {
-          $result_row = new Drupal\views\ResultRow(array(
+          $result_row = new Drupal\views\ResultRow([
             '_entity' => $ev,
-            '_relationship_entities' => array(),
+            '_relationship_entities' => [],
             'index' => $index,
             'date_recur__node__localgov_event_date_node_field_data_localg' => $ev->get('localgov_event_date')->value,
             'date_recur__node__localgov_event_date_node_field_data_localg_1' => $ev->get('localgov_event_date')->end_value,
             'nid' => $ev->nid->value
-          ));
+          ]);
           array_push($view->result, $result_row);
           $index++;
         }
@@ -242,6 +242,35 @@ function localgov_events_views_pre_render(ViewExecutable $view) {
       // Set the modified results into the views' result.
       $view->result = $final_results;
       $view->total_rows = (string) count($final_results);
+    }
+  }
+
+  /**
+   * Implements hook_form_views_exposed_form_alter().
+   */
+function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $view = $form_state->getStorage('view');
+  if ($form_id == 'views_exposed_form' && $view['view']->id() == 'localgov_events_listing') {
+    $form['pick_a_date'] = [
+      '#type' => 'date',
+      '#title' => t('Pick a date'),
+      '#date_date_element' => 'date',
+    ];
+  }
+}
+
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function bc_localgov_events_views_pre_view(ViewExecutable $view) {
+  if ($view->id() == 'localgov_events_listing') {
+    $filters = $view->getExposedInput();
+    if (isset($filters['pick_a_date']) && $filters['pick_a_date'] != '') {
+      $filters['start'] = $filters['pick_a_date'];
+      $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
+      $filters['dates'] = 'choose';
+      $view->setExposedInput($filters);
     }
   }
 }

@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies: {  }
 name: image_with_caption_vetical_mobile
-label: 'Image with caption vertical mobile 3:4 (450x600px)'
+label: 'Image with caption vertical mobile (450px width)'
 effects:
-  83d09778-21ef-4eaa-8f6e-d340a3478217:
-    uuid: 83d09778-21ef-4eaa-8f6e-d340a3478217
+  904294fc-1faf-4c4c-b5c3-aa2b875018c0:
+    uuid: 904294fc-1faf-4c4c-b5c3-aa2b875018c0
     id: image_scale
     weight: 1
     data:

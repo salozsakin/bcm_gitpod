@@ -62,9 +62,11 @@
   <div{{ attributes.addClass(classes) }}>
     <div class="image-captions--right">
       {{ content.localgov_image }}
-      <div class="image-captions__text--right">
-        {{ content.localgov_caption.0 }}
-      </div>
+      {% if content.localgov_caption.0 %}
+        <div class="image-captions__text--right">
+          {{ content.localgov_caption.0 }}
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endblock paragraph %}

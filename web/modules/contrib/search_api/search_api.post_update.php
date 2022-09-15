@@ -26,7 +26,7 @@ function search_api_post_update_fix_index_dependencies(&$sandbox = NULL) {
  */
 function search_api_post_update_views_query_type() {
   $config_factory = \Drupal::configFactory();
-  $changed_query = $changed_cache = [];
+  $changed_cache = [];
 
   foreach ($config_factory->listAll('views.view.') as $view_config_name) {
     $view = $config_factory->getEditable($view_config_name);
@@ -50,9 +50,6 @@ function search_api_post_update_views_query_type() {
         // Mark the resulting configuration as trusted data. This avoids issues
         // with future schema changes.
         $view->save(TRUE);
-        if ($update_query) {
-          $changed_query[] = $view->get('id');
-        }
         if ($update_cache) {
           $changed_cache[] = $view->get('id');
         }
@@ -60,15 +57,10 @@ function search_api_post_update_views_query_type() {
     }
   }
 
-  $results = [];
-  if (!empty($changed_query)) {
-    $vars = ['@ids' => implode(', ', array_unique($changed_query))];
-    $results[] = t('The following views have been updated to use the "search_api_query" query type instead of "views_query": @ids.', $vars);
-  }
-  if (!empty($changed_query)) {
+  if ($changed_cache) {
     $vars = ['@ids' => implode(', ', array_unique($changed_cache))];
-    $results[] = t('The following views have had caching switched off. The selected caching mechanism does not work with views on Search API indexes. Please either use one of the Search API-specific caching options or "None": @ids.', $vars);
+    return t('The following views have had caching switched off. The selected caching mechanism does not work with views on Search API indexes. Please either use one of the Search API-specific caching options or "None": @ids.', $vars);
   }
 
-  return empty($results) ? NULL : implode(' ', $results);
+  return NULL;
 }

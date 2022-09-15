@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: basic_page
+label: 'Basic Page'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  24c6b227-3dd6-411f-a7f1-26e77ab4d05e:
+    id: node_type
+    negate: false
+    uuid: 24c6b227-3dd6-411f-a7f1-26e77ab4d05e
+    context_mapping:
+      node: node
+    bundles:
+      localgov_subsites_page: localgov_subsites_page
+selection_logic: and
+weight: -5
+relationships: {  }

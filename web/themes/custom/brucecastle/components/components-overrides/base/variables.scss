@@ -15,6 +15,10 @@ html {
   font-size: 62.5%;
 }
 
+.toolbar-menu {
+  font-size: small;
+}
+
 body {
   /* Widths and Spacing */
   --width-extra-large: 118rem; /* 1180px */
@@ -36,18 +40,17 @@ body {
   --vertical-rhythm-spacing: var(--spacing);
 
   /* Colours */
-  /*
-    Colours Defined
-    In this section, we define the colours available in our theme.
-    We should not refer to these directly in our CSS however. Instead,
-    we use the names at our "Colours Applied" section.
-  */
+
+  /* Colours Defined. In this section, we define the colours available in our theme.
+  We should not refer to these directly in our CSS however.
+  Instead, we use the names at our "Colours Applied" section. */
   --color-accent: #652c95;
   --color-green: #048a04;
   --color-red: #e4251b;
   --color-orange: #ed7522;
   --color-yellow: #fd0;
   --color-blue: #297bbb;
+
   /*
     Grey Scale
     In this section, we define our greys; let's not have 50 shades
@@ -59,6 +62,7 @@ body {
   --color-grey-medium: #b1b4b6;
   --color-grey-dark: #505a5f;
   --color-black: #0b0c0c;
+
   /*
     Colours Applied
     In this section, we "apply" our colours.
@@ -72,18 +76,16 @@ body {
   --color-focus: var(--color-yellow);
 
   /* Fonts */
-  /*
-    We choose basic fonts that most people have in browser cache from visiting other websites.
-    This will help with page speed, rather than calling fonts from Google Fonts or somewhere.
-  */
+
+  /* We choose basic fonts that most people have in browser cache from visiting other websites.
+    This will help with page speed, rather than calling fonts from Google Fonts or somewhere. */
   --font-primary: 'Open Sans', sans-serif;
   --font-secondary: 'Lato', sans-serif;
-  /*
-    Font sizes based on vertical rhythm of:
+
+  /* Font sizes based on vertical rhythm of:
     - Font size: 16px;
     - Scale factor: 1.303
-    - Details: https://www.gridlover.net/try
-  */
+    - Details: https://www.gridlover.net/try */
   --font-size: 1.6rem;
   --font-size-smallest: 0.8rem;
   --font-size-smaller: 1.2rem;
@@ -119,17 +121,12 @@ body {
 
   /* Animation */
   --transition-time: 0.3s;
-}
 
-/*
-  Applying Variables
-
+/* Applying Variables
   By taking this approach of setting variables above, and then applying them here
   to specific items, we can easily override these in sub-themes to change items
   one-by-one without the CSS cascade affecting us (unless we want it to - in that case,
-  override the defined variables above instead).
-*/
-body {
+  override the defined variables above instead). */
 
   /* Grid */
   --grid-column-spacing: var(--spacing);
@@ -156,8 +153,8 @@ body {
   --header-services-button-color-hover: var(--color-white);
   --header-logo-width: 10rem;
   --header-search-button-color: var(--color-white);
-  --header-search-button-bg-color: var(--color-accent);
-  --header-search-button-color-hover: var(--color-accent);
+  --header-search-button-bg-color: var(--c-primary);
+  --header-search-button-color-hover: var(--c-primary);
   --header-search-button-bg-color-hover: var(--color-white);
   --header-search-input-border: none;
 
@@ -200,7 +197,7 @@ body {
 
   /* Checkbox Items */
   --checkbox-select-focus-color: var(--color-focus);
-  --checkbox-select-outline-color: var(--color-black);
+  --checkbox-select-outline-color: var(--c-secondary);
 
   /* Radio Items */
   --radio-select-focus-color: var(--color-focus);
@@ -210,11 +207,11 @@ body {
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);
   --button-text-color: var(--color-white);
-  --button-text-color-hover: var(--c-primary);
+  --button-text-color-hover: var(--c-secondary);
   --button-icon-color: var(--button-text-color);
   --button-icon-color-hover: var(--color-accent);
-  --button-border-color: var(--c-primary);
-  --button-bg-color: var(--c-primary);
+  --button-border-color: var(--c-secondary);
+  --button-bg-color: var(--c-secondary);
   --button-bg-color-hover: var(--color-white);
   --button-font-family: var(--font-primary);
   --button-border-radius: 0;
@@ -236,7 +233,7 @@ body {
   --option-hover-color: var(--color-accent);
 
   /* Sidebar Items */
-  --sidebar-exposed-form-bg-color: var(--color-grey-light);
+  --sidebar-exposed-form-bg-color: var(--c-light-grey);
   --sidebar-exposed-form-padding-vertical: var(--spacing-larger);
   --sidebar-exposed-form-padding-horizontal: var(--spacing-larger);
   --sidebar-exposed-form-item-spacing: var(--spacing);

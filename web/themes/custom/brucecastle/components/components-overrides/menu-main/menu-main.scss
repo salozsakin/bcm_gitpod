@@ -10,10 +10,14 @@
 }
 
 .menu--main {
-  margin-top: var(--spacing-larger);
+  margin-top: 6rem;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+
+  @include media-breakpoint-up(md) {
+    margin-top: var(--spacing-larger);
+  }
 }
 
 .menu--main > .menu-item a {

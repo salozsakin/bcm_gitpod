@@ -2,6 +2,14 @@
   @file Utility classes to drop into templates.
 */
 
+/* 
+  Position the main canvas relative so anything further down the page that
+  might use absolute will not cover the admin toolbar.
+*/
+.dialog-off-canvas-main-canvas {
+  position: relative;
+}
+
 /*
   The main container class that defines how wide our content area is
 */
@@ -9,6 +17,21 @@
   max-width: var(--width-container);
   margin-right: auto;
   margin-left: auto;
+}
+.lgd-container--mega {
+  width: var(--width-mega);
+}
+.lgd-container--extra-large {
+  width: var(--width-extra-large);
+}
+.lgd-container--large {
+  width: var(--width-large);
+}
+.lgd-container--medium {
+  width: var(--width-medium);
+}
+.lgd-container--small {
+  width: var(--width-small);
 }
 
 .padding-horizontal {
