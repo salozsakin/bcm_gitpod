@@ -2,9 +2,11 @@ name: Events
 type: module
 core_version_requirement: '^8.9 || ^9'
 dependencies:
+  - 'better_exposed_filters:better_exposed_filters'
   - 'date_recur:date_recur'
   - 'date_recur_modular:date_recur_modular'
   - 'drupal:block'
+  - 'drupal:content_moderation'
   - 'drupal:datetime'
   - 'drupal:link'
   - 'drupal:media_library'

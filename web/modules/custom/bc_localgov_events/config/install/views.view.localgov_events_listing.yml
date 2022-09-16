@@ -5,8 +5,9 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.localgov_event_image
     - node.type.localgov_event
-    - taxonomy.vocabulary.localgov_event_tag
+    - taxonomy.vocabulary.localgov_event_category
   module:
+    - better_exposed_filters
     - date_recur
     - datetime
     - node
@@ -29,69 +30,6 @@ display:
     display_options:
       title: Events
       fields:
-        localgov_event_image:
-          id: localgov_event_image
-          table: node__localgov_event_image
-          field: localgov_event_image
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: localgov_event_thumbnail
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -148,6 +86,69 @@ display:
           settings:
             link_to_entity: true
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        localgov_event_image:
+          id: localgov_event_image
+          table: node__localgov_event_image
+          field: localgov_event_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: localgov_event_thumbnail
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -502,7 +503,7 @@ display:
             offset_label: Offset
           quantity: 9
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: true
@@ -511,6 +512,61 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: wysiwyg
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              localgov_event_date_value_1:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              localgov_event_date_end_value:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              localgov_event_date_value:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              localgov_event_date_end_value_1:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              localgov_event_date_end_value_2:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              localgov_event_categories_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
       access:
         type: perm
         options:
@@ -575,6 +631,101 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        localgov_event_date_value_1:
+          id: localgov_event_date_value_1
+          table: date_recur__node__localgov_event_date
+          field: localgov_event_date_value
+          relationship: localgov_event_date_occurrences
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: today
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: localgov_event_date_value_1_op
+            label: 'Start date'
+            description: ''
+            use_operator: false
+            operator: localgov_event_date_value_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: start
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Date (localgov_event_date)'
+            description: null
+            identifier: localgov_event_date_value_1
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+        localgov_event_date_end_value:
+          id: localgov_event_date_end_value
+          table: date_recur__node__localgov_event_date
+          field: localgov_event_date_end_value
+          relationship: localgov_event_date_occurrences
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: localgov_event_date_end_value_op
+            label: 'End date'
+            description: ''
+            use_operator: false
+            operator: localgov_event_date_end_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: end
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         status_1:
           id: status_1
           table: node_field_data
@@ -657,31 +808,31 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        localgov_event_date_end_value_2:
-          id: localgov_event_date_end_value_2
+        localgov_event_date_value:
+          id: localgov_event_date_value
           table: date_recur__node__localgov_event_date
-          field: localgov_event_date_end_value
+          field: localgov_event_date_value
           relationship: localgov_event_date_occurrences
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          operator: '<='
+          operator: '<'
           value:
             min: ''
             max: ''
-            value: ''
+            value: today
             type: date
           group: 2
           exposed: true
           expose:
-            operator_id: localgov_event_date_end_value_2_op
-            label: 'End date'
+            operator_id: localgov_event_date_value_op
+            label: 'Start date'
             description: ''
             use_operator: false
-            operator: localgov_event_date_end_value_2_op
+            operator: localgov_event_date_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: end
+            identifier: start
             required: false
             remember: false
             multiple: false
@@ -749,57 +900,100 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_localgov_event_tags_target_id:
-          id: field_localgov_event_tags_target_id
-          table: node__field_localgov_event_tags
-          field: field_localgov_event_tags_target_id
-          relationship: none
+        localgov_event_date_end_value_2:
+          id: localgov_event_date_end_value_2
+          table: date_recur__node__localgov_event_date
+          field: localgov_event_date_end_value
+          relationship: localgov_event_date_occurrences
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
+          plugin_id: datetime
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
           group: 2
           exposed: true
           expose:
-            operator_id: field_localgov_event_tags_target_id_op
-            label: ''
+            operator_id: localgov_event_date_end_value_2_op
+            label: 'End date'
             description: ''
             use_operator: false
-            operator: field_localgov_event_tags_target_id_op
+            operator: localgov_event_date_end_value_2_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_localgov_event_tags_target_id
+            identifier: end
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
-              emergency_publisher: emergency_publisher
-              anonymous: anonymous
-              localgov_editor: localgov_editor
-              localgov_author: localgov_author
-              localgov_contributor: localgov_contributor
-              localgov_news_editor: localgov_news_editor
-              localgov_user_manager: localgov_user_manager
-            reduce: false
+              anonymous: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
-            label: 'Event Tags (field_localgov_event_tags)'
+            label: ''
             description: ''
-            identifier: field_localgov_event_tags_target_id
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
+            group_items: {  }
+        localgov_event_categories_target_id:
+          id: localgov_event_categories_target_id
+          table: node__localgov_event_categories
+          field: localgov_event_categories_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: localgov_event_categories_target_id_op
+            label: Categories
+            description: ''
+            use_operator: false
+            operator: localgov_event_categories_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: categories
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              emergency_publisher: '0'
+              anonymous: '0'
+              localgov_editor: '0'
+              localgov_author: '0'
+              localgov_contributor: '0'
+              localgov_news_editor: '0'
+              localgov_user_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           reduce_duplicates: false
-          vid: localgov_event_tag
+          vid: localgov_event_category
           type: select
           hierarchy: false
           limit: true
