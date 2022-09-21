@@ -105,3 +105,8 @@ header:
       dist/header.css: {}
   js:
     dist/js/components-overrides/header/header.js: {}
+
+video:
+  css:
+    theme:
+      dist/video.css: {}
