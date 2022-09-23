@@ -5,6 +5,8 @@
 # Ignore Drupal's file directory
 /web/sites/*/files/
 /web/sites/default/private/
+!/web/sites/default/files/gin-custom.css
+!/web/sites/*/files/gin-custom.css
 
 # Ignore SimpleTest multi-site environment
 /web/sites/simpletest
