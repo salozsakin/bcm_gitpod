@@ -33,8 +33,9 @@ regions:
 #libraries:
 #  - 'brucecastle/global'
 #
-#ckeditor_stylesheets:
-#  - dist/css/base.css
+ckeditor_stylesheets:
+  - dist/base.css
+  - dist/paragraph-localgov-text.css
 
 #
 component-libraries:
