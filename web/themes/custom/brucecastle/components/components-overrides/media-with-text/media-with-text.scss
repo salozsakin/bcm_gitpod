@@ -33,6 +33,7 @@
   font-weight: 700;
   display: inline-block;
   margin-top: var(--spacing-small);
+  float: none;
 
   &:hover {
     background-color: var(--c-white);

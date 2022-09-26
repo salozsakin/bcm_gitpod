@@ -1,4 +1,6 @@
-// WIP styles
+@import '../../00-base/00-global/00-grid/_breakpoints.scss';
+@import '../../00-base/00-global/_02-breakpoints.scss';
+
 .events-listing {
   .lgd-region--content {
     width: 100%;
@@ -14,12 +16,59 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .fieldgroup:first-child {
+      order: 2;
+      border: none;
+      padding: 0;
+
+      legend {
+        display: none;
+      }
+
+      .form-item-categories {
+        background-color: var(--c-primary);
+        border: 0.1rem solid transparent;
+        color: var(--c-text-inverse);
+        padding: 1.2rem 2.4rem;
+        text-decoration: none;
+        display: inline-grid;
+        margin-top: var(--spacing-small);
+        float: none;
+
+        label {
+          border-bottom: 0.2rem solid transparent;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          background-color: var(--c-white);
+          border-color: var(--c-primary);
+          color: var(--c-primary);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        input:checked + label {
+          font-weight: 700;
+          border-bottom: 0.2rem solid;
+          border-color: var(--c-white);
+        }
+      }
+    }
 
     .date-picker {
       order: 1;
       border: none;
       padding: 0;
-      margin-left: 1rem;
+
+      @include medium {
+        margin-left: 1rem;
+      }
 
       legend {
         display: none;
@@ -34,10 +83,12 @@
         }
       }
 
-      .fieldset-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+      @include medium {
+        .fieldset-wrapper {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
       }
     }
 
@@ -55,7 +106,7 @@
           option:checked {
             // Overriding user agent stylesheet
             background-color: #006980 !important;
-            color: #ffffff !important;
+            color: #fff !important;
           }
         }
 
@@ -77,8 +128,12 @@
 
     .form-actions {
       order: 3;
-      margin-top: 2.4rem;
-      margin-left: auto;
+      margin-bottom: 2.4rem;
+      width: 100%;
+
+      .button {
+        font-size: var(--font-size);
+      }
     }
   }
 }
