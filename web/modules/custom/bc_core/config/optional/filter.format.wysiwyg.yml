@@ -88,6 +88,7 @@ filters:
         custom_size: custom_size
         wysiwyg_default_image: wysiwyg_default_image
       allowed_media_types:
+        audio: audio
         document: document
         image: image
         remote_video: remote_video
