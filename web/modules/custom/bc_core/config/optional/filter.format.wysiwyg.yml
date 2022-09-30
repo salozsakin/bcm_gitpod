@@ -10,7 +10,7 @@ dependencies:
     - media_embed_extra
 name: WYSIWYG
 format: wysiwyg
-weight: 0
+weight: -10
 filters:
   editor_file_reference:
     id: editor_file_reference
