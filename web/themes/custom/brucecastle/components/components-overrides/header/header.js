@@ -183,6 +183,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       else {
         const searchButton = document.createElement("button");
         const searchIcon = document.createElement("img");
+        const searchText = document.createElement("span");
         const searchTextBox = context.querySelector(
           '.block-google-cse form',
         );
@@ -191,11 +192,15 @@ if (window.NodeList && !NodeList.prototype.forEach) {
           '/themes/custom/brucecastle/images/icons/search-icon.svg',
         );
         searchIcon.setAttribute('class', 'google-cse-search-block__search-icon');
+        searchIcon.setAttribute('alt', 'search icon');
+        searchText.setAttribute('class','sr-only');
+        searchText.textContent = 'Toggle search';
         searchButton.setAttribute(
           'class',
           'google-cse-search-block__search-button',
         );
         searchButton.appendChild(searchIcon);
+        searchButton.appendChild(searchText);
         searchBox.appendChild(searchButton);
 
         searchButton.addEventListener('click', () => {
