@@ -14,14 +14,12 @@
 
   form {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     flex-wrap: wrap;
 
-    .fieldgroup:first-child {
-      order: 2;
+    .fieldgroup[data-drupal-selector="edit-categories"] {
       border: none;
       padding: 0;
+      order: 4;
 
       legend {
         display: none;
@@ -62,13 +60,8 @@
     }
 
     .date-picker {
-      order: 1;
       border: none;
       padding: 0;
-
-      @include medium {
-        margin-left: 1rem;
-      }
 
       legend {
         display: none;
@@ -82,58 +75,87 @@
           margin-top: 2.4rem;
         }
       }
-
-      @include medium {
-        .fieldset-wrapper {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-        }
-      }
     }
 
-    .form-item-field-localgov-event-tags-target-id {
-      order: 2;
-
-      .form-select {
-        border: none;
-        padding: 0;
-        margin-top: 2.4rem;
-
-        &:focus {
-          outline: none;
-
-          option:checked {
-            // Overriding user agent stylesheet
-            background-color: #006980 !important;
-            color: #fff !important;
-          }
-        }
-
-        option {
-          display: inline-block;
-          padding: 1rem;
-          background-color: var(--c-primary);
-          color: var(--color-white);
-          margin-right: 1rem;
-          margin-bottom: 1rem;
-
-          &:hover,
-          &:focus {
-            background-color: var(--c-secondary);
-          }
-        }
-      }
+    .form-item-pick-a-date,
+    .date-picker {
+      max-width: 25rem;
     }
+
+    //.form-item-field-localgov-event-tags-target-id {
+    //  .form-select {
+    //    border: none;
+    //    padding: 0;
+    //    margin-top: 2.4rem;
+    //
+    //    &:focus {
+    //      outline: none;
+    //
+    //      option:checked {
+    //        // Overriding user agent stylesheet
+    //        background-color: #006980 !important;
+    //        color: #fff !important;
+    //      }
+    //    }
+    //
+    //    option {
+    //      display: inline-block;
+    //      padding: 1rem;
+    //      background-color: var(--c-primary);
+    //      color: var(--color-white);
+    //      margin-right: 1rem;
+    //      margin-bottom: 1rem;
+    //
+    //      &:hover,
+    //      &:focus {
+    //        background-color: var(--c-secondary);
+    //      }
+    //    }
+    //  }
+    //}
 
     .form-actions {
-      order: 3;
       margin-bottom: 2.4rem;
       width: 100%;
+      order: 5;
 
       .button {
         font-size: var(--font-size);
       }
+    }
+  }
+
+  @include large {
+    form {
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    .form-item-pick-a-date {
+      order: 1;
+    }
+
+    .date-picker {
+      order: 2;
+      margin-left: 1rem;
+    }
+
+    form .form-actions {
+      order: 3;
+      margin-top: 2.4rem;
+    }
+
+    .form-item-pick-a-date,
+    .date-picker,
+    form .form-actions {
+      width: 20%;
+    }
+
+    .fieldgroup[data-drupal-selector="edit-categories"] {
+      order: 4;
+      width: 40%;
+      margin-top: 1.2rem;
     }
   }
 }
