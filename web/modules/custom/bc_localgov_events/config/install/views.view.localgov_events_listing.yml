@@ -557,7 +557,7 @@ display:
                   collapsible: false
                   is_secondary: false
               localgov_event_categories_target_id:
-                plugin_id: bef
+                plugin_id: bef_links
                 advanced:
                   sort_options: false
                   rewrite:
@@ -565,8 +565,6 @@ display:
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
       access:
         type: perm
         options:
