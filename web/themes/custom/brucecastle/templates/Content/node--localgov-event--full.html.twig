@@ -179,9 +179,15 @@ better readability.
               </a>
             {% endif %}
           </div>
-          {% if content.localgov_event_categories %}
+          {% if category_links %}
             <div class="localgov_event__categories">
-              {{ content.localgov_event_categories }}
+              <div class="field__items">
+              {% for category_link in category_links %}
+                <div class="field__item">
+                  {{ category_link }}
+                </div>
+              {% endfor %}
+              </div>
             </div>
           {% endif %}
         </aside>

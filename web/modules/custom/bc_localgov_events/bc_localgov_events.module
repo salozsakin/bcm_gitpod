@@ -74,6 +74,21 @@ function bc_localgov_events_preprocess_node(&$variables) {
         }
       }
     }
+    if ($node->hasField('localgov_event_categories') && !$node->get('localgov_event_categories')->isEmpty()) {
+      /** @var \Drupal\taxonomy\TermInterface[] $categories_terms */
+      $categories_terms = $node->get('localgov_event_categories')->referencedEntities();
+      $variables['category_links'] = [];
+      foreach ($categories_terms as $categories_term) {
+        $url = \Drupal\Core\Url::fromRoute('view.localgov_events_listing.page_all_events', [
+          'categories' => $categories_term->id(),
+        ]);
+        $variables['category_links'][] = [
+          '#type' => 'link',
+          '#title' => $categories_term->getName(),
+          '#url' => $url,
+        ];
+      }
+    }
   }
 }
 
