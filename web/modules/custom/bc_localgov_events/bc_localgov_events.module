@@ -48,29 +48,31 @@ function bc_localgov_events_preprocess_node(&$variables) {
 
         // Build the RRule object with the recurrence string and date start.
         $rrule = new RRule($rrule_string, $date_start);
-        // Get all the possible occurrences that are parsed from the rrule string.
-        $rrule_occurrences = $rrule->getOccurrences();
-        // Find the last possible event occurrance date.
-        $last_occurrence = end($rrule_occurrences);
-        // Format the last date for comparison purposes.
-        $last_occurrence_date = $last_occurrence->format('Y-m-d');
+        if ($rrule->isFinite()) {
+          // Get all the possible occurrences that are parsed from the rrule string.
+          $rrule_occurrences = $rrule->getOccurrences();
+          // Find the last possible event occurrance date.
+          $last_occurrence = end($rrule_occurrences);
+          // Format the last date for comparison purposes.
+          $last_occurrence_date = $last_occurrence->format('Y-m-d');
 
-        // Get todays date.
-        $today = date('Y-m-d');
-        // For future-proofing, check if event occurs today.
-        $occurring_today = $rrule->occursAt($today);
-        // For future-proofing, check how many total events are.
-        $calculated_occurrences = $rrule->count();
-        // Get the next event occurrence from today to the last day.
-        $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
+          // Get todays date.
+          $today = date('Y-m-d');
+          // For future-proofing, check if event occurs today.
+          $occurring_today = $rrule->occursAt($today);
+          // For future-proofing, check how many total events are.
+          $calculated_occurrences = $rrule->count();
+          // Get the next event occurrence from today to the last day.
+          $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
 
-        // If we cant find the future occurrence, just display the last occurrence formatted.
-        if (empty($future_occurrences)) {
-          $variables['next_occurrence'] = $last_occurrence->format('l jS F Y');
-        }
-        // Get the first next future occurrence date and format it.
-        else {
-          $variables['next_occurrence'] = reset($future_occurrences)->format('l jS F Y');
+          // If we cant find the future occurrence, just display the last occurrence formatted.
+          if (empty($future_occurrences)) {
+            $variables['next_occurrence'] = $last_occurrence->format('l jS F Y');
+          }
+          // Get the first next future occurrence date and format it.
+          else {
+            $variables['next_occurrence'] = reset($future_occurrences)->format('l jS F Y');
+          }
         }
       }
     }
@@ -287,6 +289,20 @@ function bc_localgov_events_views_pre_view(ViewExecutable $view) {
       $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
       $filters['dates'] = 'choose';
       $view->setExposedInput($filters);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field__localgov_event_date().
+ */
+function bc_localgov_events_preprocess_field__localgov_event_date(&$variables) {
+  if (isset($variables['items'][0]['content']['#occurrences'])) {
+    foreach ($variables['items'][0]['content']['#occurrences'] as &$item) {
+      $start_timestamp = strtotime($item['start_date']['#text']);
+      $item['start_date']['#text'] = date('l jS F Y', $start_timestamp);
+      $item['end_date']['#text'] = date('g.ia', $start_timestamp) . $item['separator']['#plain_text'] . $item['end_date']['#text'];
+      unset($item['separator']);
     }
   }
 }

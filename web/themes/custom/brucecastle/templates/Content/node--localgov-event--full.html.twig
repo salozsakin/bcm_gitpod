@@ -137,34 +137,35 @@ better readability.
       <div class="localgov_event__container">
         <aside class="lgd-row__one-third sidebar sidebar--second event-page__sidebar">
           <div class="basic-page__side-menu">
-            {% if startDate == true %}
-              <div class="localgov_event__dates">
-                <div class="localgov_event__date">
-                  <img src="/themes/custom/brucecastle/images/icons/calendar.svg"/>
-                  {% if endDateAndYear != startDateAndYear and endTime %}
-                    <p>
+            {{ content.localgov_event_date }}
+{#            {% if startDate == true %}#}
+{#              <div class="localgov_event__dates">#}
+{#                <div class="localgov_event__date">#}
+{#                  <img src="/themes/custom/brucecastle/images/icons/calendar.svg"/>#}
+{#                  {% if endDateAndYear != startDateAndYear and endTime %}#}
+{#                    <p>#}
 {#                      {{ startDayOfWeek }}#}
 {#                      {{ startDateAndYear }}#}
-                      {{ nextOccurrence }}
-                      <span>{{ startTime }}</span>
-                    </p>
-                    <p class="localgov_event__date__to">to</p>
-                    <p>
-                      {{ endDayOfWeek }}
-                      {{ endDateAndYear }}
-                      <span>{{ endTime }}</span>
-                    </p>
-                  {% else %}
-                    <p>
+{#                      {{ nextOccurrence }}#}
+{#                      <span>{{ startTime }}</span>#}
+{#                    </p>#}
+{#                    <p class="localgov_event__date__to">to</p>#}
+{#                    <p>#}
+{#                      {{ endDayOfWeek }}#}
+{#                      {{ endDateAndYear }}#}
+{#                      <span>{{ endTime }}</span>#}
+{#                    </p>#}
+{#                  {% else %}#}
+{#                    <p>#}
 {#                      {{ startDayOfWeek }}#}
 {#                      {{ startDateAndYear }}#}
-                      {{ nextOccurrence }}
-                      <span>{{ startTime }} - {{ endDayOfWeek }}</span>
-                    </p>
-                  {% endif %}
-                </div>
-              </div>
-            {% endif %}
+{#                      {{ nextOccurrence }}#}
+{#                      <span>{{ startTime }} - {{ endDayOfWeek }}</span>#}
+{#                    </p>#}
+{#                  {% endif %}#}
+{#                </div>#}
+{#              </div>#}
+{#            {% endif %}#}
             {% if content.localgov_event_locality[0]['#title'] %}
             <div class="localgov_event__location">
               <img src="/themes/custom/brucecastle/images/icons/map-location.svg"/>
