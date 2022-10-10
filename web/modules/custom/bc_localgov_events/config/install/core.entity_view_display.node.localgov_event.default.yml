@@ -13,10 +13,10 @@ dependencies:
     - field.field.node.localgov_event.localgov_event_location
     - field.field.node.localgov_event.localgov_event_price
     - field.field.node.localgov_event.localgov_event_provider
-    - field.field.node.localgov_event.localgov_event_venue
     - node.type.localgov_event
   module:
     - date_recur
+    - field_formatter_class
     - link
     - text
     - user
@@ -31,6 +31,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   localgov_event_call_to_action:
     type: link
@@ -58,13 +63,15 @@ content:
     settings:
       timezone_override: ''
       format_type: localgov_event_date_full
-      separator: to
+      separator: ' - '
       show_next: 10
       count_per_item: false
       occurrence_format_type: localgov_event_date_full
       same_end_date_format_type: localgov_event_date_hour
       interpreter: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   localgov_event_image:
