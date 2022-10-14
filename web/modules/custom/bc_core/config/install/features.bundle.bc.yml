@@ -10,7 +10,7 @@ assignments:
     weight: 0
     core: true
     uuid: true
-    user_permissions: true
+    user_permissions: false
   base:
     enabled: true
     weight: -2

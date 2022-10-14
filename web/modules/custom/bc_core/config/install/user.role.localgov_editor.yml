@@ -1,0 +1,162 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - node.type.landing_page
+    - node.type.localgov_event
+    - node.type.localgov_news_article
+    - node.type.localgov_newsroom
+    - node.type.localgov_subsites_overview
+    - node.type.localgov_subsites_page
+    - taxonomy.vocabulary.localgov_event_category
+    - taxonomy.vocabulary.localgov_event_locality
+    - taxonomy.vocabulary.localgov_event_price
+    - taxonomy.vocabulary.localgov_topic
+    - workflows.workflow.localgov_alert_banners
+    - workflows.workflow.localgov_editorial
+  module:
+    - content_moderation
+    - entity_hierarchy
+    - eu_cookie_compliance
+    - layout_paragraphs
+    - localgov_alert_banner
+    - media
+    - node
+    - path
+    - role_delegation
+    - system
+    - taxonomy
+    - toolbar
+  enforced:
+    module:
+      - localgov_roles
+id: localgov_editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access localgov alert banner listing page'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer eu cookie compliance categories'
+  - 'administer eu cookie compliance popup'
+  - 'administer media'
+  - 'administer media types'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'assign localgov_author role'
+  - 'assign localgov_contributor role'
+  - 'assign localgov_editor role'
+  - 'create document media'
+  - 'create image media'
+  - 'create landing_page content'
+  - 'create localgov_news_article content'
+  - 'create localgov_newsroom content'
+  - 'create localgov_subsites_overview content'
+  - 'create localgov_subsites_page content'
+  - 'create media'
+  - 'create remote_video media'
+  - 'create terms in localgov_event_category'
+  - 'create terms in localgov_event_locality'
+  - 'create terms in localgov_event_price'
+  - 'create terms in localgov_topic'
+  - 'create url aliases'
+  - 'delete any document media'
+  - 'delete any image media'
+  - 'delete any landing_page content'
+  - 'delete any localgov_event content'
+  - 'delete any localgov_news_article content'
+  - 'delete any localgov_newsroom content'
+  - 'delete any localgov_subsites_overview content'
+  - 'delete any localgov_subsites_page content'
+  - 'delete any media'
+  - 'delete any remote_video media'
+  - 'delete landing_page revisions'
+  - 'delete localgov_event revisions'
+  - 'delete localgov_news_article revisions'
+  - 'delete localgov_newsroom revisions'
+  - 'delete localgov_subsites_overview revisions'
+  - 'delete localgov_subsites_page revisions'
+  - 'delete media'
+  - 'delete own document media'
+  - 'delete own image media'
+  - 'delete own landing_page content'
+  - 'delete own localgov_event content'
+  - 'delete own localgov_news_article content'
+  - 'delete own localgov_newsroom content'
+  - 'delete own localgov_subsites_overview content'
+  - 'delete own localgov_subsites_page content'
+  - 'delete own remote_video media'
+  - 'delete terms in localgov_event_category'
+  - 'delete terms in localgov_event_locality'
+  - 'delete terms in localgov_event_price'
+  - 'delete terms in localgov_topic'
+  - 'display eu cookie compliance popup'
+  - 'edit any document media'
+  - 'edit any image media'
+  - 'edit any landing_page content'
+  - 'edit any localgov_event content'
+  - 'edit any localgov_news_article content'
+  - 'edit any localgov_newsroom content'
+  - 'edit any localgov_subsites_overview content'
+  - 'edit any localgov_subsites_page content'
+  - 'edit any remote_video media'
+  - 'edit layout paragraphs plugin config'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own landing_page content'
+  - 'edit own localgov_event content'
+  - 'edit own localgov_news_article content'
+  - 'edit own localgov_newsroom content'
+  - 'edit own localgov_subsites_overview content'
+  - 'edit own localgov_subsites_page content'
+  - 'edit own remote_video media'
+  - 'edit terms in localgov_event_category'
+  - 'edit terms in localgov_event_locality'
+  - 'edit terms in localgov_event_price'
+  - 'edit terms in localgov_topic'
+  - 'manage localgov alert banner localgov_alert_banner entities'
+  - 'reorder entity_hierarchy children'
+  - 'revert landing_page revisions'
+  - 'revert localgov_event revisions'
+  - 'revert localgov_news_article revisions'
+  - 'revert localgov_newsroom revisions'
+  - 'revert localgov_subsites_overview revisions'
+  - 'revert localgov_subsites_page revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use localgov_alert_banners transition create_new_draft'
+  - 'use localgov_alert_banners transition publish'
+  - 'use localgov_alert_banners transition unpublish'
+  - 'use localgov_editorial transition approve'
+  - 'use localgov_editorial transition archive'
+  - 'use localgov_editorial transition archived_draft'
+  - 'use localgov_editorial transition archived_published'
+  - 'use localgov_editorial transition create_new_draft'
+  - 'use localgov_editorial transition publish'
+  - 'use localgov_editorial transition reject'
+  - 'use localgov_editorial transition submit_for_review'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view landing_page revisions'
+  - 'view latest version'
+  - 'view localgov alert banner localgov_alert_banner entities'
+  - 'view localgov_event revisions'
+  - 'view localgov_news_article revisions'
+  - 'view localgov_newsroom revisions'
+  - 'view localgov_subsites_overview revisions'
+  - 'view localgov_subsites_page revisions'
+  - 'view media'
+  - 'view own unpublished media'
+  - 'view the administration theme'

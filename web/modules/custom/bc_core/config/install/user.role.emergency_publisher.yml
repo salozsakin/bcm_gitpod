@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - workflows.workflow.localgov_alert_banners
+  module:
+    - content_moderation
+    - eu_cookie_compliance
+    - filter
+    - localgov_alert_banner
+    - system
+  enforced:
+    module:
+      - localgov_alert_banner
+id: emergency_publisher
+label: 'Emergency publisher'
+weight: -2
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access localgov alert banner listing page'
+  - 'add scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'display eu cookie compliance popup'
+  - 'manage all localgov alert banner entities'
+  - 'reschedule scheduled transitions localgov_alert_banner localgov_alert_banner'
+  - 'use localgov_alert_banners transition publish'
+  - 'use localgov_alert_banners transition unpublish'
+  - 'use text format full_html'
+  - 'view all localgov alert banner entities'
+  - 'view scheduled transitions localgov_alert_banner localgov_alert_banner'
