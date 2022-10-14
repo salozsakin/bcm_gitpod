@@ -28,6 +28,7 @@
 
       .form-select ul {
         list-style: none;
+        padding-left: 0;
 
         li {
           display: inline-block;
@@ -75,16 +76,12 @@
       .form-item {
         margin-right: 1rem;
         margin-bottom: 1rem;
-
-        &:first-child {
-          margin-top: 2.4rem;
-        }
       }
     }
 
     .form-item-pick-a-date,
     .date-picker {
-      max-width: 25rem;
+      max-width: 20rem;
     }
 
     .form-actions {
@@ -99,6 +96,17 @@
       input[value="Apply"] {
         display: none;
       }
+    }
+  }
+
+  .form-item-pick-a-date {
+    width: 100%;
+  }
+
+  @include small-med {
+    .date-picker .form-item:first-child,
+    .form-actions {
+      margin-top: 2.4rem;
     }
   }
 
@@ -120,19 +128,28 @@
 
     form .form-actions {
       order: 3;
-      margin-top: 2.4rem;
-    }
-
-    .form-item-pick-a-date,
-    .date-picker,
-    form .form-actions {
-      width: 20%;
     }
 
     .form-item-categories {
       order: 4;
-      width: 40%;
       margin-top: 1.2rem;
+    }
+
+    .form-item-pick-a-date,
+    .date-picker {
+      min-width: 20rem;
+    }
+
+    form .form-actions {
+      width: 10%;
+    }
+
+    .form-item-categories {
+      width: 60%;
+
+      ul {
+        padding-left: 5rem;
+      }
     }
   }
 }
