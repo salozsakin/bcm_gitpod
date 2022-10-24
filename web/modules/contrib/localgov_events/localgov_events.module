@@ -218,21 +218,21 @@ function localgov_events_form_views_exposed_form_alter(&$form, FormStateInterfac
     ];
     $form['date_picker']['start'] = [
       '#type' => 'date',
-      '#title' => t('Start date'),
+//      '#title' => t('Start date'),
       '#date_date_format' => 'Y-m-d',
       '#attributes' => [
         'type' => 'date',
-        'class' => ['js-date-picker-start'],
+        'class' => ['js-date-picker-start', 'visually-hidden'],
       ],
     ];
     unset($form['start']);
     $form['date_picker']['end'] = [
       '#type' => 'date',
-      '#title' => t('End date'),
+//      '#title' => t('End date'),
       '#date_date_format' => 'Y-m-d',
       '#attributes' => [
         'type' => 'date',
-        'class' => ['js-date-picker-end'],
+        'class' => ['js-date-picker-end', 'visually-hidden'],
       ],
     ];
     unset($form['end']);
@@ -243,19 +243,23 @@ function localgov_events_form_views_exposed_form_alter(&$form, FormStateInterfac
  * Implements hook_views_query_alter().
  */
 function localgov_events_views_pre_view(ViewExecutable $view) {
-  if ($view->id() == 'localgov_events_listing') {
+  // We check if the custom localgov module that overwrites required parts of the localgov_events_listing view is
+  // installed, if so we dont run any contrib code from here.
+  $custom_module = 'bc_localgov_events';
+  if (!\Drupal::moduleHandler()->moduleExists($custom_module)) {
+    if ($view->id() == 'localgov_events_listing') {
+      // Add one day to end date so events for that day are included.
+      $filters = $view->getExposedInput();
+      if (isset($filters['end']) && strlen($filters['end']) > 0) {
+        $filters['end'] = date('Y-m-d', strtotime($filters['end'] . ' + 1 days'));
+        $view->setExposedInput($filters);
+      }
 
-    // Add one day to end date so events for that day are included.
-    $filters = $view->getExposedInput();
-    if (isset($filters['end']) && strlen($filters['end']) > 0) {
-      $filters['end'] = date('Y-m-d', strtotime($filters['end'] . ' + 1 days'));
-      $view->setExposedInput($filters);
-    }
-
-    // Set default to todays date if empty.
-    if (empty($filters['start'])) {
-      $filters['start'] = date('Y-m-d');
-      $view->setExposedInput($filters);
+      // Set default to todays date if empty.
+      if (empty($filters['start'])) {
+        $filters['start'] = date('Y-m-d');
+        $view->setExposedInput($filters);
+      }
     }
   }
 }

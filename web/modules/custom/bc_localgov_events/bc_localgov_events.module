@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Hook functions for bc_localgov_events.
+ */
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 use Drupal\node\NodeInterface;
@@ -104,6 +109,11 @@ function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\F
       '#type' => 'date',
       '#title' => t('Pick a date'),
       '#date_date_element' => 'date',
+      '#states' => [
+        'disabled' => [
+          ':input[name="dates"]' => ['!value' => 'choose'],
+        ],
+      ],
     ];
   }
 }
@@ -111,14 +121,28 @@ function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\F
 
 /**
  * Implements hook_views_query_alter().
+ * @param ViewExecutable $view
  */
 function bc_localgov_events_views_pre_view(ViewExecutable $view) {
   if ($view->id() == 'localgov_events_listing') {
+    // Get user exposed input.
     $filters = $view->getExposedInput();
+    // If the user selected the 'dates' filter - Today, Tomorrow, This week, This month, Next month,
+    // the 'start' and 'end' filter will be automatically selected, so the pick a date filter needs to be set to empty.
+    if (isset($filters['start'], $filters['end'], $filters['dates'])) {
+      $filters['pick_a_date'] = '';
+      $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
+      $view->setExposedInput($filters);
+    }
+
     if (isset($filters['pick_a_date']) && $filters['pick_a_date'] != '') {
       $filters['start'] = $filters['pick_a_date'];
+
+      // Add one day to end date so events for that day are included.
       $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
       $filters['dates'] = 'choose';
+
+      // Update user exposed input with date logic above.
       $view->setExposedInput($filters);
     }
   }
@@ -134,6 +158,51 @@ function bc_localgov_events_preprocess_field__localgov_event_date(&$variables) {
       $item['start_date']['#text'] = date('l jS F Y', $start_timestamp);
       $item['end_date']['#text'] = date('g.ia', $start_timestamp) . $item['separator']['#plain_text'] . $item['end_date']['#text'];
       unset($item['separator']);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the FORM_ID() form.
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ */
+function bc_localgov_events_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // All localgov event forms should be added here.
+  $event_forms = [
+    'node_localgov_event_form',
+    'node_localgov_event_edit_form'
+  ];
+  // If current form is one of the above, add custom validation.
+  if (in_array($form_id, $event_forms, true)) {
+    $form['#validate'][] = '_bc_localgov_events_form_validate';
+  }
+}
+
+/**
+ * Validates submission values in the bc_localgov_events_form_alter() function.
+ * @param array $form
+ * @param FormStateInterface $form_state
+ */
+function _bc_localgov_events_form_validate(array &$form, FormStateInterface $form_state) {
+  // Check if the form actually has the value - It should but just in case it doesnt skip custom validation.
+  if ($form_state->hasValue('localgov_event_date')) {
+    // Get the event dates from the form_state.
+    $event_dates = $form_state->getValue('localgov_event_date');
+    $event_dates = reset($event_dates);
+
+    // Get start and end DateTime objects.
+    $date_start = $event_dates['start'];
+    $date_end = $event_dates['end'];
+
+    // Get the different in epoch between end and start dates.
+    $diff = $date_end->getTimestamp() - $date_start->getTimestamp();
+
+    // If the time difference is positive we dont even need to error because it will be picked up by standard Date
+    // validation, f the difference is less than a minute, error on that field.
+    if ($diff >= 0 && $diff < 60) {
+      $form_state->setErrorByName('localgov_event_date][0][end][time', t('The event duration is less than a minute!'));
     }
   }
 }

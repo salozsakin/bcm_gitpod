@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - facets.facet.localgov_events_locality
@@ -9,8 +9,8 @@ dependencies:
     - brucecastle
 id: brucecastle_localgov_events_neighbourhood_scarfolk
 theme: brucecastle
-region: header
-weight: 2
+region: sidebar_first
+weight: -6
 provider: null
 plugin: 'facet_block:localgov_events_locality'
 settings:
