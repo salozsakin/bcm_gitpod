@@ -129,11 +129,6 @@ function bc_localgov_events_views_pre_view(ViewExecutable $view) {
     $filters = $view->getExposedInput();
     // If the user selected the 'dates' filter - Today, Tomorrow, This week, This month, Next month,
     // the 'start' and 'end' filter will be automatically selected, so the pick a date filter needs to be set to empty.
-    if (isset($filters['start'], $filters['end'], $filters['dates'])) {
-      $filters['pick_a_date'] = '';
-      $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
-      $view->setExposedInput($filters);
-    }
 
     if (isset($filters['pick_a_date']) && $filters['pick_a_date'] != '') {
       $filters['start'] = $filters['pick_a_date'];
@@ -204,5 +199,18 @@ function _bc_localgov_events_form_validate(array &$form, FormStateInterface $for
     if ($diff >= 0 && $diff < 60) {
       $form_state->setErrorByName('localgov_event_date][0][end][time', t('The event duration is less than a minute!'));
     }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function bc_localgov_events_module_implements_alter(&$implementations, $hook) {
+  switch ($hook) {
+    case 'views_pre_view':
+      $group = $implementations['bc_localgov_events'];
+      unset($implementations['bc_localgov_events']);
+      $implementations['bc_localgov_events'] = $group;
+      break;
   }
 }
