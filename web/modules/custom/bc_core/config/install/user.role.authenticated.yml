@@ -2,11 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
     - filter.format.wysiwyg
   module:
     - eu_cookie_compliance
     - filter
-    - google_cse
+    - fontawesome
+    - localgov_alert_banner
     - localgov_geo
     - media
     - system
@@ -14,3 +16,14 @@ id: authenticated
 label: 'Authenticated user'
 weight: 1
 is_admin: false
+permissions:
+  - 'access content'
+  - 'access fontawesome additional settings'
+  - 'display eu cookie compliance popup'
+  - 'use text format full_html'
+  - 'use text format wysiwyg'
+  - 'view all localgov alert banner entities'
+  - 'view geo'
+  - 'view localgov alert banner localgov_alert_banner entities'
+  - 'view localgov alert banner localgov_full_page entities'
+  - 'view media'

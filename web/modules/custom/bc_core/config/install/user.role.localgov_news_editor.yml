@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - eu_cookie_compliance
   enforced:
     module:
       - localgov_news
@@ -8,3 +10,5 @@ id: localgov_news_editor
 label: 'News editor'
 weight: 4
 is_admin: null
+permissions:
+  - 'display eu cookie compliance popup'

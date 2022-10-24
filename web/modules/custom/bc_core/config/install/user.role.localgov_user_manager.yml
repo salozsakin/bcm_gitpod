@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - eu_cookie_compliance
+    - role_delegation
+    - system
+    - toolbar
+  enforced:
+    module:
+      - localgov_roles
+id: localgov_user_manager
+label: 'User manager'
+weight: 5
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'administer users'
+  - 'assign localgov_author role'
+  - 'assign localgov_contributor role'
+  - 'assign localgov_editor role'
+  - 'display eu cookie compliance popup'
+  - 'view the administration theme'
