@@ -1,0 +1,30 @@
+diff --git a/web/modules/contrib/localgov_events/localgov_events.module b/web/modules/contrib/localgov_events/localgov_events.module
+index 5a1b04219..1b60ecfc9 100644
+--- a/web/modules/contrib/localgov_events/localgov_events.module
++++ b/web/modules/contrib/localgov_events/localgov_events.module
+@@ -218,21 +218,21 @@ function localgov_events_form_views_exposed_form_alter(&$form, FormStateInterfac
+     ];
+     $form['date_picker']['start'] = [
+       '#type' => 'date',
+-      '#title' => t('Start date'),
++//      '#title' => t('Start date'),
+       '#date_date_format' => 'Y-m-d',
+       '#attributes' => [
+         'type' => 'date',
+-        'class' => ['js-date-picker-start'],
++        'class' => ['js-date-picker-start', 'visually-hidden'],
+       ],
+     ];
+     unset($form['start']);
+     $form['date_picker']['end'] = [
+       '#type' => 'date',
+-      '#title' => t('End date'),
++//      '#title' => t('End date'),
+       '#date_date_format' => 'Y-m-d',
+       '#attributes' => [
+         'type' => 'date',
+-        'class' => ['js-date-picker-end'],
++        'class' => ['js-date-picker-end', 'visually-hidden'],
+       ],
+     ];
+     unset($form['end']);
