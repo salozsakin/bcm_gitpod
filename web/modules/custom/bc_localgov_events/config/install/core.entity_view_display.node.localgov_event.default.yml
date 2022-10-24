@@ -16,6 +16,7 @@ dependencies:
     - node.type.localgov_event
   module:
     - date_recur
+    - field_formatter_class
     - link
     - text
     - user
@@ -62,13 +63,15 @@ content:
     settings:
       timezone_override: ''
       format_type: localgov_event_date_full
-      separator: to
+      separator: ' - '
       show_next: 10
       count_per_item: false
       occurrence_format_type: localgov_event_date_full
       same_end_date_format_type: localgov_event_date_hour
       interpreter: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   localgov_event_image:

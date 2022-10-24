@@ -53,211 +53,56 @@ function bc_localgov_events_preprocess_node(&$variables) {
 
         // Build the RRule object with the recurrence string and date start.
         $rrule = new RRule($rrule_string, $date_start);
-        // Get all the possible occurrences that are parsed from the rrule string.
-        $rrule_occurrences = $rrule->getOccurrences();
-        // Find the last possible event occurrance date.
-        $last_occurrence = end($rrule_occurrences);
-        // Format the last date for comparison purposes.
-        $last_occurrence_date = $last_occurrence->format('Y-m-d');
+        if ($rrule->isFinite()) {
+          // Get all the possible occurrences that are parsed from the rrule string.
+          $rrule_occurrences = $rrule->getOccurrences();
+          // Find the last possible event occurrance date.
+          $last_occurrence = end($rrule_occurrences);
+          // Format the last date for comparison purposes.
+          $last_occurrence_date = $last_occurrence->format('Y-m-d');
 
-        // Get todays date.
-        $today = date('Y-m-d');
-        // For future-proofing, check if event occurs today.
-        $occurring_today = $rrule->occursAt($today);
-        // For future-proofing, check how many total events are.
-        $calculated_occurrences = $rrule->count();
-        // Get the next event occurrence from today to the last day.
-        $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
+          // Get todays date.
+          $today = date('Y-m-d');
+          // For future-proofing, check if event occurs today.
+          $occurring_today = $rrule->occursAt($today);
+          // For future-proofing, check how many total events are.
+          $calculated_occurrences = $rrule->count();
+          // Get the next event occurrence from today to the last day.
+          $future_occurrences = $rrule->getOccurrencesBetween($today, $last_occurrence_date);
 
-        // If we cant find the future occurrence, just display the last occurrence formatted.
-        if (empty($future_occurrences)) {
-          $variables['next_occurrence'] = $last_occurrence->format('l jS F Y');
-        }
-        // Get the first next future occurrence date and format it.
-        else {
-          $variables['next_occurrence'] = reset($future_occurrences)->format('l jS F Y');
+          // If we cant find the future occurrence, just display the last occurrence formatted.
+          if (empty($future_occurrences)) {
+            $variables['next_occurrence'] = $last_occurrence->format('l jS F Y');
+          }
+          // Get the first next future occurrence date and format it.
+          else {
+            $variables['next_occurrence'] = reset($future_occurrences)->format('l jS F Y');
+          }
         }
       }
     }
-  }
-}
-
-/**
- * Implements hook_views_pre_render().
- *
- * Aggregates multi-day events into one result.
- *
- * @param ViewExecutable $view
- * @throws Exception
- */
-function localgov_events_views_pre_render(ViewExecutable $view) {
-  // Only run on a specific view for now.
-  if ($view->id() === 'localgov_events_listing') {
-
-    $today_events = [];
-    $index = count($view->result);
-
-    // Only run on a specific view for now.
-    if ($view->id() === 'localgov_events_listing') {
-
-      /** Start Custom code-block to handle Daily (infinite) events with a 1-day recurrence. */
-      $daily_rrule_string = 'FREQ=DAILY;INTERVAL=1;COUNT=999';
-      // Get the node start and end dates.
-      $date_start = $view->getExposedInput()['start'];
-
-      $query = \Drupal::entityQuery('node')
-        ->condition('type', 'localgov_event')
-        ->condition('localgov_event_date.rrule', $daily_rrule_string, '=');
-      $daily_results = $query->execute();
-
-      foreach ($daily_results as $key => $value) {
-        $node = \Drupal::entityTypeManager()->getStorage('node')->load($value);
-        if ($node->hasField('localgov_event_date')) {
-          // Get the node rrule string for the RRule object.
-          $rrule_string = $node->get('localgov_event_date')->rrule;
-          // Get the node start and end dates.
-          $date_start = $node->get('localgov_event_date')->value;
-          $date_end = $node->get('localgov_event_date')->end_value;
-        }
-
-        $rrule = new RRule($rrule_string, $date_start);
-        // Get todays date.
-        $tz = 'Europe/London';
-        $dt = new DateTime('now', new DateTimeZone($tz));
-        $today = $dt->format('Y-m-d');
-        $rrule_occurrences = $rrule->getOccurrences();
-
-        foreach ($rrule_occurrences as $occurrence) {
-          $event_day = $occurrence->format('Y-m-d');
-          if ($event_day == $today) {
-            array_push($today_events, $node);
-            continue;
-          }
-        }
+    if ($node->hasField('localgov_event_categories') && !$node->get('localgov_event_categories')->isEmpty()) {
+      /** @var \Drupal\taxonomy\TermInterface[] $categories_terms */
+      $categories_terms = $node->get('localgov_event_categories')->referencedEntities();
+      $variables['category_links'] = [];
+      foreach ($categories_terms as $categories_term) {
+        $url = \Drupal\Core\Url::fromRoute('view.localgov_events_listing.page_all_events', [
+          'categories' => $categories_term->id(),
+        ]);
+        $variables['category_links'][] = [
+          '#type' => 'link',
+          '#title' => $categories_term->getName(),
+          '#url' => $url,
+        ];
       }
-      /** End Custom code-block to handle Daily (infinite) events with a 1-day recurrence. */
-
-      /** Start Custom code-block to handle Once events with multiple-day duration. */
-      $once_rrule_string = 'FREQ=DAILY;INTERVAL=1;COUNT=1';
-      // Get the node end dates.
-      $wanted_date_start = $view->getExposedInput()['start'];
-      $wanted_date_end = $view->getExposedInput()['end'];
-
-      $query = \Drupal::entityQuery('node')
-        ->condition('type', 'localgov_event')
-        ->condition('localgov_event_date.rrule', $once_rrule_string, '=');
-      $once_results = $query->execute();
-
-      foreach ($once_results as $key => $value) {
-        $node = \Drupal::entityTypeManager()->getStorage('node')->load($value);
-        if ($node->hasField('localgov_event_date')) {
-          // Get the node rrule string for the RRule object.
-          $rrule_string = $node->get('localgov_event_date')->rrule;
-          // Get the node start and end dates.
-          $date_start = $node->get('localgov_event_date')->value;
-          $date_end = $node->get('localgov_event_date')->end_value;
-
-          // Get todays date.
-          $tz = 'Europe/London';
-          $dt = new DateTime('now', new DateTimeZone($tz));
-          $today = $dt->format('Y-m-d');
-
-          $dt_wanted_start = new DateTime($wanted_date_start, new DateTimeZone($tz));
-          $dt_wanted_end = new DateTime($wanted_date_end, new DateTimeZone($tz));
-
-          $dt_start = new DateTime($date_start, new DateTimeZone($tz));
-          $dt_end = new DateTime($date_end, new DateTimeZone($tz));
-          $dt_start = $dt_start->format('Y-m-d');
-          $dt_end = $dt_end->format('Y-m-d');
-
-          if (($dt_wanted_start >= $dt_start) && ($dt_wanted_end <= $dt_end)) {
-            if (($today >= $dt_start) && ($today <= $dt_end)) {
-              array_push($today_events, $node);
-            }
-          }
-        }
-      }
-      /** End Custom code-block to handle Once events with multiple-day duration. */
-
-      /** Apparently this is not needed - So commenting out this block for now until the logic is tested thoroughly. */
-      //      if (!empty($daily_results)) {
-      //        foreach ($daily_results as $n => $ev) {
-      //          $result_row = new Drupal\views\ResultRow(array(
-      //            '_entity' => $ev,
-      //            '_relationship_entities' => array(),
-      //            'index' => $index,
-      //            'date_recur__node__localgov_event_date_node_field_data_localg' => $ev->get('localgov_event_date')->value,
-      //            'date_recur__node__localgov_event_date_node_field_data_localg_1' => $ev->get('localgov_event_date')->end_value,
-      //            'nid' => $ev->nid->value
-      //          ));
-      //          array_push($view->result, $result_row);
-      //          $index++;
-      //        }
-      //      }
-
-      if (!empty($today_events)) {
-        foreach ($today_events as $n => $ev) {
-          $result_row = new Drupal\views\ResultRow([
-            '_entity' => $ev,
-            '_relationship_entities' => [],
-            'index' => $index,
-            'date_recur__node__localgov_event_date_node_field_data_localg' => $ev->get('localgov_event_date')->value,
-            'date_recur__node__localgov_event_date_node_field_data_localg_1' => $ev->get('localgov_event_date')->end_value,
-            'nid' => $ev->nid->value
-          ]);
-          array_push($view->result, $result_row);
-          $index++;
-        }
-      }
-
-      // Save original results to loop through them.
-      $original_results = $view->result;
-      // Create array for storing unique events.
-      $unique_events = [];
-      // Temporary index to fix order later.
-      $index = -1;
-      foreach ($original_results as $result) {
-        // Get the node ID for comparing how many unique events are.
-        $nid = $result->nid;
-        // Save both start and end date to change how they display on the results page.
-        $start_date = $result->date_recur__node__localgov_event_date_node_field_data_localg;
-        $end_date = $result->date_recur__node__localgov_event_date_node_field_data_localg_1;
-        // If a unique event doesn't exist already, add it.
-        if (!array_key_exists($result->nid, $unique_events)) {
-          $unique_events[$result->nid] = $result;
-        }
-        // If the current element (event) of the loop already exists within the unique events,
-        // compare the date to see if the end date is further in the future than the current
-        // saved one, if the case, update that to have the future end date.
-        else {
-          $old_end_date = new DateTime($unique_events[$nid]->date_recur__node__localgov_event_date_node_field_data_localg_1);
-          $new_end_date = new DateTime($end_date);
-          if ($new_end_date > $old_end_date) {
-            $unique_events[$nid]->date_recur__node__localgov_event_date_node_field_data_localg_1 = $end_date;
-          }
-        }
-      }
-      // Fix index elements to correctly display all events.
-      $final_results = [];
-      foreach ($unique_events as $unique_event) {
-        ++$index;
-        $unique_event->index = $index;
-        array_push($final_results, $unique_event);
-      }
-      // Set the modified results into the views' result.
-      $view->result = $final_results;
-      $view->total_rows = (string) count($final_results);
     }
   }
 }
 
 /**
  * Implements hook_form_views_exposed_form_alter().
- * @param $form
- * @param FormStateInterface $form_state
- * @param $form_id
  */
-function bc_localgov_events_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function bc_localgov_events_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $view = $form_state->getStorage('view');
   if ($form_id == 'views_exposed_form' && $view['view']->id() == 'localgov_events_listing') {
     $form['pick_a_date'] = [
@@ -284,11 +129,6 @@ function bc_localgov_events_views_pre_view(ViewExecutable $view) {
     $filters = $view->getExposedInput();
     // If the user selected the 'dates' filter - Today, Tomorrow, This week, This month, Next month,
     // the 'start' and 'end' filter will be automatically selected, so the pick a date filter needs to be set to empty.
-    if (isset($filters['start'], $filters['end'], $filters['dates'])) {
-      $filters['pick_a_date'] = '';
-      $filters['end'] = date('Y-m-d', strtotime($filters['pick_a_date'] . ' + 1 days'));
-      $view->setExposedInput($filters);
-    }
 
     if (isset($filters['pick_a_date']) && $filters['pick_a_date'] != '') {
       $filters['start'] = $filters['pick_a_date'];
@@ -299,6 +139,20 @@ function bc_localgov_events_views_pre_view(ViewExecutable $view) {
 
       // Update user exposed input with date logic above.
       $view->setExposedInput($filters);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field__localgov_event_date().
+ */
+function bc_localgov_events_preprocess_field__localgov_event_date(&$variables) {
+  if (isset($variables['items'][0]['content']['#occurrences'])) {
+    foreach ($variables['items'][0]['content']['#occurrences'] as &$item) {
+      $start_timestamp = strtotime($item['start_date']['#text']);
+      $item['start_date']['#text'] = date('l jS F Y', $start_timestamp);
+      $item['end_date']['#text'] = date('g.ia', $start_timestamp) . $item['separator']['#plain_text'] . $item['end_date']['#text'];
+      unset($item['separator']);
     }
   }
 }
@@ -348,3 +202,15 @@ function _bc_localgov_events_form_validate(array &$form, FormStateInterface $for
   }
 }
 
+/**
+ * Implements hook_module_implements_alter().
+ */
+function bc_localgov_events_module_implements_alter(&$implementations, $hook) {
+  switch ($hook) {
+    case 'views_pre_view':
+      $group = $implementations['bc_localgov_events'];
+      unset($implementations['bc_localgov_events']);
+      $implementations['bc_localgov_events'] = $group;
+      break;
+  }
+}
