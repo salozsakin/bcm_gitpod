@@ -4,7 +4,6 @@ dependencies:
   config:
     - entity_browser.browser.localgov_geo_library
     - field.field.node.localgov_event.body
-    - field.field.node.localgov_event.field_localgov_event_tags
     - field.field.node.localgov_event.localgov_event_call_to_action
     - field.field.node.localgov_event.localgov_event_categories
     - field.field.node.localgov_event.localgov_event_date
@@ -13,9 +12,10 @@ dependencies:
     - field.field.node.localgov_event.localgov_event_location
     - field.field.node.localgov_event.localgov_event_price
     - field.field.node.localgov_event.localgov_event_provider
-    - field.field.node.localgov_event.localgov_event_venue
     - node.type.localgov_event
+    - workflows.workflow.localgov_editorial
   module:
+    - content_moderation
     - date_recur_modular
     - entity_browser
     - field_group
@@ -74,7 +74,6 @@ third_party_settings:
     group_location:
       children:
         - localgov_event_provider
-        - localgov_event_venue
         - localgov_event_location
       label: Location
       region: content
@@ -92,7 +91,6 @@ third_party_settings:
         - localgov_event_price
         - localgov_event_locality
         - localgov_event_categories
-        - field_localgov_event_tags
       label: Facets
       region: content
       parent_name: group_tags
@@ -121,19 +119,9 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 2
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_localgov_event_tags:
-    type: entity_reference_autocomplete
-    weight: 10
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   localgov_event_call_to_action:
     type: link_default
@@ -145,7 +133,7 @@ content:
     third_party_settings: {  }
   localgov_event_categories:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -168,7 +156,7 @@ content:
     third_party_settings: {  }
   localgov_event_locality:
     type: options_select
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -202,39 +190,35 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  localgov_event_venue:
-    type: entity_reference_autocomplete
-    weight: 11
+  moderation_state:
+    type: moderation_state_default
+    weight: 7
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -249,7 +233,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS

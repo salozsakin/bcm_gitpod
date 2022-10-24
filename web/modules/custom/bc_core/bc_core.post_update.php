@@ -24,3 +24,15 @@ function bc_core_post_update_enable_ckeditor_addons_modules(&$sandbox) {
 
  return t('Installed ' . implode(',', $modules_list));
 }
+
+/**
+ * Install better exposed filters.
+ */
+function bc_core_post_update_enable_better_exposed_filters(&$sandbox) {
+  $modules_list = [
+    'better_exposed_filters'
+  ];
+  Drupal::service('module_installer')->install($modules_list);
+
+  return t('Installed ' . implode(',', $modules_list));
+}
