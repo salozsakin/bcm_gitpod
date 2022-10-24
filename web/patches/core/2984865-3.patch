@@ -1,0 +1,45 @@
+diff --git a/core/modules/ckeditor/js/ckeditor.es6.js b/core/modules/ckeditor/js/ckeditor.es6.js
+index 5f193f60d0..ca53e88fac 100644
+--- a/core/modules/ckeditor/js/ckeditor.es6.js
++++ b/core/modules/ckeditor/js/ckeditor.es6.js
+@@ -256,6 +256,7 @@
+         ? dialogSettings.dialogClass.split(' ')
+         : [];
+       classes.push('ui-dialog--narrow');
++      classes.push('editor-dialog-save');
+       dialogSettings.dialogClass = classes.join(' ');
+       dialogSettings.autoResize = window.matchMedia(
+         '(min-width: 600px)',
+@@ -314,7 +315,10 @@
+ 
+   // Respond to dialogs that are closed, removing the current save handler.
+   $(window).on('dialog:afterclose', (e, dialog, $element) => {
+-    if (Drupal.ckeditor.saveCallback) {
++    if (
++      Drupal.ckeditor.saveCallback &&
++      $element.parent().hasClass('editor-dialog-save')
++    ) {
+       Drupal.ckeditor.saveCallback = null;
+     }
+   });
+diff --git a/core/modules/ckeditor/js/ckeditor.js b/core/modules/ckeditor/js/ckeditor.js
+index 227b3024a5..5b4b837b68 100644
+--- a/core/modules/ckeditor/js/ckeditor.js
++++ b/core/modules/ckeditor/js/ckeditor.js
+@@ -125,6 +125,7 @@
+ 
+       var classes = dialogSettings.dialogClass ? dialogSettings.dialogClass.split(' ') : [];
+       classes.push('ui-dialog--narrow');
++      classes.push('editor-dialog-save');
+       dialogSettings.dialogClass = classes.join(' ');
+       dialogSettings.autoResize = window.matchMedia('(min-width: 600px)').matches;
+       dialogSettings.width = 'auto';
+@@ -169,7 +170,7 @@
+   });
+ 
+   $(window).on('dialog:afterclose', function (e, dialog, $element) {
+-    if (Drupal.ckeditor.saveCallback) {
++    if (Drupal.ckeditor.saveCallback && $element.parent().hasClass('editor-dialog-save')) {
+       Drupal.ckeditor.saveCallback = null;
+     }
+   });

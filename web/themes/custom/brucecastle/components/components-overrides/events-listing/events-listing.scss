@@ -37,7 +37,6 @@
         }
 
         .bef-link {
-          display: inline-block;
           background-color: var(--c-primary);
           border: 0.1rem solid transparent;
           color: var(--c-text-inverse);
@@ -55,6 +54,12 @@
             cursor: pointer;
             box-shadow: none;
             outline: none;
+
+            option:checked {
+              // Overriding user agent stylesheet
+              background-color: #006980 !important;
+              color: #fff !important;
+            }
           }
         }
 
@@ -128,11 +133,7 @@
 
     form .form-actions {
       order: 3;
-    }
-
-    .form-item-categories {
-      order: 4;
-      margin-top: 1.2rem;
+      width: 10%;
     }
 
     .form-item-pick-a-date,
@@ -140,13 +141,10 @@
       min-width: 20rem;
     }
 
-    form .form-actions {
-      width: 10%;
-    }
-
     .form-item-categories {
       width: 60%;
-
+      order: 4;
+      margin-top: 1.2rem;
       ul {
         padding-left: 5rem;
       }

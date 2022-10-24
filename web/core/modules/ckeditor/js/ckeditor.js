@@ -122,6 +122,7 @@
       $target.css('position', 'relative').find('.ckeditor-dialog-loading').remove();
       var classes = dialogSettings.dialogClass ? dialogSettings.dialogClass.split(' ') : [];
       classes.push('ui-dialog--narrow');
+      classes.push('editor-dialog-save');
       dialogSettings.dialogClass = classes.join(' ');
       dialogSettings.autoResize = window.matchMedia('(min-width: 600px)').matches;
       dialogSettings.width = 'auto';
@@ -164,7 +165,7 @@
     }
   });
   $(window).on('dialog:afterclose', function (e, dialog, $element) {
-    if (Drupal.ckeditor.saveCallback) {
+    if (Drupal.ckeditor.saveCallback && $element.parent().hasClass('editor-dialog-save')) {
       Drupal.ckeditor.saveCallback = null;
     }
   });
@@ -202,4 +203,27 @@
       }
     };
   }
+
+  var origBeforeSubmit = Drupal.Ajax.prototype.beforeSubmit;
+
+  Drupal.Ajax.prototype.beforeSubmit = function (formValues, element, options) {
+    if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances) {
+      var instances = Object.values(CKEDITOR.instances);
+      instances.forEach(function (editor) {
+        formValues.forEach(function (formField) {
+          var element = document.querySelector("#".concat(editor.name));
+
+          if (element) {
+            var fieldName = element.getAttribute('name');
+
+            if (formField.name === fieldName && editor.mode === 'source') {
+              formField.value = editor.getData();
+            }
+          }
+        });
+      });
+    }
+
+    return origBeforeSubmit.apply(this, arguments);
+  };
 })(Drupal, Drupal.debounce, CKEDITOR, jQuery, Drupal.displace, Drupal.AjaxCommands);

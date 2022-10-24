@@ -172,6 +172,7 @@
               widget._setUpEditButton();
 
               editor.fire('unlockSnapshot');
+              editor.fire('saveSnapshot');
             });
           }
 
