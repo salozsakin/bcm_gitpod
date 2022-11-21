@@ -28,7 +28,7 @@
         "drupal/image_lazy_loader": "^2.0",
         "drupal/media_embed_extra": "^1.0@beta",
         "drupal/password_policy": "^3.1",
-        "drupal/search_api": "^1.23",
+        "drupal/search_api": "1.28",
         "drupal/search_api_solr": "^4.2",
         "drupal/seckit": "^2.0",
         "drupal/username_enumeration_prevention": "^1.2",

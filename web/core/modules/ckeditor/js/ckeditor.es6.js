@@ -256,7 +256,6 @@
         ? dialogSettings.dialogClass.split(' ')
         : [];
       classes.push('ui-dialog--narrow');
-      classes.push('editor-dialog-save');
       dialogSettings.dialogClass = classes.join(' ');
       dialogSettings.autoResize =
         window.matchMedia('(min-width: 600px)').matches;
@@ -314,10 +313,7 @@
 
   // Respond to dialogs that are closed, removing the current save handler.
   $(window).on('dialog:afterclose', (e, dialog, $element) => {
-    if (
-      Drupal.ckeditor.saveCallback &&
-      $element.parent().hasClass('editor-dialog-save')
-    ) {
+    if (Drupal.ckeditor.saveCallback) {
       Drupal.ckeditor.saveCallback = null;
     }
   });
@@ -386,27 +382,6 @@
       }
     };
   }
-
-  const origBeforeSubmit = Drupal.Ajax.prototype.beforeSubmit;
-  Drupal.Ajax.prototype.beforeSubmit = function (formValues, element, options) {
-    if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances) {
-      const instances = Object.values(CKEDITOR.instances);
-      instances.forEach((editor) => {
-        formValues.forEach((formField) => {
-          // Get field name from the id in the editor so that it covers all
-          // fields using ckeditor.
-          const element = document.querySelector(`#${editor.name}`);
-          if (element) {
-            const fieldName = element.getAttribute('name');
-            if (formField.name === fieldName && editor.mode === 'source') {
-              formField.value = editor.getData();
-            }
-          }
-        });
-      });
-    }
-    return origBeforeSubmit.apply(this, arguments);
-  };
 })(
   Drupal,
   Drupal.debounce,
