@@ -18,7 +18,7 @@
         "drupal/better_exposed_filters": "^6.0",
         "drupal/components": "^2.4",
         "drupal/core-composer-scaffold": "^9.1",
-        "drupal/core-recommended": "9.3.19",
+        "drupal/core-recommended": "9.3.22",
         "drupal/emulsify_twig": "2.1.2",
         "drupal/eu_cookie_compliance": "^1.19",
         "drupal/fakeobjects": "^1.1",
